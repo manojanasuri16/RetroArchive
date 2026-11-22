@@ -1,0 +1,29 @@
+name: Assassin's Creed
+tagline: Gameloft's Java ME take on Assassin's Creed
+kind: game
+source: community
+platform: java
+runtime: midp
+category: game-action
+author: Gameloft SA
+license: Commercial (no longer sold)
+added: 2026-11-22
+icon: assassins-creed/icon.png
+files:
+  - name: AssassinsCreed-1.0.1.jar
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/assassins-creed-1.0.1/AssassinsCreed-1.0.1.jar
+    kind: jar
+    size: 385065
+    sha256: b07642515a0059be3fe0f38396dbd96d0e966fa98331ce3b28d8cc31248a99d7
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the file to the phone and open it from the File manager. See the [Java apps guide](/guides/install-java-apps/).'
+knownIssues:
+  - 'Commercial or fan-made software mirrored for preservation. Rights belong to the original owners. See [About and removals](/about/).'
+description: |
+  **Assassin's Creed** is the Java ME game published by Gameloft (manifest vendor: Gameloft SA), version 1.0.1. This is the 240x320 build.
+
+  MIDP 2.0 / CLDC 1.0.

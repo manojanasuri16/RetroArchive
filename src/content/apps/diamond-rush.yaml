@@ -1,0 +1,28 @@
+name: Diamond Rush
+tagline: Gameloft adventure puzzle: collect diamonds, dodge traps
+kind: game
+source: community
+platform: java
+runtime: midp
+category: game-puzzle
+author: Gameloft
+license: Commercial (no longer sold)
+added: 2026-11-22
+files:
+  - name: DiamondRush-1.0.3.jar
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/diamond-rush-1.0.3/DiamondRush-1.0.3.jar
+    kind: jar
+    size: 303986
+    sha256: 573ed355838ae22af5662417a9aca251b967d656e110dda36f6346ed6b62e703
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the file to the phone and open it from the File manager. See the [Java apps guide](/guides/install-java-apps/).'
+knownIssues:
+  - 'Commercial or fan-made software mirrored for preservation. Rights belong to the original owners. See [About and removals](/about/).'
+description: |
+  **Diamond Rush** is a temple-exploring puzzle adventure published by Gameloft, version 1.0.3.
+
+  MIDP 2.0 / CLDC 1.0.

@@ -1,0 +1,29 @@
+name: Super Mario Bros. (fan game)
+tagline: Unofficial Mario clone for Java phones
+kind: game
+source: community
+platform: java
+runtime: midp
+category: game-action
+author: Unknown fan developer
+license: Unofficial fan game
+added: 2026-11-22
+icon: super-mario-bros/icon.png
+files:
+  - name: SuperMarioBros.jar
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/super-mario-bros/SuperMarioBros.jar
+    kind: jar
+    size: 198302
+    sha256: 09a268df6d713eba9e9972b0b4d6f8f85394fbee49f2af109981e87d54b64814
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the file to the phone and open it from the File manager. See the [Java apps guide](/guides/install-java-apps/).'
+knownIssues:
+  - 'Commercial or fan-made software mirrored for preservation. Rights belong to the original owners. See [About and removals](/about/).'
+description: |
+  An **unofficial fan-made** Mario-style platformer for Java phones. Not made by Nintendo. The file's metadata lists wap4net.com as vendor, but the original author is not clear.
+
+  MIDP 2.0 / CLDC 1.0.

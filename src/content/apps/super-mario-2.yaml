@@ -1,0 +1,29 @@
+name: Super Mario 2 (fan game)
+tagline: Unofficial Mario platformer for Java phones
+kind: game
+source: community
+platform: java
+runtime: midp
+category: game-action
+author: Unknown fan developer
+license: Unofficial fan game
+added: 2026-11-22
+icon: super-mario-2/icon.png
+files:
+  - name: SuperMario2.jar
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/super-mario-2/SuperMario2.jar
+    kind: jar
+    size: 146703
+    sha256: 14cd938dc7130e107fa3e5fa386c1aeb9087108f19210e2cc5a834cf9c5b3c37
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the file to the phone and open it from the File manager. See the [Java apps guide](/guides/install-java-apps/).'
+knownIssues:
+  - 'Commercial or fan-made software mirrored for preservation. Rights belong to the original owners. See [About and removals](/about/).'
+description: |
+  An **unofficial fan-made** Mario platformer for Java phones, with a multi-screen build. Not made by Nintendo. The file's metadata credits a blog (freemobilejavagames.blogspot.com) and the name jasonlindai, but the original author is not clear.
+
+  MIDP 2.0 / CLDC 1.0.

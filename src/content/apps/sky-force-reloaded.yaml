@@ -1,0 +1,28 @@
+name: Sky Force Reloaded
+tagline: Vertical shoot-em-up for S60
+kind: game
+source: community
+platform: symbian
+runtime: native
+category: game-arcade
+author: Unknown
+license: Commercial (no longer sold)
+added: 2026-11-22
+files:
+  - name: SkyForceReloaded.sis
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/sky-force-reloaded/SkyForceReloaded.sis
+    kind: sis
+    size: 1177460
+    sha256: a2658d0551822caaef83bf4f12617291730d2fd7d19d2f33cf79f529d62f8b2a
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Install the file directly from the File manager.'
+knownIssues:
+  - 'Commercial or fan-made software mirrored for preservation. Rights belong to the original owners. See [About and removals](/about/).'
+description: |
+  **Sky Force Reloaded** is a vertical scrolling shooter. This is the 240x320 Symbian build.
+
+  The author and version are not recorded in the file name.

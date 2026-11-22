@@ -1,0 +1,28 @@
+name: CorePlayer
+tagline: Media player for S60 3rd Edition
+kind: app
+source: community
+platform: symbian
+runtime: native
+category: media
+author: Unknown
+license: Commercial (shareware)
+added: 2026-11-22
+files:
+  - name: CorePlayer.sisx
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/coreplayer/CorePlayer.sisx
+    kind: sisx
+    size: 3367104
+    sha256: 9c50002cf066076374cda6d1edade5113201797ad95b142e96e3f41f984b4316
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Install the file directly from the File manager.'
+knownIssues:
+  - 'Commercial or fan-made software mirrored for preservation. Rights belong to the original owners. See [About and removals](/about/).'
+description: |
+  **CorePlayer** is a media player for Symbian phones. This is the S60 3rd Edition .sisx.
+
+  It was shareware, so some features may be limited without a licence key. The version is not recorded in the file name.
