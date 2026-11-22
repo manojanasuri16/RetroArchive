@@ -1,6 +1,6 @@
 {
   "manojanasuri16/RetroSend": {
-    "fetched": "2026-11-22T05:00:15.192Z",
+    "fetched": "2026-11-22T05:36:08.725Z",
     "latest": {
       "tag": "v1.2.1",
       "name": "RetroSend 1.2.1: phone memory or memory card",
@@ -84,7 +84,7 @@
     ]
   },
   "manojanasuri16/symbian-s60v3-toolchain": {
-    "fetched": "2026-11-22T05:00:15.312Z",
+    "fetched": "2026-11-22T05:36:09.733Z",
     "latest": {
       "tag": "archives",
       "name": "Original archives",
@@ -132,45 +132,49 @@
     ]
   },
   "manojanasuri16/RetroTele": {
-    "fetched": "2026-11-22T05:00:15.232Z",
+    "fetched": "2026-11-22T05:36:09.081Z",
     "latest": {
-      "tag": "v0.7.9",
-      "name": "RetroTele 0.7.9: VoIP echo test (experimental)",
-      "published": "2026-11-22T04:46:34Z",
-      "body": "The phone's normal audio can't record while playing, so this tries Nokia's VoIP Audio Services (built for internet calls).\n\nInstall, in order: **VoIPAudioSrvc_3132_0x10207b9e.SISX** (Nokia's VoIP audio service), **RetroTele.sis**, **RetroTele-audiotest.sis**. Then Settings > Call test > Options > **Echo test via VoIP**: you should hear a beep, then your own voice half a second later.",
-      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.9",
+      "tag": "v0.7.12",
+      "name": "RetroTele 0.7.12: VoIP echo test mic fix (experimental)",
+      "published": "2026-11-22T05:23:18Z",
+      "body": "The VoIP echo test muted the microphone (gain rounded to 0). Fixed: install RetroTele-voiptest.sis and try Settings > Call test > Options > Echo test via VoIP again.",
+      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.12",
       "assets": [
         {
-          "name": "RetroTele-audiotest.sis",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/RetroTele-audiotest.sis",
-          "size": 15896,
-          "downloads": 0,
-          "sha256": "528508ff046937ee33f9c42c24dd071e44626cdd7c80a48af993846e50d31856"
-        },
-        {
           "name": "RetroTele-voiptest.sis",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/RetroTele-voiptest.sis",
-          "size": 8388,
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.12/RetroTele-voiptest.sis",
+          "size": 8788,
           "downloads": 0,
-          "sha256": "ea09e61c8702206a85810fe7f6bd260b6b4707d2b1bd16e261c87a2cb31bb3e3"
+          "sha256": "55f5c0f13218de9ebb1a6e673782793759c31eb403cb49eae8842fba5c127a85"
         },
         {
           "name": "RetroTele.sis",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/RetroTele.sis",
-          "size": 809712,
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.12/RetroTele.sis",
+          "size": 809696,
           "downloads": 0,
-          "sha256": "da35c02fe960abcf4d68378e0dc2369c16bd39dbf3fafe653b44833434c63687"
-        },
-        {
-          "name": "VoIPAudioSrvc_3132_0x10207b9e.SISX",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/VoIPAudioSrvc_3132_0x10207b9e.SISX",
-          "size": 24716,
-          "downloads": 0,
-          "sha256": "753690a6434c049f913d5d452bf706db7830c14f773e8ed6518890f1dcfd39a9"
+          "sha256": "fedc2f5175f980841620022161d171ca2cff116037f71b40d0c4f145773b4467"
         }
       ]
     },
     "history": [
+      {
+        "tag": "v0.7.12",
+        "published": "2026-11-22T05:23:18Z",
+        "body": "The VoIP echo test muted the microphone (gain rounded to 0). Fixed: install RetroTele-voiptest.sis and try Settings > Call test > Options > Echo test via VoIP again.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.12"
+      },
+      {
+        "tag": "v0.7.11",
+        "published": "2026-11-22T05:15:33Z",
+        "body": "Fixes the VoIP echo test stopping after the first beep, and logs more detail about the microphone. Install RetroTele-voiptest.sis, run Settings > Call test > Options > Echo test via VoIP.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.11"
+      },
+      {
+        "tag": "v0.7.10",
+        "published": "2026-11-22T05:05:04Z",
+        "body": "Fixes \"Unable to install\" for the VoIP echo test: it shared an internal ID with the RetroTorch app. Install **RetroTele.sis** and **RetroTele-voiptest.sis** (Nokia's VoIPAudioSrvc SISX from 0.7.9 is still needed), then Settings > Call test > Options > Echo test via VoIP.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.10"
+      },
       {
         "tag": "v0.7.9",
         "published": "2026-11-22T04:46:34Z",
@@ -212,29 +216,11 @@
         "published": "2026-11-21T23:49:48Z",
         "body": "Two packages now:\n- **RetroTele.sis**: install to phone memory\n- **RetroTele-card.sis**: install to the memory card (the app files go to the card; only a 2 KB starter goes to phone memory)\n\nA plain memory-card install never started because Python for S60 1.4.5 always looks for the app's starter script in phone memory. Your login is kept either way.",
         "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.3"
-      },
-      {
-        "tag": "v0.7.2",
-        "published": "2026-11-21T23:33:48Z",
-        "body": "- **Exit** now really closes the app (it stayed on a white screen because open Telegram connections kept it alive)\n- RetroTele can be installed to the **memory card** again, or to phone memory: the phone asks\n- README screenshots use made-up sample chats\n\nInstall over the previous version; your login is kept.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.2"
-      },
-      {
-        "tag": "v0.7.1",
-        "published": "2026-11-21T16:49:05Z",
-        "body": "- Fixes screens staying white (the music player and anything else drawing with large numbers from the phone)\n- If a screen ever fails to draw, it now shows a short error bar instead of a blank screen\n- Native crypto confirmed on the N79: a 6 KB chat list now decrypts in 0.02 s instead of 2 s\n\nInstall over the previous version; your login is kept.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.1"
-      },
-      {
-        "tag": "v0.7.0",
-        "published": "2026-11-21T16:41:28Z",
-        "body": "**Compiled crypto module.** Encryption now runs as native code (`tgnative.pyd`, installed with the app) instead of Python. That's hundreds of times faster: chats and pictures load quickly, music downloads in seconds instead of minutes, two-step login takes seconds, and the full integrity check is back on by default.\n\nIf the module can't load, RetroTele falls back to the old Python code automatically. Options > About shows *native crypto* when it's active.\n\nInstall over the previous version; your login is kept.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.0"
       }
     ]
   },
   "manojanasuri16/RetroTorch": {
-    "fetched": "2026-11-22T05:00:15.268Z",
+    "fetched": "2026-11-22T05:36:09.420Z",
     "latest": {
       "tag": "v1.3.0",
       "name": "RetroTorch 1.3.0: phone memory or memory card",

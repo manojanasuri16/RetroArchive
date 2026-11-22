@@ -1,0 +1,28 @@
+name: City Bloxx
+tagline: Stack blocks and build skyscrapers
+kind: game
+source: community
+platform: java
+runtime: midp
+category: game-puzzle
+author: Nokia
+license: Freeware
+added: 2026-11-22
+icon: city-bloxx/icon.png
+files:
+  - name: CityBloxx-1.0.8.jar
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/city-bloxx-1.0.8/CityBloxx-1.0.8.jar
+    kind: jar
+    size: 297938
+    sha256: 9a6d8398d30c6cf0aa90b0bb0605378c77f5ea9b8f0f20343277916a246d4aea
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the .jar to the phone (cable, Bluetooth or memory card) and open it from the Messaging inbox or File manager. The phone installs it into the Applications folder.'
+  - 'See the [Java apps guide](/guides/install-java-apps/).'
+description: |
+  **City Bloxx** is a tower-building game: drop blocks, keep the stack balanced, and grow a city. Version 1.0.8, published by Nokia.
+
+  MIDP 2.0 / CLDC 1.0.

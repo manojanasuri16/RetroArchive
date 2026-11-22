@@ -1,0 +1,26 @@
+name: N-Gage 2.0 Installer
+tagline: Installer for the N-Gage 2.0 platform, v1.40 (build 1557)
+kind: app
+source: community
+platform: symbian
+runtime: native
+category: system
+author: Nokia
+license: Freeware
+added: 2026-11-22
+files:
+  - name: NGage-2.0-Installer-1.40.sisx
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/ngage-2.0-installer-1.40/NGage-2.0-Installer-1.40.sisx
+    kind: sisx
+    size: 12266112
+    sha256: 2396b65d14abbacd371142954b65d20eb2c30dd05f3f9e548287f474cfdac6b5
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Install the .sisx directly from the file manager.'
+description: |
+  The **N-Gage 2.0** installer for Series 60 phones, version 1.40 (build 1557), dated 2012 in its file name.
+
+  The N-Gage services are shut down, so the store and online features will not work. This is kept as a historical archive file.

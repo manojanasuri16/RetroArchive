@@ -1,0 +1,28 @@
+name: Snake III
+tagline: The Nokia snake game, 3D style
+kind: game
+source: community
+platform: java
+runtime: midp
+category: game-arcade
+author: Nokia
+license: Freeware
+added: 2026-11-22
+icon: snake-iii/icon.png
+files:
+  - name: SnakeIII-3.07.2.jar
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/snake-iii-3.07.2/SnakeIII-3.07.2.jar
+    kind: jar
+    size: 266934
+    sha256: e5ce4ff582af8b5d7e1725c627bcb4fbacea89e4f3badb39164c84bf1d13c930
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the .jar to the phone (cable, Bluetooth or memory card) and open it from the Messaging inbox or File manager. The phone installs it into the Applications folder.'
+  - 'See the [Java apps guide](/guides/install-java-apps/).'
+description: |
+  **Snake III** is Nokia's third-generation Snake for Java phones, version 3.07.2. Steer the snake, eat, and don't hit the walls or yourself.
+
+  MIDP 2.0 / CLDC 1.1.

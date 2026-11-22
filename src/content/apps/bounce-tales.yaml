@@ -1,0 +1,28 @@
+name: Bounce Tales
+tagline: Nokia platformer starring the red ball Bounce
+kind: game
+source: community
+platform: java
+runtime: midp
+category: game-action
+author: Nokia
+license: Freeware
+added: 2026-11-22
+icon: bounce-tales/icon.png
+files:
+  - name: BounceTales-2.0.25.jar
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/bounce-tales-2.0.25/BounceTales-2.0.25.jar
+    kind: jar
+    size: 606720
+    sha256: ef8c3f0eaa27f1b17ba27b82a594821a63b12f8f558c486bdfbf74cd2e58a1aa
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the .jar to the phone (cable, Bluetooth or memory card) and open it from the Messaging inbox or File manager. The phone installs it into the Applications folder.'
+  - 'See the [Java apps guide](/guides/install-java-apps/).'
+description: |
+  **Bounce Tales** is a side-scrolling platform game for Java phones, published by Nokia. You guide a bouncing ball through levels full of enemies and obstacles. Version 2.0.25.
+
+  MIDP 2.0 / CLDC 1.1.

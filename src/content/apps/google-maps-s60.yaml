@@ -1,0 +1,27 @@
+name: Google Maps for S60
+tagline: Google Maps for S60 3rd and 5th Edition
+kind: app
+source: community
+platform: symbian
+runtime: native
+category: utility
+author: Google
+license: Freeware
+homepage: https://www.google.com/mobile/maps/
+added: 2026-11-22
+files:
+  - name: GoogleMaps-S60.sisx
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/google-maps-s60/GoogleMaps-S60.sisx
+    kind: sisx
+    size: 1208280
+    sha256: 29e611e31cf4b95f0427128b58eb21d0aab7e7efe46dd8344b26664df55e4701
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Install the .sisx directly from the file manager.'
+description: |
+  **Google Maps for S60** is the Symbian build of Google Maps, for S60 3rd Edition and 5th Edition phones. The file is dated 2010 in its name.
+
+  Map tiles come from Google's servers, so the app needs a data connection. Google has retired this old client, so the map data may no longer load. Check before relying on it.

@@ -1,0 +1,37 @@
+name: Opera Mini 8.00
+tagline: The classic Java ME web browser, version 8.00
+kind: app
+source: community
+platform: java
+runtime: midp
+category: network
+author: Opera Software ASA
+license: Freeware
+homepage: http://mini.opera.com/
+added: 2026-11-22
+icon: opera-mini/icon.png
+files:
+  - name: OperaMini-8.00.jar
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/opera-mini-8.00/OperaMini-8.00.jar
+    kind: jar
+    size: 319111
+    sha256: 19397940002cd8b19fca4c8c81c2ac13f0ba265bfe4b444ba614bbea9da0bc25
+  - name: OperaMini-8.00.jad
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/opera-mini-8.00/OperaMini-8.00.jad
+    kind: jad
+    size: 6397
+    sha256: 0dea439556c2252828c70f81cd449b5078ef5161ed019a86b206d13c9225dc23
+    note: Descriptor, optional
+tested:
+  - device: n79
+    status: works
+    notes: Tested on a Nokia N79 by the site owner.
+installNotes:
+  - 'Send the .jar to the phone (cable, Bluetooth or memory card) and open it from the Messaging inbox or File manager. The phone installs it into the Applications folder.'
+  - 'See the [Java apps guide](/guides/install-java-apps/).'
+description: |
+  **Opera Mini** 8.00 is the Java ME build of Opera's proxy-based mobile browser. Pages are compressed by Opera's servers, which made it fast on slow connections.
+
+  The Opera Mini servers for this old version may no longer work. Check that it connects before relying on it.
+
+  MIDP 2.0 / CLDC 1.0. The .jad lists the permissions it asks for: HTTP access, plus optional file, SMS and socket access.
