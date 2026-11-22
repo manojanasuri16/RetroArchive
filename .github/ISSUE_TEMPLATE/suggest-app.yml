@@ -1,0 +1,26 @@
+name: Suggest an app
+description: Suggest an app or game for the N79 archive
+title: "[Suggest] "
+labels: [suggestion]
+body:
+  - type: input
+    id: name
+    attributes: { label: Name, placeholder: App or game name }
+    validations: { required: true }
+  - type: dropdown
+    id: platform
+    attributes: { label: Platform, options: [Symbian (.sis/.sisx), Java ME (.jar/.jad), Other] }
+    validations: { required: true }
+  - type: input
+    id: link
+    attributes: { label: Link to the file or original page }
+    validations: { required: true }
+  - type: input
+    id: device
+    attributes: { label: Tested device and firmware, placeholder: Nokia N79, 31.0.008 }
+  - type: dropdown
+    id: works
+    attributes: { label: Does it work?, options: [Works, Partly, Broken, Not tested] }
+  - type: textarea
+    id: notes
+    attributes: { label: Notes, description: Author, licence, install quirks }

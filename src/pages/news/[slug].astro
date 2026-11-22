@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getNews } from '../../lib/catalog';
+import { md, fmtDate } from '../../lib/format';
+import { url } from '../../lib/url';
+export async function getStaticPaths() {
+  return (await getNews()).map((n) => ({ params: { slug: n.id }, props: { n } }));
+}
+const { n } = Astro.props;
+---
+<Base title={n.data.title} description={n.data.summary}>
+  <div class="wrap">
+    <div class="page-head"><div class="crumbs"><a href={url('/news/')}>News</a> / {fmtDate(n.data.date)}</div><h1><span class="hl">{n.data.title}</span></h1></div>
+    <article class="prose" set:html={md(n.body ?? '')} />
+  </div>
+</Base>

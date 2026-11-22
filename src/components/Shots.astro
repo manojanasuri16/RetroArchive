@@ -1,0 +1,28 @@
+---
+import { media } from '../lib/url';
+const { shots, name } = Astro.props;
+---
+<div class="shots">
+  <div class="phone">
+    <div class="screen" id="screen">
+      {shots.length
+        ? <img src={media(shots[0])} alt={`${name} screenshot 1`} id="shot" />
+        : <div class="none">{name}<br />no screenshot yet</div>}
+    </div>
+  </div>
+  {shots.length > 1 && (
+    <div class="thumbs">
+      {shots.map((s: string, i: number) => (
+        <button type="button" data-src={media(s)} aria-current={i === 0 ? 'true' : 'false'} aria-label={`Screenshot ${i + 1}`}><img src={media(s)} alt="" loading="lazy" /></button>
+      ))}
+    </div>
+  )}
+</div>
+<script is:inline>
+  document.querySelectorAll('.thumbs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.getElementById('shot').src = b.dataset.src;
+      document.querySelectorAll('.thumbs button').forEach(function (x) { x.setAttribute('aria-current', x === b ? 'true' : 'false'); });
+    });
+  });
+</script>

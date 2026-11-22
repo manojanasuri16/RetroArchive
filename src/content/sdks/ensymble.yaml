@@ -1,0 +1,12 @@
+name: Ensymble
+tagline: Python 2 tool that packages Python for S60 apps into .sis files
+kind: tool
+hostOs: [linux]
+author: Jussi Ylänen
+homepage: https://code.google.com/archive/p/ensymble/
+added: 2026-11-22
+featured: false
+description: |
+  **Ensymble** by Jussi Ylänen builds `.sis` packages for Python for S60 apps, using `py2sis`. The toolchain uses it with `--extrasdir` to add native `.pyd` modules. [RetroSend](/apps/retrosend/), [RetroTele](/apps/retrotele/) and [RetroTorch](/apps/retrotorch/) are all packaged with it.
+
+  On current systems, a patch is needed for the OpenSSL calls. RetroSend's repository has the patch.

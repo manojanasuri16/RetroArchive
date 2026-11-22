@@ -1,0 +1,106 @@
+---
+import { url } from '../lib/url';
+import { fmtSize, fmtDate, md, mdInline } from '../lib/format';
+import { slugTitle, getDevices } from '../lib/catalog';
+import Icon from './Icon.astro';
+import Badges from './Badges.astro';
+import Files from './Files.astro';
+import Shots from './Shots.astro';
+const { item } = Astro.props;
+const d = item.data;
+const isApp = item.type === 'app';
+const primary = item.files[0];
+const others = item.files.slice(1);
+const reqs = (await Promise.all((d.requires ?? []).map(async (s: string) => (await slugTitle(s)) ?? { name: s, href: '' }))) as { name: string; href: string }[];
+const devices = await getDevices();
+const devName = (s: string) => devices.find((x) => x.id === s)?.data.name ?? s;
+const signing: Record<string, string> = { signed: 'Signed', 'self-signed': 'Self-signed (install on a phone that allows it)', unsigned: 'Unsigned', 'needs-hack': 'Needs a signing hack / unlocked phone' };
+const links = d.links ?? [];
+---
+<div class="wrap">
+  <div class="crumbs"><a href={url(isApp ? '/apps/' : '/sdks/')}>{isApp ? 'Apps' : 'SDKs & Tools'}</a> / {d.name}</div>
+  <div class="detail">
+    <div>
+      <div class="detail-id">
+        <Icon name={d.name} icon={d.icon} large />
+        <div>
+          <h1>{d.name}</h1>
+          <p class="tagline">{d.tagline}</p>
+        </div>
+      </div>
+      <Badges d={d} />
+      <p class="meta">
+        {item.version && <span>v{item.version}</span>}
+        {item.size ? <span>{fmtSize(item.size)}</span> : null}
+        {item.date && <span>{fmtDate(item.date)}</span>}
+        {item.downloads > 0 && <span>{item.downloads} downloads</span>}
+      </p>
+      <div class="dl">
+        {primary
+          ? <a class="btn" href={primary.url} rel="noopener">Download {primary.name}</a>
+          : (d.homepage || links[0])
+            ? <a class="btn" href={d.homepage ?? links[0].url} rel="noopener">Get it from the source</a>
+            : <span class="empty">No download listed yet.</span>}
+        {isApp === false && d.rehostable === false && <small>Link only: the licence does not allow re-hosting this file here.</small>}
+        {d.signing && <small>Signing: {signing[d.signing]}</small>}
+      </div>
+      {item.files.length > 1 || primary?.sha256 ? <><h2 style="font-size:1.1rem;text-transform:uppercase;letter-spacing:.1em;margin-top:22px">All files</h2><Files files={item.files} /></> : null}
+      {reqs.length > 0 && <p class="req"><strong>Requires:</strong> {reqs.map((r, i) => <>{i > 0 && ', '}{r.href ? <a href={url(r.href)}>{r.name} →</a> : r.name}</>)}</p>}
+    </div>
+    {isApp && <Shots shots={d.screenshots ?? []} name={d.name} />}
+    {!isApp && (
+      <div class="panel" style="align-self:start;margin-right:10px">
+        <h2>At a glance</h2>
+        <dl class="facts">
+          <dt>Type</dt><dd>{d.kind}</dd>
+          {d.hostOs?.length > 0 && <><dt>Runs on</dt><dd>{d.hostOs.join(', ')}</dd></>}
+          <dt>Author</dt><dd>{d.author}</dd>
+          {d.license && <><dt>Licence</dt><dd>{d.license}</dd></>}
+          <dt>Added</dt><dd>{fmtDate(d.added)}</dd>
+        </dl>
+      </div>
+    )}
+  </div>
+
+  <div class="panels">
+    <section class="panel wide"><h2>About</h2><div class="prose" set:html={md(d.description)} /></section>
+
+    {isApp && d.tested?.length > 0 && (
+      <section class="panel wide"><h2>Compatibility</h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Device</th><th>Firmware</th><th>Status</th><th>Notes</th></tr></thead>
+          <tbody>{d.tested.map((t: any) => (
+            <tr><td><a href={url(`/devices/${t.device}/`)}>{devName(t.device)}</a></td><td>{t.firmware ?? ''}</td>
+              <td><span class={`badge ${t.status}`}>{t.status}</span></td><td set:html={mdInline(t.notes ?? '')} /></tr>
+          ))}</tbody></table></div>
+      </section>
+    )}
+    {d.installNotes?.length > 0 && (
+      <section class="panel"><h2>Install notes</h2><ol class="prose">{d.installNotes.map((n: string) => <li set:html={mdInline(n)} />)}</ol></section>
+    )}
+    {d.knownIssues?.length > 0 && (
+      <section class="panel"><h2>Known issues</h2><ul class="prose">{d.knownIssues.map((n: string) => <li set:html={mdInline(n)} />)}</ul></section>
+    )}
+    {d.guide && <section class="panel"><h2>Guide</h2><p><a href={url(`/guides/${d.guide}/`)}>Read the related guide →</a></p></section>}
+    {links.length > 0 && <section class="panel"><h2>Links</h2><ul class="prose">{links.map((l: any) => <li><a href={url(l.url)} rel="noopener">{l.label}</a></li>)}</ul></section>}
+    {item.changelog.length > 0 && (
+      <section class="panel wide"><h2>Changelog</h2>
+        {item.changelog.map((c: any) => (
+          <div class="log"><h3>{c.tag}<span>{fmtDate(c.published)}</span></h3><div class="prose" set:html={md(c.body)} /></div>
+        ))}
+      </section>
+    )}
+    <section class="panel wide"><h2>Source &amp; credits</h2>
+      <dl class="facts">
+        <dt>Author</dt><dd>{d.authorUrl ? <a href={d.authorUrl} rel="noopener">{d.author}</a> : d.author}</dd>
+        {d.license && <><dt>Licence</dt><dd>{d.license}</dd></>}
+        {d.repo && <><dt>Repository</dt><dd><a href={`https://github.com/${d.repo}`} rel="noopener">github.com/{d.repo}</a></dd></>}
+        {item.releaseUrl && <><dt>Release</dt><dd><a href={item.releaseUrl} rel="noopener">{item.releaseUrl.replace('https://', '')}</a></dd></>}
+        {d.homepage && <><dt>Homepage</dt><dd><a href={d.homepage} rel="noopener">{d.homepage}</a></dd></>}
+        {d.capabilities?.length > 0 && <><dt>Capabilities</dt><dd>{d.capabilities.join(', ')}</dd></>}
+        <dt>Added</dt><dd>{fmtDate(d.added)}</dd>
+      </dl>
+      <p style="font-size:.9rem;color:var(--ink-soft)">Something wrong or want it removed? <a href={url('/about/')}>Tell us</a>.</p>
+    </section>
+  </div>
+</div>

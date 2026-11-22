@@ -1,0 +1,12 @@
+---
+import { url } from '../lib/url';
+interface Props { title: string; back?: string; }
+const { title, back } = Astro.props;
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>{title}</title>
+<meta name="robots" content="noindex">
+<style>body{font-family:Arial,sans-serif;font-size:14px;margin:4px;background:#fff;color:#000;max-width:480px}a{color:#036}h1{font-size:18px;margin:4px 0;background:#78A2D6;padding:2px}h2{font-size:15px;margin:10px 0 2px}li{margin:3px 0}pre{white-space:pre-wrap;font-size:12px}body,li,td,code{word-wrap:break-word;overflow-wrap:break-word}code{font-size:12px}img{vertical-align:middle}small,.n{font-size:11px;color:#444}table{border-collapse:collapse}td,th{border:1px solid #999;padding:1px 3px;font-size:12px}</style></head>
+<body><h1>{title}</h1><slot />
+<p class="n">Downloads come from GitHub over HTTPS. If your phone browser fails, download on a PC and send the file to the phone (e.g. with RetroSend).</p>
+<p class="n">{back && <><a href={url(back)}>Back</a> | </>}<a href={url('/m/')}>Home</a> | <a href={url('/')}>Full site</a></p></body></html>

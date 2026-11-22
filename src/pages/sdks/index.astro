@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import AppCard from '../../components/AppCard.astro';
+import { getSdks } from '../../lib/catalog';
+import { url } from '../../lib/url';
+const items = await getSdks();
+const groups: [string, string][] = [['sdk', 'SDKs'], ['toolchain', 'Toolchains'], ['runtime', 'Runtimes'], ['tool', 'Tools'], ['hack', 'Hacks & unlock tools']];
+---
+<Base title="SDKs & tools" nav="sdks" description="Toolchains, runtimes and unlock tools for Symbian S60v3 and Java ME.">
+  <div class="wrap">
+    <div class="page-head"><h1>SDKs <span class="hl">&amp; Tools</span></h1><p>Everything you need to build, run and install your own software on the N79.</p></div>
+    {items.length === 0 && <p class="empty">Nothing here yet. <a href={url('/submit/')}>Suggest something</a>.</p>}
+    {groups.map(([k, label]) => {
+      const g = items.filter((i) => i.data.kind === k);
+      return g.length > 0 && <><h2 class="group-h">{label}</h2><ul class="grid">{g.map((i) => <AppCard item={i} />)}</ul></>;
+    })}
+  </div>
+</Base>

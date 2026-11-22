@@ -1,0 +1,55 @@
+name: RetroTorch
+tagline: A torch for the N79, using the camera LED, the screen and the keypad light
+kind: app
+source: mine
+platform: symbian
+runtime: pys60
+category: utility
+author: Manoj Anasuri
+authorUrl: https://github.com/manojanasuri16
+repo: manojanasuri16/RetroTorch
+version: 1.3.0
+released: 2026-11-22
+added: 2026-11-22
+featured: true
+icon: retrotorch/icon.png
+screenshots: [retrotorch/1.png, retrotorch/2.png]
+requires: [pys60-runtime]
+signing: self-signed
+capabilities: [LocalServices, NetworkServices, ReadUserData, WriteUserData, UserEnvironment]
+tested:
+  - device: n79
+    status: works
+    notes: 'The LED torch is confirmed working on a Nokia N79. RetroTorch was installed on the memory card with Python for S60 in phone memory.'
+installNotes:
+  - 'Install **Python for S60 1.4.5** (`PythonForS60_1_4_5_3rdEd.sis`) first. See the [Python for S60 guide](/guides/install-pys60/).'
+  - 'Set *Software installation* to **All** and *Online certificate check* to **Off** in App. mgr. > Options > Settings.'
+  - 'Install **RetroTorch.sis**. The installer asks for phone memory or the memory card. Either works wherever Python is installed.'
+  - 'Installing on the memory card while Python is in phone memory needs an unlocked phone (for example with the Open4All patch). On a phone that is not unlocked, install RetroTorch on the same drive as Python. See [memory card installs](/guides/memory-card-installs/).'
+  - 'The first time you use the LED torch, RetroTorch runs a one-time LED setup. It tries up to 9 ways to light the LED and asks "LED on?" after each. Answer Yes only when the flash is lit.'
+knownIssues:
+  - 'The LED torch needs the one-time setup. If none of the 9 ways work, send `E:\retrotorch_log.txt` with an issue.'
+  - 'Touching the camera while the screen is being drawn closes the app without a Python error. RetroTorch only touches the hardware after the UI is up, inside a crash guard. If a piece of hardware closes the app, it is switched off at the next start. Use Options > Retry all hardware to turn it back on.'
+  - 'On phones that are not unlocked, a memory-card install needs the `appuifwmodule.rsc` file copied by hand. See [memory card installs](/guides/memory-card-installs/).'
+description: |
+  **RetroTorch** is a torch app for the **Nokia N79** and other S60 3rd Edition phones. Its main light is the **camera's LED flash as a steady torch**, and it can also use every other light the phone has.
+
+  ### Lights
+
+  | Light | What it does |
+  |---|---|
+  | **LED torch** (default) | The camera's dual LED as a steady light, plus strobe, SOS, Morse and beacon. A one-time setup finds the way that lights the LED on your phone. |
+  | **Screen light** | The whole screen in 10 colours (white, warm white, red night-vision, amber and more), with brightness control and effects: steady, strobe, SOS, Morse, beacon, heartbeat, police, rainbow, candle, disco and warning. |
+  | **Flash bursts** | Fires the LED as a photo flash, about one burst every two seconds. |
+  | **Keypad light** | The keypad backlight, dimmable, with the same blink patterns. |
+  | **Extra lights** | Any other light the phone reports. The N79 has one, "Extra light 4". |
+  | **All lights** | Everything at once. |
+
+  Also:
+
+  - Opens straight into the LED torch. Options > Turn on at start chooses another light.
+  - Auto-off timer from 1 to 60 minutes.
+  - Morse messages: any text, flashed on any light.
+  - Crash guard and hardware info screen.
+
+  RetroTorch needs [Python for S60](/sdks/pys60-runtime/) installed. Its source is on [GitHub](https://github.com/manojanasuri16/RetroTorch).

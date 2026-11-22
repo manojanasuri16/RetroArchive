@@ -1,0 +1,12 @@
+---
+import { RUNTIME_LABELS, CATEGORY_LABELS } from '../lib/format';
+const { d } = Astro.props;
+---
+<ul class="badges">
+  {d.platform && <li class={`badge ${d.platform}`}>{d.platform === 'java' ? 'Java ME' : 'Symbian'}</li>}
+  {d.runtime && <li class="badge">{RUNTIME_LABELS[d.runtime]}</li>}
+  {d.source && <li class={`badge ${d.source === 'mine' ? 'mine' : ''}`}>{d.source === 'mine' ? 'Mine' : 'Community'}</li>}
+  {d.category && <li class="badge">{CATEGORY_LABELS[d.category] ?? d.category}</li>}
+  {d.hostOs?.map((o: string) => <li class="badge">{o}</li>)}
+  {d.kind && !d.platform && <li class="badge symbian">{d.kind}</li>}
+</ul>

@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getNews } from '../../lib/catalog';
+import { url } from '../../lib/url';
+import { fmtDate } from '../../lib/format';
+const news = await getNews();
+---
+<Base title="News" description="Updates from RetroArchive.">
+  <div class="wrap">
+    <div class="page-head"><h1><span class="hl">News</span></h1><p>New entries, releases and site changes. <a href={url('/rss.xml')}>RSS feed</a>.</p></div>
+    {news.length === 0 && <p class="empty">No news yet.</p>}
+    <ul class="rows">{news.map((n) => (
+      <li class="row"><span class="when">{fmtDate(n.data.date)}</span><h3><a href={url(`/news/${n.id}/`)}>{n.data.title}</a></h3><p>{n.data.summary}</p></li>
+    ))}</ul>
+  </div>
+</Base>

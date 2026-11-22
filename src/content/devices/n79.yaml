@@ -1,0 +1,20 @@
+name: Nokia N79
+platform: S60 3rd Edition FP2
+os: Symbian OS 9.3
+screen: 240x320
+java: MIDP 2.0 / CLDC 1.1
+released: 2008
+notes: |
+  The N79 is a candybar phone with a keypad and a 240x320 screen. It runs S60 3rd Edition Feature Pack 2 (S60 3.2) on Symbian OS 9.3. Build against the S60 3.2 SDK. That is what the [build guide](/guides/build-native-on-linux/) sets up.
+
+  **Python.** Python for S60 1.4.5 runs on the N79. Install it once, see the [install guide](/guides/install-pys60/).
+
+  **Memory card installs.** A Python for S60 app on a different drive from Python does not start. The fix is in RetroSend 1.2.1, RetroTele 0.7.4 and RetroTorch 1.3.0. It needs an unlocked phone to copy the resource file. See [memory card installs](/guides/memory-card-installs/).
+
+  **LED torch.** The N79's camera has a dual LED. The camera reports "video light" as a flash mode, and setting it returns no error. The LED stays dark while the camera is idle, but it lights when the camera is in video mode, with the viewfinder running and video capture prepared. RetroTorch's first LED setup tries that way first ("Video mode, video light"). It was confirmed working on the N79.
+
+  **Other lights.** The N79's light targets are display, keypad and "Extra light 4" (custom target 4). RetroTorch uses all three.
+
+  **Touching the camera while the screen draws.** On the N79 this closes a Python app with no error message. Apps must start hardware only after the UI is up.
+
+  **Unlocking.** The N79 can be unlocked to install unsigned apps, using the [unlock guide](/guides/unlock-n79/) and EasyHackKit 2.0.

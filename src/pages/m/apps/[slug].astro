@@ -1,0 +1,22 @@
+---
+import Lite from '../../../layouts/Lite.astro';
+import { getApps, slugTitle } from '../../../lib/catalog';
+import { fmtSize, liteMd, liteInline } from '../../../lib/format';
+import { url } from '../../../lib/url';
+export async function getStaticPaths() {
+  return (await getApps()).map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+const { item } = Astro.props;
+const d = item.data;
+const reqs = await Promise.all((d.requires ?? []).map(async (s: string) => (await slugTitle(s)) ?? { name: s, href: '' }));
+---
+<Lite title={d.name} back="/m/apps/">
+<p>{d.tagline}<br />{item.version && `v${item.version}`}{item.size ? ` | ${fmtSize(item.size)}` : ''} | {d.platform === 'java' ? 'Java ME' : 'Symbian'}</p>
+<h2>Download</h2>
+{item.files.length ? <ul>{item.files.map((f: any) => <li><a href={f.url}>{f.name}</a> {fmtSize(f.size)}</li>)}</ul> : <p>No file listed.</p>}
+{reqs.length > 0 && <><h2>Requires</h2><ul>{reqs.map((r: any) => <li>{r.href ? <a href={url(r.href.replace(/^\/(apps|sdks)/, '/m/$1'))}>{r.name}</a> : r.name}</li>)}</ul></>}
+<h2>About</h2>
+<div set:html={liteMd(d.description)} />
+{d.installNotes?.length > 0 && <><h2>Install</h2><ol>{d.installNotes.map((n: string) => <li set:html={liteInline(n)} />)}</ol></>}
+{d.knownIssues?.length > 0 && <><h2>Known issues</h2><ul>{d.knownIssues.map((n: string) => <li set:html={liteInline(n)} />)}</ul></>}
+</Lite>

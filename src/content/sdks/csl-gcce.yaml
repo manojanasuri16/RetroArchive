@@ -1,0 +1,13 @@
+name: CodeSourcery GCCE 3.4.3 (2005Q1C)
+tagline: The arm-none-symbianelf compiler that Nokia supported for S60 3rd Edition
+kind: toolchain
+hostOs: [linux]
+author: CodeSourcery (now Mentor / Siemens)
+license: GPL (GCC and binutils)
+homepage: https://www.martin.st/symbian/
+version: 3.4.3
+added: 2026-11-22
+featured: false
+rehostable: true
+description: |
+  The **GCCE** compiler (`arm-none-symbianelf-gcc` 3.4.3, 2005Q1C), prebuilt for i686 Linux. It was made by CodeSourcery and is the free alternative to ARM RVCT for S60 3rd Edition. The [Symbian S60v3 toolchain](/sdks/symbian-s60v3-toolchain/) unpacks it.

@@ -1,0 +1,28 @@
+name: Symbian S60v3 toolchain
+tagline: Build native Symbian and PyS60 .pyd modules on modern Linux for the N79 (S60 3rd Edition FP2)
+kind: toolchain
+hostOs: [linux]
+author: Manoj Anasuri
+license: MIT for the scripts and docs. The bundled third-party archives keep their own licences.
+repo: manojanasuri16/symbian-s60v3-toolchain
+homepage: https://github.com/manojanasuri16/symbian-s60v3-toolchain
+added: 2026-11-22
+featured: false
+links:
+  - label: Original open archives (GitHub release)
+    url: https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/tag/archives
+  - label: Setup guide
+    url: /guides/build-native-on-linux/
+guide: build-native-on-linux
+rehostable: true
+description: |
+  A working **Symbian C++ toolchain for S60 3rd Edition Feature Pack 2** (S60 3.2, Symbian OS 9.3, e.g. the **Nokia N79**), set up to run on modern x86_64 Linux. It can build:
+
+  - native Symbian DLLs and EXEs (GCCE, `armv5` / `gcce urel`)
+  - native **Python for S60 1.4.5** extension modules (`.pyd`), the main reason it exists
+
+  The archives are from 2005 to 2010 and are hard to find now. The repository keeps the original archives in its release, with checksums, and a script that turns them into a toolchain. It also includes the fixes that old code needs to build on current systems. Everything installs inside the repository folder.
+
+  Only FP2 is covered for now. FP1 phones such as the N82 need the FP1 SDK.
+
+  Credits are listed in the repository's `SOURCES.md`. Components are listed separately in this archive: GnuPoc, CodeSourcery GCCE, the Nokia S60 3rd FP2 SDK, the FP2 API Plug-In Pack, Python for S60 1.4.5 and ensymble.

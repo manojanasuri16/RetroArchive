@@ -1,0 +1,22 @@
+---
+import Lite from '../../layouts/Lite.astro';
+import { getApps, getSdks, getGuides } from '../../lib/catalog';
+import { url } from '../../lib/url';
+const apps = await getApps(); const sdks = await getSdks(); const guides = await getGuides();
+const mine = apps.filter((a) => a.data.source === 'mine');
+const games = apps.filter((a) => a.data.kind === 'game');
+const rest = apps.filter((a) => a.data.kind === 'app' && a.data.source !== 'mine');
+---
+<Lite title="RetroArchive">
+<p>Apps and games for the Nokia N79.</p>
+<h2>My Apps ({mine.length})</h2>
+<ul>{mine.map((a) => <li><a href={url(`/m/apps/${a.slug}/`)}>{a.data.name}</a>{a.version && ` ${a.version}`}</li>)}</ul>
+<h2>Menu</h2>
+<ul>
+<li><a href={url('/m/apps/')}>All apps ({apps.length})</a></li>
+<li><a href={url('/m/apps/#games')}>Games ({games.length})</a></li>
+<li><a href={url('/m/apps/#apps')}>Apps ({rest.length})</a></li>
+<li><a href={url('/m/sdks/')}>SDKs and tools ({sdks.length})</a></li>
+<li><a href={url('/m/guides/')}>Guides ({guides.length})</a></li>
+</ul>
+</Lite>

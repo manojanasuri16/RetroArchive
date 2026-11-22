@@ -1,0 +1,63 @@
+name: RetroTele
+tagline: Telegram client for the N79, talking to Telegram directly
+kind: app
+source: mine
+platform: symbian
+runtime: pys60
+category: messaging
+author: Manoj Anasuri
+authorUrl: https://github.com/manojanasuri16
+repo: manojanasuri16/RetroTele
+version: 0.7.9
+released: 2026-11-22
+added: 2026-11-22
+featured: true
+icon: retrotele/icon.png
+screenshots: [retrotele/1.png, retrotele/2.png]
+requires: [pys60-runtime]
+signing: self-signed
+capabilities: [NetworkServices, LocalServices, ReadUserData, WriteUserData, UserEnvironment]
+tested:
+  - device: n79
+    status: partial
+    notes: 'Tested on a Nokia N79 with RetroTele on the memory card and Python for S60 in phone memory. Telegram calls are not supported, and the call test is experimental.'
+installNotes:
+  - 'Install **PythonForS60_1_4_5_3rdEd.sis** first if it is not on the phone yet. See the [Python for S60 guide](/guides/install-pys60/).'
+  - 'Install **RetroTele.sis** and choose phone memory or the memory card. On an unlocked phone either works wherever Python is installed. On a phone that is not unlocked, install RetroTele on the same drive as Python. See [memory card installs](/guides/memory-card-installs/).'
+  - 'On a computer, open my.telegram.org, go to **API development tools**, and create an app. Note the **api_id** and **api_hash**.'
+  - 'Open RetroTele, enter the api_id and api_hash once, choose an access point (Wi-Fi or packet data), then log in.'
+  - 'The first connection creates a secure key with Telegram. This takes a few seconds of 2048-bit maths on the phone.'
+  - 'Two-step verification takes roughly an hour in pure Python on the N79. Either keep RetroTele open on the charger, or use the PC helper `tools/tg2fa.py` from the repository.'
+  - 'Data is kept in `E:\RetroTele\`. The log is `E:\retrotele_log.txt`.'
+knownIssues:
+  - 'Telegram voice and video calls cannot be answered. The phone only shows the incoming call pop-up. "Call" in RetroTele uses the normal phone line.'
+  - 'The call test (Settings > Call test) is experimental. In an earlier test on the N79, every speaker write while recording failed with KErrAccessDenied. The VoIP echo test in 0.7.9 has no confirmed result on the N79 yet.'
+  - 'No secret chats, and no file or video download.'
+  - 'No playback of GIFs or animated stickers. Stickers show as their emoji.'
+  - 'Voice messages use Opus/OGG, which the N79 cannot decode yet.'
+  - 'Two-step verification takes about an hour on the phone unless the PC helper is used.'
+description: |
+  **RetroTele** is a small Telegram client for Nokia S60 3rd Edition phones, written and tested for the **Nokia N79**, in Python for S60 1.4.5.
+
+  Modern Telegram apps need Qt Quick, which S60 3rd Edition does not have. RetroTele speaks Telegram's MTProto 2.0 protocol itself, so it needs no PC, bridge or proxy. The crypto is pure Python 2.2, with an optional native module that makes it much faster.
+
+  ### Features
+
+  - Telegram-style look: blue header, round avatars, unread badges, online dots, chat bubbles and read ticks.
+  - Tabs for **All, Unread, Personal, Groups, Channels**, your own Telegram folders, **Archived** and **Contacts**.
+  - Log in with your phone number and the code Telegram sends you, including the two-step verification password.
+  - Read chats and load older messages by scrolling up. Replies, forwards and media show as labels.
+  - Write messages, reply to a message, **edit**, **delete** (for you or for everyone) and **forward**.
+  - **Pictures** show a preview in the chat, and can be viewed full screen.
+  - **Music and audio files** (MP3, M4A, AAC, AMR, WAV) can be played with a play/pause button and a position bar.
+  - **Emoji** are drawn as pictures, because the phone's fonts have none.
+  - Live incoming messages with a pop-up banner, read receipts and online status.
+  - Search chats and contacts, or open any @username.
+  - **Call** a contact's phone number as a normal phone call.
+  - The chat list is cached, so it appears at once when the app starts.
+  - **Profile** of any chat, with the photo, status, username, bio and members.
+  - **Fast mode** (on by default) skips the SHA-256 integrity check on received data, which makes loading 2 to 3 times faster. Turn it off in Settings for the full check.
+
+  RetroTele needs [Python for S60](/sdks/pys60-runtime/) installed. Its source is on [GitHub](https://github.com/manojanasuri16/RetroTele).
+
+  Emoji images are from Twemoji by Twitter, Inc and contributors, under CC-BY 4.0.

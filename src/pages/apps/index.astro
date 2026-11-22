@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import Catalog from '../../components/Catalog.astro';
+import { getApps } from '../../lib/catalog';
+const items = await getApps();
+---
+<Base title="Apps & games" nav="apps" description="Every app and game in the RetroArchive catalog.">
+  <div class="wrap">
+    <div class="page-head"><h1>All <span class="hl">Apps</span></h1><p>Apps and games for the N79. Filter by platform, type, source and category, or search.</p></div>
+    <Catalog items={items} group current="all" />
+  </div>
+</Base>

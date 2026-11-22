@@ -1,0 +1,15 @@
+name: GnuPoc 1.22
+tagline: Linux tools for Symbian development, the SDK installers and native build tools
+kind: toolchain
+hostOs: [linux]
+author: Martin Storjö
+license: GPL v2 (COPYING in the package). Bundled tool sources keep their own notices.
+homepage: https://www.martin.st/symbian/
+version: 1.22
+added: 2026-11-22
+featured: false
+rehostable: true
+description: |
+  **GnuPoc** by Martin Storjö made Symbian development on Linux possible. It contains the SDK installers (`install_gnupoc_s60_32`, `install_wrapper`) and the sources of native SDK tools such as `elf2e32`, `petran`, `bmconv`, `rcomp`, `mifconv` and `genstubs`.
+
+  The [Symbian S60v3 toolchain](/sdks/symbian-s60v3-toolchain/) uses GnuPoc 1.22, with patches for modern Linux.

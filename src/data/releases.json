@@ -1,0 +1,283 @@
+{
+  "manojanasuri16/RetroSend": {
+    "fetched": "2026-11-22T05:00:15.192Z",
+    "latest": {
+      "tag": "v1.2.1",
+      "name": "RetroSend 1.2.1: phone memory or memory card",
+      "published": "2026-11-22T00:13:37Z",
+      "body": "**Tested on a Nokia N79:** RetroTorch, RetroSend and RetroTele all installed on the memory card, with Python for S60 in phone memory.\n\n**Install to phone memory or the memory card.** The installer already let you choose the memory card, but RetroSend then wouldn't start if Python for S60 was on the other drive. Now it does, on an unlocked phone (e.g. the Open4All patch).\n\n- A Python for S60 1.4.5 app on a different drive from Python closes at once: Python's `appuifw` looks for its resource file `appuifwmodule.rsc` on the app's drive. The package now includes that file and a tiny native program that the installer runs once to put it in place.\n- On a phone that isn't unlocked, install RetroSend on the same drive as Python for S60, as before.\n\nThe fix comes from [RetroTorch](https://github.com/manojanasuri16/RetroTorch), where it was tested on a Nokia N79. RetroSend itself works as in 1.2.0.\n\n**Downloads:** same as 1.2.0. `PythonForS60_1_4_5_3rdEd.sis` (install once), `RetroSend-1.2.1-S60v3.sis`, `retrosend-1.2.1.py` (single script for the Script Shell), `SHA256SUMS.txt`.\n\n",
+      "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.2.1",
+      "assets": [
+        {
+          "name": "PythonForS60_1_4_5_3rdEd.sis",
+          "url": "https://github.com/manojanasuri16/RetroSend/releases/download/v1.2.1/PythonForS60_1_4_5_3rdEd.sis",
+          "size": 587124,
+          "downloads": 0,
+          "sha256": "db991e343b120c1bc64ae445126efdeba5479bd2244672181a318776b2840856"
+        },
+        {
+          "name": "RetroSend-1.2.1-S60v3.sis",
+          "url": "https://github.com/manojanasuri16/RetroSend/releases/download/v1.2.1/RetroSend-1.2.1-S60v3.sis",
+          "size": 51896,
+          "downloads": 1,
+          "sha256": "98dde3fffec1a58d84a98782a2e4a6025b5c452033496b0991509c78d928bd7e"
+        },
+        {
+          "name": "retrosend-1.2.1.py",
+          "url": "https://github.com/manojanasuri16/RetroSend/releases/download/v1.2.1/retrosend-1.2.1.py",
+          "size": 157382,
+          "downloads": 1,
+          "sha256": "daa5e2446437538172249b85c8f1c605dc365d9d26c80b2834ce5fcdee3721ac"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "url": "https://github.com/manojanasuri16/RetroSend/releases/download/v1.2.1/SHA256SUMS.txt",
+          "size": 272,
+          "downloads": 1,
+          "sha256": "d18ab762d741cee8f0384c3fe2b331ff8fcb1866bf220d75b2e01bc5ba826213"
+        }
+      ]
+    },
+    "history": [
+      {
+        "tag": "v1.2.1",
+        "published": "2026-11-22T00:13:37Z",
+        "body": "**Tested on a Nokia N79:** RetroTorch, RetroSend and RetroTele all installed on the memory card, with Python for S60 in phone memory.\n\n**Install to phone memory or the memory card.** The installer already let you choose the memory card, but RetroSend then wouldn't start if Python for S60 was on the other drive. Now it does, on an unlocked phone (e.g. the Open4All patch).\n\n- A Python for S60 1.4.5 app on a different drive from Python closes at once: Python's `appuifw` looks for its resource file `appuifwmodule.rsc` on the app's drive. The package now includes that file and a tiny native program that the installer runs once to put it in place.\n- On a phone that isn't unlocked, install RetroSend on the same drive as Python for S60, as before.\n\nThe fix comes from [RetroTorch](https://github.com/manojanasuri16/RetroTorch), where it was tested on a Nokia N79. RetroSend itself works as in 1.2.0.\n\n**Downloads:** same as 1.2.0. `PythonForS60_1_4_5_3rdEd.sis` (install once), `RetroSend-1.2.1-S60v3.sis`, `retrosend-1.2.1.py` (single script for the Script Shell), `SHA256SUMS.txt`.\n\n",
+        "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.2.1"
+      },
+      {
+        "tag": "v1.2.0",
+        "published": "2026-11-21T13:13:50Z",
+        "body": "### A cleaner, easier RetroSend\n- **Clearer tabs:** every item has a short hint underneath (e.g. *Send photos / Pick from thumbnails*). The Receive tab starts with a status card showing whether it's ready, your name and your IP.\n- **New transfer screen:** a large progress bar with the file name, *File 2 of 5*, size, speed and time left. *Options → Cancel* stops it, *Right softkey* hides it while it keeps running, and it ends with a clear done or failed result.\n- **Nicer picker and photo grid:** a header with the folder and *3 marked · 4.2 MB*, drawn checkboxes, coloured type badges (IMG / MUS / VID / DIR), highlighted marked files, a scroll bar and key hints at the bottom.\n- **Faster repeat sends:** the device you sent to last is listed first.\n- A short welcome tip on first start.\n\n### Install\n1. **`PythonForS60_1_4_5_3rdEd.sis`**: once, if Python for S60 isn't installed yet. If it says \"Certificate expired\", set the date to 2009, install, then set it back.\n2. **`RetroSend-1.2.0-S60v3.sis`**: install over any earlier version.\n",
+        "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.2.0"
+      },
+      {
+        "tag": "v1.1.4",
+        "published": "2026-11-21T13:05:47Z",
+        "body": "### Fixes\n- **Devices are found on the first send.** Before, your Android often appeared only after it had sent something to the phone, because the Wi-Fi didn't pass on RetroSend's multicast \"hello\". Scan now also says hello directly to every address on the network.\n- **Change Wi-Fi no longer closes the app.** It shows RetroSend's own list of Wi-Fi networks, saves your choice, and uses it the next time RetroSend opens (it offers to close the app so you can reopen it).\n\n### Install\n1. **`PythonForS60_1_4_5_3rdEd.sis`**: once, if Python for S60 isn't installed yet. If it says \"Certificate expired\", set the date to 2009, install, then set it back.\n2. **`RetroSend-1.1.4-S60v3.sis`**: install over any earlier version.\n\n`retrosend-1.1.4.py` is the single-file script for the Python Script Shell.\n",
+        "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.1.4"
+      },
+      {
+        "tag": "v1.1.3",
+        "published": "2026-11-21T12:58:04Z",
+        "body": "### Fixes\n- **Finding devices:** LocalSend devices are found reliably again, in about 12 seconds. The old network sweep could stall: Python for S60 allows only 16 network requests in flight, and connections to empty addresses can't be cancelled. RetroSend now uses a UDP halving search instead, with no connections to empty addresses. Remembered devices are still re-checked at start.\n- **Send to keeps your files:** after *Scan again*, an *Enter IP address* that fails or is cancelled, or a failed send, you come back to the device list with the same files. A failed send offers *Try again* / *Choose another device* / *Give up*.\n- The IP box remembers the last address you typed.\n- Start-up problems are logged step by step in `E:\\retrosend_log.txt`.\n\n### Install: two files, no more combined package\n1. **`PythonForS60_1_4_5_3rdEd.sis`**: install once. If it says \"Certificate expired\", set the date to 2009, install, then set it back.\n2. **`RetroSend-1.1.3-S60v3.sis`**: install, and later install new versions over it.\n\n> The combined \"with-Python\" package from 1.0.0 to 1.1.1 is gone. Replacing it could remove Python, and then every Python app does nothing when opened. If that happened to you, remove RetroSend and Python for S60 in App. mgr. and install the two files above.\n\n`retrosend-1.1.3.py` is the single-file script for the Python Script Shell.\n",
+        "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.1.3"
+      },
+      {
+        "tag": "v1.1.1",
+        "published": "2026-11-21T12:33:37Z",
+        "body": "> **Outdated, use the [latest release](https://github.com/manojanasuri16/RetroSend/releases/latest).** The combined \"with-Python\" package listed below was removed: replacing it could also remove Python for S60, so every Python app stopped opening. Install Python for S60 and RetroSend as two separate files instead.\n\n### Fix\n- **1.1.0 didn't open on some phones.** At every start, the phone compiled the whole 130 KB app as one file, ran out of the 4 MB memory limit, and closed before showing anything. The app is now split into smaller modules, the memory limit is 16 MB, and a tiny starter shows any start-up error on screen (and in `E:\\retrosend_log.txt`) instead of failing silently.\n\nAll 1.1.0 features are included: photo grid, folder and contact sending, browser sharing, opening received files, sorting into Images/Music/Videos, remembered devices, speed and time left, and cancel/stop.\n\n### Which file do I need?\n| File | What it is |\n|---|---|\n| **`RetroSend-1.1.1-S60v3-with-Python.sis`** | **Install this one.** RetroSend plus Nokia's Python for S60 1.4.5 runtime. |\n| `RetroSend-1.1.1-S60v3.sis` | The app alone, if Python for S60 1.4.5 is already installed. |\n| `retrosend-1.1.1.py` | Single-file script for the Python Script Shell. |\n| `PythonForS60_1_4_5_3rdEd.sis` | Nokia's runtime alone, unchanged. |\n\nInstall over 1.0.0 or 1.1.0.\n\n",
+        "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.1.1"
+      },
+      {
+        "tag": "v1.1.0",
+        "published": "2026-11-21T12:26:36Z",
+        "body": "> **Outdated, use the [latest release](https://github.com/manojanasuri16/RetroSend/releases/latest).** The combined \"with-Python\" package listed below was removed: replacing it could also remove Python for S60, so every Python app stopped opening. Install Python for S60 and RetroSend as two separate files instead.\n\n### New in 1.1.0\n- **Photo grid:** \"Send a photo\" opens a thumbnail grid. Mark photos with the centre key. Switch to the list view in Options.\n- **Send a whole folder** (Options → Mark whole folder). The folder structure is kept on the other device.\n- **Send contacts** as a `.vcf` file.\n- **Browser sharing:** turn it on in the Receive tab, then open `http://<phone-ip>:53317/` in any browser on the same Wi-Fi to download shared files, or to upload files and text to the phone. No app needed on the other side.\n- **Open received files** in the phone's own viewer or player, plus a **Received files** list of the last 30.\n- **Received photos, music and videos** are saved to `E:\\Images`, `E:\\Music` and `E:\\Videos`, so Gallery and the Music player find them (can be switched off).\n- **Remembers devices** after a restart and re-checks their addresses. Options for each device include *Forget*.\n- **Speed and time left** while sending or receiving.\n- **Cancel sending / Stop receiving** as the first Options item during a transfer.\n- The version is shown under Receive → About.\n\n### Which file do I need?\n| File | What it is |\n|---|---|\n| **`RetroSend-1.1.0-S60v3-with-Python.sis`** | **Install this one.** RetroSend plus Nokia's Python for S60 1.4.5 runtime. |\n| `RetroSend-1.1.0-S60v3.sis` | The app alone, if Python for S60 1.4.5 is already installed. |\n| `retrosend-1.1.0.py` | Script version for the Python Script Shell. |\n| `PythonForS60_1_4_5_3rdEd.sis` | Nokia's runtime alone, unchanged. |\n\nUpgrading from 1.0.0: install over it. Install notes and troubleshooting are in the [README](https://github.com/manojanasuri16/RetroSend#readme).\n\n",
+        "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.1.0"
+      },
+      {
+        "tag": "v1.0.0",
+        "published": "2026-11-21T12:07:28Z",
+        "body": "> **Outdated, use the [latest release](https://github.com/manojanasuri16/RetroSend/releases/latest).** The combined \"with-Python\" package listed below was removed: replacing it could also remove Python for S60, so every Python app stopped opening. Install Python for S60 and RetroSend as two separate files instead.\n\nFirst release of **RetroSend**: send and receive files and text between a Nokia S60 3rd Edition phone (tested on a Nokia N79) and the [LocalSend](https://localsend.org) app on Android, iPhone, Windows, macOS or Linux, over Wi-Fi.\n\n### Which file do I need?\n| File | What it is |\n|---|---|\n| **`RetroSend-1.0.0-S60v3-with-Python.sis`** | **Install this one.** RetroSend plus Nokia's Python for S60 1.4.5 runtime in a single package. |\n| `RetroSend-1.0.0-S60v3.sis` | The app alone, if Python for S60 1.4.5 is already installed. |\n| `retrosend-1.0.0.py` | The same app as a script, for the Python Script Shell (shows errors on screen). |\n| `PythonForS60_1_4_5_3rdEd.sis` | Nokia's Python for S60 1.4.5 runtime alone, unchanged from SourceForge. |\n| `SHA256SUMS.txt` | Checksums. |\n\n### Install\n1. On the phone, open **App. mgr. → Options → Settings**. Set *Software installation* to **All** and *Online certificate check* to **Off**.\n2. Copy the `.sis` to the phone and open it in File manager. Accept the one \"untrusted supplier\" warning (RetroSend is self-signed).\n3. If you get **\"Certificate expired\"** (Nokia's runtime certificate is old), set the phone's date to 2009, install, then set it back.\n4. On the other device, turn **Encryption off** in LocalSend's settings.\n\n### Features\n- Send photos, videos, music, any file or text; **multi-select** across folders\n- Picker **previews**: camera thumbnails, MP3 album art and tags, video length\n- Receive one or many files (Accept prompt or auto-accept) and text messages\n- Automatic device discovery (multicast plus a local network sweep), or add by IP\n- Send | Receive tabs; asks for Wi-Fi once; no permission pop-ups while running\n\nSee the [README](https://github.com/manojanasuri16/RetroSend#readme) for usage and troubleshooting, and [docs/PYS60-NOTES.md](https://github.com/manojanasuri16/RetroSend/blob/main/docs/PYS60-NOTES.md) for the Python for S60 pitfalls solved along the way.\n\n",
+        "url": "https://github.com/manojanasuri16/RetroSend/releases/tag/v1.0.0"
+      }
+    ]
+  },
+  "manojanasuri16/symbian-s60v3-toolchain": {
+    "fetched": "2026-11-22T05:00:15.312Z",
+    "latest": {
+      "tag": "archives",
+      "name": "Original archives",
+      "published": "2026-11-21T23:52:04Z",
+      "body": "Original, unmodified archives used by setup.sh (openly licensed ones only). Checksums: SHA256SUMS. The Nokia SDK and API Plug-In Pack are fetched from archive.org; see SOURCES.md.",
+      "url": "https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/tag/archives",
+      "assets": [
+        {
+          "name": "gnu-csl-arm-2005Q1C-arm-none-symbianelf-i686-pc-linux-gnu.tar.bz2",
+          "url": "https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/download/archives/gnu-csl-arm-2005Q1C-arm-none-symbianelf-i686-pc-linux-gnu.tar.bz2",
+          "size": 10896869,
+          "downloads": 2,
+          "sha256": "cd80c3068b69d2f7ebd9dc917cdd6353158d465623e8ec4ac244915143ce5ce0"
+        },
+        {
+          "name": "gnupoc-package-1.22.tar.gz",
+          "url": "https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/download/archives/gnupoc-package-1.22.tar.gz",
+          "size": 9650807,
+          "downloads": 2,
+          "sha256": "32c9e88eeeff53a5baf02f208e03ab9c42dc28e68991d761059807a28f8058ec"
+        },
+        {
+          "name": "PyS60_1.4.5.zip",
+          "url": "https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/download/archives/PyS60_1.4.5.zip",
+          "size": 27326587,
+          "downloads": 2,
+          "sha256": "2a091547475ab426cb390cd62bd25443802063714d2dc2de59c49e4fa6103d13"
+        },
+        {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/download/archives/SHA256SUMS",
+          "size": 514,
+          "downloads": 1,
+          "sha256": "cb69ac02f2e507350c38905d5a5ec73b96eb99c4454a698b2ccd88880f3d2885"
+        }
+      ]
+    },
+    "history": [
+      {
+        "tag": "archives",
+        "published": "2026-11-21T23:52:04Z",
+        "body": "Original, unmodified archives used by setup.sh (openly licensed ones only). Checksums: SHA256SUMS. The Nokia SDK and API Plug-In Pack are fetched from archive.org; see SOURCES.md.",
+        "url": "https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/tag/archives"
+      }
+    ]
+  },
+  "manojanasuri16/RetroTele": {
+    "fetched": "2026-11-22T05:00:15.232Z",
+    "latest": {
+      "tag": "v0.7.9",
+      "name": "RetroTele 0.7.9: VoIP echo test (experimental)",
+      "published": "2026-11-22T04:46:34Z",
+      "body": "The phone's normal audio can't record while playing, so this tries Nokia's VoIP Audio Services (built for internet calls).\n\nInstall, in order: **VoIPAudioSrvc_3132_0x10207b9e.SISX** (Nokia's VoIP audio service), **RetroTele.sis**, **RetroTele-audiotest.sis**. Then Settings > Call test > Options > **Echo test via VoIP**: you should hear a beep, then your own voice half a second later.",
+      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.9",
+      "assets": [
+        {
+          "name": "RetroTele-audiotest.sis",
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/RetroTele-audiotest.sis",
+          "size": 15896,
+          "downloads": 0,
+          "sha256": "528508ff046937ee33f9c42c24dd071e44626cdd7c80a48af993846e50d31856"
+        },
+        {
+          "name": "RetroTele-voiptest.sis",
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/RetroTele-voiptest.sis",
+          "size": 8388,
+          "downloads": 0,
+          "sha256": "ea09e61c8702206a85810fe7f6bd260b6b4707d2b1bd16e261c87a2cb31bb3e3"
+        },
+        {
+          "name": "RetroTele.sis",
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/RetroTele.sis",
+          "size": 809712,
+          "downloads": 0,
+          "sha256": "da35c02fe960abcf4d68378e0dc2369c16bd39dbf3fafe653b44833434c63687"
+        },
+        {
+          "name": "VoIPAudioSrvc_3132_0x10207b9e.SISX",
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.9/VoIPAudioSrvc_3132_0x10207b9e.SISX",
+          "size": 24716,
+          "downloads": 0,
+          "sha256": "753690a6434c049f913d5d452bf706db7830c14f773e8ed6518890f1dcfd39a9"
+        }
+      ]
+    },
+    "history": [
+      {
+        "tag": "v0.7.9",
+        "published": "2026-11-22T04:46:34Z",
+        "body": "The phone's normal audio can't record while playing, so this tries Nokia's VoIP Audio Services (built for internet calls).\n\nInstall, in order: **VoIPAudioSrvc_3132_0x10207b9e.SISX** (Nokia's VoIP audio service), **RetroTele.sis**, **RetroTele-audiotest.sis**. Then Settings > Call test > Options > **Echo test via VoIP**: you should hear a beep, then your own voice half a second later.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.9"
+      },
+      {
+        "tag": "v0.7.8",
+        "published": "2026-11-22T00:43:59Z",
+        "body": "The phone now plays without errors, but you heard nothing. This version narrows it down:\n- each echo test starts with a **short beep**: if you hear it, the speaker works\n- sound is forced to the **loudspeaker**\n- the log shows microphone and speaker levels every second\n\nPlease run both echo tests again (centre key, and Options > Echo test via helper) and say whether you heard the beep and/or your voice.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.8"
+      },
+      {
+        "tag": "v0.7.7",
+        "published": "2026-11-22T00:38:56Z",
+        "body": "Call test results so far: **Opus is fast enough** (5.6 ms per 20 ms of audio at the lowest effort), recording works, but the phone refused to play while recording.\n\nThis version tries two fixes:\n- **Echo test** (centre key): speaker starts first, higher audio priority, lower mic gain\n- **Options > Echo test via helper**: install **RetroTele-audiotest.sis** too (needs an unlocked phone: it has the MultimediaDD capability S60 gives VoIP apps priority with)\n\nTell me which one lets you hear yourself.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.7"
+      },
+      {
+        "tag": "v0.7.6",
+        "published": "2026-11-22T00:29:38Z",
+        "body": "Step 1 of Telegram calls, part 2: **Settings > Call test > Options > Opus speed test**. It checks whether the N79 can compress and decompress voice with Opus (the codec calls use) fast enough: a self-test, then timings at three effort levels and a verdict. Takes about a minute; the screen pauses while it runs.\n\nAlso run the echo test (centre key) for ~30 s. Then send the log: together they decide whether real Telegram calls are possible on this phone.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.6"
+      },
+      {
+        "tag": "v0.7.5",
+        "published": "2026-11-22T00:26:01Z",
+        "body": "First step towards Telegram calls: **Settings > Call test (experimental)**. Press the centre key and speak. You'll hear yourself half a second later, the way a call would deliver audio. The screen shows whether the phone records and plays live audio smoothly (rates, gaps, errors).\n\nPlease run it for ~30 seconds and send the log (retrotele_log.txt): it tells whether real calls are possible on the N79. Normal chat features are unchanged.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.5"
+      },
+      {
+        "tag": "v0.7.4",
+        "published": "2026-11-22T00:14:32Z",
+        "body": "**Tested on a Nokia N79:** RetroTorch, RetroSend and RetroTele all installed on the memory card, with Python for S60 in phone memory.\n\n**Install to phone memory or the memory card.** There's now one `RetroTele.sis`, and the installer asks where to put it. It works on either drive, wherever Python for S60 is installed, on an unlocked phone (e.g. the Open4All patch).\n\n- 0.7.3's memory-card package didn't fix the real cause. A Python for S60 1.4.5 app on a different drive from Python closes at once, because Python's `appuifw` looks for its resource file `appuifwmodule.rsc` on the app's drive. The package now includes that file and a tiny native program that the installer runs once to put it in place.\n- On a phone that isn't unlocked, install RetroTele on the same drive as Python for S60.\n\nThe fix comes from [RetroTorch](https://github.com/manojanasuri16/RetroTorch), where it was tested on a Nokia N79. RetroTele itself works as in 0.7.3.\n\nReplaces 0.7.3's `RetroTele-card.sis`.\n\n",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.4"
+      },
+      {
+        "tag": "v0.7.3",
+        "published": "2026-11-21T23:49:48Z",
+        "body": "Two packages now:\n- **RetroTele.sis**: install to phone memory\n- **RetroTele-card.sis**: install to the memory card (the app files go to the card; only a 2 KB starter goes to phone memory)\n\nA plain memory-card install never started because Python for S60 1.4.5 always looks for the app's starter script in phone memory. Your login is kept either way.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.3"
+      },
+      {
+        "tag": "v0.7.2",
+        "published": "2026-11-21T23:33:48Z",
+        "body": "- **Exit** now really closes the app (it stayed on a white screen because open Telegram connections kept it alive)\n- RetroTele can be installed to the **memory card** again, or to phone memory: the phone asks\n- README screenshots use made-up sample chats\n\nInstall over the previous version; your login is kept.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.2"
+      },
+      {
+        "tag": "v0.7.1",
+        "published": "2026-11-21T16:49:05Z",
+        "body": "- Fixes screens staying white (the music player and anything else drawing with large numbers from the phone)\n- If a screen ever fails to draw, it now shows a short error bar instead of a blank screen\n- Native crypto confirmed on the N79: a 6 KB chat list now decrypts in 0.02 s instead of 2 s\n\nInstall over the previous version; your login is kept.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.1"
+      },
+      {
+        "tag": "v0.7.0",
+        "published": "2026-11-21T16:41:28Z",
+        "body": "**Compiled crypto module.** Encryption now runs as native code (`tgnative.pyd`, installed with the app) instead of Python. That's hundreds of times faster: chats and pictures load quickly, music downloads in seconds instead of minutes, two-step login takes seconds, and the full integrity check is back on by default.\n\nIf the module can't load, RetroTele falls back to the old Python code automatically. Options > About shows *native crypto* when it's active.\n\nInstall over the previous version; your login is kept.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.0"
+      }
+    ]
+  },
+  "manojanasuri16/RetroTorch": {
+    "fetched": "2026-11-22T05:00:15.268Z",
+    "latest": {
+      "tag": "v1.3.0",
+      "name": "RetroTorch 1.3.0: phone memory or memory card",
+      "published": "2026-11-22T00:08:28Z",
+      "body": "**Tested on a Nokia N79:** RetroTorch, RetroSend and RetroTele all installed on the memory card, with Python for S60 in phone memory.\n\n**Install to phone memory or the memory card.** There's now one `RetroTorch.sis`, and the installer asks where to put it. It works on either drive, wherever Python for S60 is installed.\n\n- A Python for S60 1.4.5 app on a different drive from Python normally closes at once, without a message: Python's `appuifw` looks for its resource file `appuifwmodule.rsc` on the app's drive. RetroTorch now includes that file and a tiny native program that the installer runs once to put it in place. Tested on a Nokia N79, with the app on the memory card and Python in phone memory.\n- That needs an **unlocked phone** (e.g. the Open4All patch). On a phone that isn't unlocked, either install RetroTorch on the same drive as Python, or copy `appuifwmodule.rsc` (attached) into `resource\\apps\\` on the app's drive, over USB in Mass storage mode.\n\n**LED torch**\n- Confirmed working on the N79. LED setup now tries **\"Video mode, video light\"** first, the way that lights the N79's LED, so it should light on the first try.\n- The LED torch is the default light: the app opens straight into it. *Options → Turn on at start* changes that.\n\n**Downloads**\n- `RetroTorch.sis`: the app (needs Python for S60 1.4.5).\n- `appuifwmodule.rsc`: only for memory-card installs on phones that aren't unlocked (see above).\n- `SHA256SUMS.txt`: checksums.\n\nReplaces 1.2.0's `RetroTorch-card.sis`.\n\n",
+      "url": "https://github.com/manojanasuri16/RetroTorch/releases/tag/v1.3.0",
+      "assets": [
+        {
+          "name": "appuifwmodule.rsc",
+          "url": "https://github.com/manojanasuri16/RetroTorch/releases/download/v1.3.0/appuifwmodule.rsc",
+          "size": 1015,
+          "downloads": 1,
+          "sha256": "3a8f10d50439152d577ac0ba73445f83380c76494f5db538e69b61a6d3f9c608"
+        },
+        {
+          "name": "RetroTorch.sis",
+          "url": "https://github.com/manojanasuri16/RetroTorch/releases/download/v1.3.0/RetroTorch.sis",
+          "size": 34632,
+          "downloads": 1,
+          "sha256": "6f30975cc91379760b8befb2728c06827696ee4779445f958937da50d228a08a"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "url": "https://github.com/manojanasuri16/RetroTorch/releases/download/v1.3.0/SHA256SUMS.txt",
+          "size": 165,
+          "downloads": 1,
+          "sha256": "5f8ed6eab434deda97fa3adc695e99b100c7735380c4461d3adad18742f811f2"
+        }
+      ]
+    },
+    "history": [
+      {
+        "tag": "v1.3.0",
+        "published": "2026-11-22T00:08:28Z",
+        "body": "**Tested on a Nokia N79:** RetroTorch, RetroSend and RetroTele all installed on the memory card, with Python for S60 in phone memory.\n\n**Install to phone memory or the memory card.** There's now one `RetroTorch.sis`, and the installer asks where to put it. It works on either drive, wherever Python for S60 is installed.\n\n- A Python for S60 1.4.5 app on a different drive from Python normally closes at once, without a message: Python's `appuifw` looks for its resource file `appuifwmodule.rsc` on the app's drive. RetroTorch now includes that file and a tiny native program that the installer runs once to put it in place. Tested on a Nokia N79, with the app on the memory card and Python in phone memory.\n- That needs an **unlocked phone** (e.g. the Open4All patch). On a phone that isn't unlocked, either install RetroTorch on the same drive as Python, or copy `appuifwmodule.rsc` (attached) into `resource\\apps\\` on the app's drive, over USB in Mass storage mode.\n\n**LED torch**\n- Confirmed working on the N79. LED setup now tries **\"Video mode, video light\"** first, the way that lights the N79's LED, so it should light on the first try.\n- The LED torch is the default light: the app opens straight into it. *Options → Turn on at start* changes that.\n\n**Downloads**\n- `RetroTorch.sis`: the app (needs Python for S60 1.4.5).\n- `appuifwmodule.rsc`: only for memory-card installs on phones that aren't unlocked (see above).\n- `SHA256SUMS.txt`: checksums.\n\nReplaces 1.2.0's `RetroTorch-card.sis`.\n\n",
+        "url": "https://github.com/manojanasuri16/RetroTorch/releases/tag/v1.3.0"
+      },
+      {
+        "tag": "v1.2.0",
+        "published": "2026-11-21T23:33:26Z",
+        "body": "First release of RetroTorch, a torch app for the Nokia N79 and other S60 3rd Edition phones. Needs Python for S60 1.4.5.\n\n**Downloads**\n- `RetroTorch.sis`: installs to phone memory. Use this one if you're unsure.\n- `RetroTorch-card.sis`: installs to the memory card, plus a 2 KB launcher in phone memory.\n- `SHA256SUMS.txt`: checksums.\n\n**What's in it**\n- **LED torch** as the default light: the camera's dual LED as a steady torch, plus strobe, SOS, Morse and beacon. The app opens straight into it.\n- **Screen light** in 10 colours with brightness, and effects (police, rainbow, candle, disco and more).\n- **Flash bursts**, **keypad light**, the N79's **extra light**, and **all lights** at once.\n- Auto-off timer, Morse messages, Hardware info.\n- **Crash guard:** hardware that makes the app close is switched off at the next start, with a message. *Options → Retry all hardware* turns it back on.\n\n**Not yet confirmed on a phone**\n- **LED torch:** the screen, keypad and extra lights work on an N79. The LED's first setup tries 9 ways to keep it lit, and which one works on the N79 isn't known yet. Answer \"YES\" only when the LED is really on.\n- **`RetroTorch-card.sis`:** a plain memory-card install of a Python for S60 app never starts on the N79. This package adds a launcher in phone memory to work around that, but the workaround hasn't been tested on a phone yet.\n",
+        "url": "https://github.com/manojanasuri16/RetroTorch/releases/tag/v1.2.0"
+      }
+    ]
+  }
+}

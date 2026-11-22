@@ -1,0 +1,10 @@
+/*.jad
+  Content-Type: text/vnd.sun.j2me.app-descriptor
+/*.jar
+  Content-Type: application/java-archive
+/*.sis
+  Content-Type: application/vnd.symbian.install
+/*.sisx
+  Content-Type: application/vnd.symbian.install
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

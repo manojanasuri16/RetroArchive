@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getGuides } from '../../lib/catalog';
+import { url } from '../../lib/url';
+import { fmtDate } from '../../lib/format';
+const guides = await getGuides();
+---
+<Base title="Guides" nav="guides" description="How-tos for the Nokia N79: unlocking, signing, installing and building.">
+  <div class="wrap">
+    <div class="page-head"><h1><span class="hl">Guides</span></h1><p>Step-by-step how-tos for getting software onto the N79 and building your own.</p></div>
+    {guides.length === 0 && <p class="empty">No guides yet.</p>}
+    <ul class="rows">
+      {guides.map((g) => (
+        <li class="row">
+          {g.data.updated && <span class="when">Updated {fmtDate(g.data.updated)}</span>}
+          <h3><a href={url(`/guides/${g.id}/`)}>{g.data.title}</a></h3>
+          <p>{g.data.summary}</p>
+          {g.data.tags.length > 0 && <ul class="badges" style="margin-top:6px">{g.data.tags.map((t) => <li class="badge">{t}</li>)}</ul>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>

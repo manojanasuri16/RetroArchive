@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+<Base title="Memory full" noindex>
+  <div class="wrap oops">
+    <div class="dialog">
+      <div class="t">Notice</div>
+      <div class="b">
+        <h1>Memory full</h1>
+        <p>Error 404: that page was not found. Delete some files, or go back to the menu.</p>
+        <a class="btn" href={url('/')}>Back to menu</a>
+      </div>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getGuides } from '../../lib/catalog';
+import { mdToc, fmtDate } from '../../lib/format';
+import { url } from '../../lib/url';
+export async function getStaticPaths() {
+  return (await getGuides()).map((g) => ({ params: { slug: g.id }, props: { g } }));
+}
+const { g } = Astro.props;
+const { html, toc } = mdToc(g.body ?? '');
+---
+<Base title={g.data.title} nav="guides" description={g.data.summary}>
+  <div class="wrap">
+    <div class="page-head">
+      <div class="crumbs"><a href={url('/guides/')}>Guides</a> / {g.data.title}</div>
+      <h1><span class="hl">{g.data.title}</span></h1>
+      <p>{g.data.summary}{g.data.updated && ` Updated ${fmtDate(g.data.updated)}.`}</p>
+    </div>
+    <div class="article">
+      <aside class="toc" aria-label="Contents">
+        <h2>Contents</h2>
+        <ol>{toc.map((t) => <li class={`l${t.depth}`}><a href={`#${t.id}`}>{t.text}</a></li>)}</ol>
+        <p style="margin:12px 0 0"><a href={url(`/m/guides/${g.id}/`)}>Phone version</a></p>
+      </aside>
+      <article class="prose" set:html={html} />
+    </div>
+  </div>
+</Base>

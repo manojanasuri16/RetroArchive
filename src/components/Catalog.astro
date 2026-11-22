@@ -1,0 +1,66 @@
+---
+import AppCard from './AppCard.astro';
+import { url } from '../lib/url';
+import { CATEGORY_LABELS } from '../lib/format';
+const { items, filters = true, group = false, current = 'all' } = Astro.props;
+const cats = [...new Set(items.map((i: any) => i.data.category).filter(Boolean))] as string[];
+const apps = items.filter((i: any) => i.data.kind === 'app');
+const games = items.filter((i: any) => i.data.kind === 'game');
+const tabs = [['all', '/apps/', 'All'], ['mine', '/apps/mine/', 'Mine'], ['games', '/apps/games/', 'Games'], ['community', '/apps/community/', 'Community']];
+---
+<nav class="subnav" aria-label="Catalog sections">
+  {tabs.map(([k, h, l]) => <a href={url(h)} aria-current={current === k ? 'page' : undefined}>{l}</a>)}
+</nav>
+{filters && (
+  <div class="filters" id="filters" role="search">
+    <div class="frow"><span class="flabel">Search</span><input class="search" id="q" type="search" placeholder="Name, author, keyword" aria-label="Search" /></div>
+    <div class="frow" data-group="platform"><span class="flabel">Platform</span>
+      <button class="chip" type="button" data-v="symbian" aria-pressed="false">Symbian</button>
+      <button class="chip" type="button" data-v="java" aria-pressed="false">Java</button></div>
+    <div class="frow" data-group="kind"><span class="flabel">Type</span>
+      <button class="chip" type="button" data-v="app" aria-pressed="false">App</button>
+      <button class="chip" type="button" data-v="game" aria-pressed="false">Game</button></div>
+    <div class="frow" data-group="source"><span class="flabel">Source</span>
+      <button class="chip" type="button" data-v="mine" aria-pressed="false">Mine</button>
+      <button class="chip" type="button" data-v="community" aria-pressed="false">Community</button></div>
+    <div class="frow" data-group="category"><span class="flabel">Category</span>
+      {cats.map((c) => <button class="chip" type="button" data-v={c} aria-pressed="false">{CATEGORY_LABELS[c] ?? c}</button>)}</div>
+  </div>
+)}
+{items.length === 0 && <p class="empty">Nothing here yet. <a href={url('/submit/')}>Suggest something</a>.</p>}
+{group
+  ? <>
+      {apps.length > 0 && <><h2 class="group-h">Apps</h2><ul class="grid" data-grid>{apps.map((i: any) => <AppCard item={i} />)}</ul></>}
+      {games.length > 0 && <><h2 class="group-h">Games</h2><ul class="grid" data-grid>{games.map((i: any) => <AppCard item={i} />)}</ul></>}
+    </>
+  : items.length > 0 && <ul class="grid" data-grid>{items.map((i: any) => <AppCard item={i} />)}</ul>}
+<p class="empty" id="none" hidden>No matches. Try clearing a filter.</p>
+{filters && <script is:inline>
+(function () {
+  var cards = [].slice.call(document.querySelectorAll('[data-grid] .card'));
+  var q = document.getElementById('q'), none = document.getElementById('none');
+  var sel = { platform: [], kind: [], source: [], category: [] };
+  function apply() {
+    var t = (q.value || '').toLowerCase().trim(), shown = 0;
+    cards.forEach(function (c) {
+      var ok = !t || c.dataset.name.indexOf(t) > -1;
+      for (var k in sel) if (ok && sel[k].length && sel[k].indexOf(c.dataset[k]) < 0) ok = false;
+      c.hidden = !ok; if (ok) shown++;
+    });
+    none.hidden = shown > 0;
+  }
+  document.querySelectorAll('.frow[data-group]').forEach(function (row) {
+    var g = row.dataset.group;
+    row.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip'); if (!b) return;
+      var on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', on);
+      var v = b.dataset.v, i = sel[g].indexOf(v);
+      if (on && i < 0) sel[g].push(v); if (!on && i > -1) sel[g].splice(i, 1);
+      apply();
+    });
+  });
+  q.addEventListener('input', apply);
+  var p = new URLSearchParams(location.search).get('q'); if (p) { q.value = p; apply(); }
+})();
+</script>}

@@ -1,0 +1,16 @@
+---
+import { fmtSize } from '../lib/format';
+const { files } = Astro.props;
+---
+{files.length > 0 && (
+  <ul class="files">
+    {files.map((f: any) => (
+      <li>
+        <a href={f.url} rel="noopener">{f.name}</a>
+        <span class="sz">{f.kind !== 'other' ? f.kind + ' · ' : ''}{fmtSize(f.size) || '—'}</span>
+        {f.note && <span class="note">{f.note}</span>}
+        {f.sha256 && <span class="sha"><code title={f.sha256}>sha256 {f.sha256}</code><button class="copy" type="button" data-copy={f.sha256}>Copy</button></span>}
+      </li>
+    ))}
+  </ul>
+)}

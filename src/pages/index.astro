@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Poster from '../components/Poster.astro';
+import AppCard from '../components/AppCard.astro';
+import { getApps, getSdks, getNews, byAdded } from '../lib/catalog';
+import { url } from '../lib/url';
+import { fmtDate } from '../lib/format';
+const apps = await getApps(); const sdks = await getSdks(); const news = (await getNews()).slice(0, 3);
+const featured = [...apps, ...sdks].filter((i) => i.data.featured);
+const featApps = apps.filter((i) => i.data.featured).slice(0, 6);
+const latest = [...apps].sort(byAdded).slice(0, 6);
+const nGames = apps.filter((a) => a.data.kind === 'game').length;
+---
+<Base nav="">
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Retro<br /><span class="hl">Archive</span></h1>
+        <p class="sub">Software for the N79 era</p>
+        <p class="lede">A small, honest archive of Symbian S60v3 and Java ME apps, games, tools and guides that run on the Nokia N79. Download what works, read how to install it, skip the dead links.</p>
+        <div class="hero-cta">
+          <a class="btn" href={url('/apps/')}>Browse apps</a>
+          <a class="btn btn-blue" href={url('/guides/')}>Read the guides</a>
+        </div>
+      </div>
+      <Poster />
+    </section>
+
+    <section class="cards3" aria-label="Sections">
+      <article class="scard tan">
+        <div class="count">{apps.filter((a) => a.data.kind === 'app').length} entries</div>
+        <h2>Apps</h2>
+        <p>Utilities, network and messaging tools, many built for this phone. Mine and the community's.</p>
+        <a class="btn btn-outline" href={url('/apps/')}>Browse apps</a>
+      </article>
+      <article class="scard blue">
+        <div class="count">{nGames} entries</div>
+        <h2>Games</h2>
+        <p>Symbian and Java ME games, tested on the N79's 240×320 screen where we can.</p>
+        <a class="btn btn-outline btn-outline-w" href={url('/apps/games/')}>Games</a>
+      </article>
+      <article class="scard char">
+        <div class="count">{sdks.length} entries</div>
+        <h2>SDKs &amp; Tools</h2>
+        <p>Toolchains, runtimes and unlock tools for building and installing your own software.</p>
+        <a class="btn btn-outline btn-outline-c" href={url('/sdks/')}>SDKs &amp; tools</a>
+      </article>
+    </section>
+
+    {(featApps.length > 0 || featured.length > 0) && (
+      <section class="sec">
+        <div class="sec-head"><h2>Featured</h2><a href={url('/apps/mine/')}>My apps →</a></div>
+        <ul class="grid">
+          {featApps.map((i) => <AppCard item={i} />)}
+          {featured.filter((i) => i.type === 'sdk').map((i) => <AppCard item={i} />)}
+        </ul>
+      </section>
+    )}
+
+    <section class="sec">
+      <div class="sec-head"><h2>Latest additions</h2><a href={url('/apps/')}>All apps →</a></div>
+      {latest.length ? <ul class="grid">{latest.map((i) => <AppCard item={i} />)}</ul> : <p class="empty">Nothing yet.</p>}
+    </section>
+
+    {news.length > 0 && (
+      <section class="sec">
+        <div class="sec-head"><h2>News</h2><a href={url('/news/')}>All news →</a></div>
+        <ul class="rows">
+          {news.map((n) => (
+            <li class="row"><span class="when">{fmtDate(n.data.date)}</span><h3><a href={url(`/news/${n.id}/`)}>{n.data.title}</a></h3><p>{n.data.summary}</p></li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</Base>

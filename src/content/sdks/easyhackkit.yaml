@@ -1,0 +1,21 @@
+name: EasyHackKit 2.0
+tagline: Wizard that removes Symbian signing and capability limits on your own phone (N79 path)
+kind: hack
+hostOs: [phone]
+author: Alireza.M
+homepage: http://s60world.ir
+added: 2026-11-22
+featured: false
+guide: unlock-n79
+rehostable: false
+description: |
+  **EasyHackKit 2.0** is a wizard by **Alireza.M** that installs the tools for "hacking" (unlocking) a Nokia Symbian phone. On a hacked phone, unsigned apps can be installed and protected folders can be reached. Support covers S60v3 FP1 and FP2, S60v5, Symbian^3, Anna, Belle and Belle FP2.
+
+  The kit runs on the phone. It installs SafeManager, ROMPatcher+ and two patches (Install Server and Open4All). Its help file is by Alireza Elahi (2025).
+
+  The kit is not hosted here, because its licence is not known. Step-by-step instructions for the N79 are in the [unlock guide](/guides/unlock-n79/). The guide is also in the [unlock guide repository](https://github.com/manojanasuri16/symbian-unlock-guide).
+
+  Only use this on a phone you own. Disabling Platform Security is at your own risk.
+links:
+  - label: Unlock guide repository
+    url: https://github.com/manojanasuri16/symbian-unlock-guide

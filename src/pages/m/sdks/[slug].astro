@@ -1,0 +1,19 @@
+---
+import Lite from '../../../layouts/Lite.astro';
+import { url } from '../../../lib/url';
+import { getSdks } from '../../../lib/catalog';
+import { fmtSize, liteMd, liteInline } from '../../../lib/format';
+export async function getStaticPaths() {
+  return (await getSdks()).map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+const { item } = Astro.props;
+const d = item.data;
+---
+<Lite title={d.name} back="/m/sdks/">
+<p>{d.tagline}<br />{item.version && `v${item.version}`} | {d.hostOs?.join(', ')}</p>
+<h2>Download</h2>
+{item.files.length ? <ul>{item.files.map((f: any) => <li><a href={f.url}>{f.name}</a> {fmtSize(f.size)}</li>)}</ul> : <p>Link only.</p>}
+{d.links?.length > 0 && <ul>{d.links.map((l: any) => <li><a href={l.url.startsWith("/") ? url("/m" + l.url) : l.url}>{l.label}</a></li>)}</ul>}
+<h2>About</h2>
+<div set:html={liteMd(d.description)} />
+</Lite>

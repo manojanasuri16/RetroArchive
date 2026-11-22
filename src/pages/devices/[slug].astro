@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getDevices, getApps } from '../../lib/catalog';
+import { md, fmtDate } from '../../lib/format';
+import { url, media } from '../../lib/url';
+export async function getStaticPaths() {
+  const apps = await getApps();
+  return (await getDevices()).map((d) => ({
+    params: { slug: d.id },
+    props: { d, tested: apps.flatMap((a) => (a.data.tested ?? []).filter((t: any) => t.device === d.id).map((t: any) => ({ a, t }))) },
+  }));
+}
+const { d, tested } = Astro.props;
+const x = d.data;
+---
+<Base title={x.name} description={`${x.name}: ${x.platform}, ${x.os}, ${x.screen}.`}>
+  <div class="wrap">
+    <div class="page-head"><div class="crumbs"><a href={url('/devices/')}>Devices</a> / {x.name}</div><h1><span class="hl">{x.name}</span></h1></div>
+    <div class="panels" style="margin-top:0">
+      <section class="panel">
+        <h2>Specs</h2>
+        {x.image && <img src={media(x.image)} alt={x.name} style="max-height:240px;margin-bottom:12px" />}
+        <dl class="facts">
+          <dt>Platform</dt><dd>{x.platform}</dd><dt>OS</dt><dd>{x.os}</dd><dt>Screen</dt><dd>{x.screen}</dd>
+          {x.java && <><dt>Java</dt><dd>{x.java}</dd></>}{x.released && <><dt>Released</dt><dd>{x.released}</dd></>}
+        </dl>
+      </section>
+      <section class="panel"><h2>Notes</h2><div class="prose" set:html={md(x.notes)} /></section>
+      <section class="panel wide"><h2>Tested on this device</h2>
+        {tested.length === 0 ? <p>Nothing recorded yet.</p> : (
+          <div class="tablewrap"><table>
+            <thead><tr><th>Entry</th><th>Firmware</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody>{tested.map(({ a, t }: any) => (
+              <tr><td><a href={url(a.href)}>{a.data.name}</a></td><td>{t.firmware ?? ''}</td><td><span class={`badge ${t.status}`}>{t.status}</span></td><td>{t.notes ?? ''}</td></tr>
+            ))}</tbody></table></div>
+        )}
+      </section>
+    </div>
+  </div>
+</Base>

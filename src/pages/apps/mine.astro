@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import Catalog from '../../components/Catalog.astro';
+import { getApps } from '../../lib/catalog';
+const items = (await getApps()).filter((i) => i.data.source === 'mine');
+---
+<Base title="Mine" nav="apps" description="Apps and games written by the site owner.">
+  <div class="wrap">
+    <div class="page-head"><h1><span class="hl">Mine</span></h1><p>Apps and games written by the site owner.</p></div>
+    <Catalog items={items} filters={false} current="mine" group={true} />
+  </div>
+</Base>

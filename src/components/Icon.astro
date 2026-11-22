@@ -1,0 +1,10 @@
+---
+import { media } from '../lib/url';
+const { name, icon, large = false } = Astro.props;
+const colors = ['#78A2D6', '#D65A5A', '#D9C29A', '#9bab7c', '#e0b24a', '#a58fc8'];
+let h = 0; for (const c of name) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+const bg = colors[h % colors.length];
+---
+{icon
+  ? <img class={`icon ${large ? 'lg' : ''}`} src={media(icon)} alt="" width={large ? 96 : 64} height={large ? 96 : 64} loading="lazy" />
+  : <span class={`icon ph ${large ? 'lg' : ''}`} style={`background:${bg}`} aria-hidden="true">{name.trim().charAt(0)}</span>}

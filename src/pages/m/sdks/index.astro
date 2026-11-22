@@ -1,0 +1,9 @@
+---
+import Lite from '../../../layouts/Lite.astro';
+import { getSdks } from '../../../lib/catalog';
+import { url } from '../../../lib/url';
+const sdks = await getSdks();
+---
+<Lite title="SDKs and tools" back="/m/">
+<ul>{sdks.map((a) => <li><a href={url(`/m/sdks/${a.slug}/`)}>{a.data.name}</a>{a.version && ` ${a.version}`}<br /><small>{a.data.tagline}</small></li>)}</ul>
+</Lite>

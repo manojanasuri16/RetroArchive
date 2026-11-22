@@ -1,0 +1,12 @@
+---
+import Lite from '../../../layouts/Lite.astro';
+import { getGuides } from '../../../lib/catalog';
+import { liteMd, liteInline } from '../../../lib/format';
+export async function getStaticPaths() {
+  return (await getGuides()).map((g) => ({ params: { slug: g.id }, props: { g } }));
+}
+const { g } = Astro.props;
+---
+<Lite title={g.data.title} back="/m/guides/">
+<div set:html={liteMd(g.body ?? '')} />
+</Lite>

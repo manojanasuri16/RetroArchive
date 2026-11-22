@@ -1,0 +1,24 @@
+---
+import { url } from '../lib/url';
+import { fmtSize } from '../lib/format';
+import Icon from './Icon.astro';
+import Badges from './Badges.astro';
+const { item } = Astro.props;
+const d = item.data;
+---
+<li class="card" data-name={d.name.toLowerCase() + ' ' + d.tagline.toLowerCase() + ' ' + d.author.toLowerCase()}
+  data-platform={d.platform ?? ''} data-kind={d.kind} data-source={d.source ?? ''} data-category={d.category ?? ''}>
+  <div class="card-main">
+    <Icon name={d.name} icon={d.icon} />
+    <div>
+      <h3><a href={url(item.href)}>{d.name}</a></h3>
+      <p>{d.tagline}</p>
+    </div>
+  </div>
+  <Badges d={d} />
+  <div class="card-foot">
+    {item.version && <span>v{item.version}</span>}
+    {item.size ? <span>{fmtSize(item.size)}</span> : null}
+    <span>{d.author}</span>
+  </div>
+</li>

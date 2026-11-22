@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import Detail from '../../components/Detail.astro';
+import { getApps } from '../../lib/catalog';
+export async function getStaticPaths() {
+  return (await getApps()).map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+const { item } = Astro.props;
+---
+<Base title={item.data.name} nav={item.data.kind === 'game' ? 'games' : 'apps'} description={item.data.tagline}>
+  <Detail item={item} />
+</Base>

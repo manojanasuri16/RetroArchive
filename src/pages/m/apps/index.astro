@@ -1,0 +1,16 @@
+---
+import Lite from '../../../layouts/Lite.astro';
+import { getApps } from '../../../lib/catalog';
+import { url, media } from '../../../lib/url';
+const apps = await getApps();
+const groups: [string, string, any[]][] = [
+  ['mine', 'My apps', apps.filter((a) => a.data.source === 'mine')],
+  ['games', 'Games', apps.filter((a) => a.data.kind === 'game' && a.data.source !== 'mine')],
+  ['apps', 'Apps', apps.filter((a) => a.data.kind === 'app' && a.data.source !== 'mine')],
+];
+---
+<Lite title="Apps" back="/m/">
+{groups.map(([id, label, list]) => list.length > 0 && <><h2 id={id}>{label}</h2><ul>{list.map((a) => (
+  <li>{a.data.icon && <img src={media(a.data.icon)} width="24" height="24" alt="" />} <a href={url(`/m/apps/${a.slug}/`)}>{a.data.name}</a>{a.version && ` ${a.version}`}<br /><small>{a.data.tagline}</small></li>
+))}</ul></>)}
+</Lite>

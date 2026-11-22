@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getDevices } from '../../lib/catalog';
+import { url } from '../../lib/url';
+const devices = await getDevices();
+---
+<Base title="Devices" description="Devices that software in RetroArchive is tested on.">
+  <div class="wrap">
+    <div class="page-head"><h1><span class="hl">Devices</span></h1><p>The phones this archive is about.</p></div>
+    <ul class="rows">{devices.map((d) => (
+      <li class="row"><span class="when">{d.data.platform}</span><h3><a href={url(`/devices/${d.id}/`)}>{d.data.name}</a></h3><p>{d.data.os} · {d.data.screen}{d.data.java ? ` · ${d.data.java}` : ''}</p></li>
+    ))}</ul>
+  </div>
+</Base>

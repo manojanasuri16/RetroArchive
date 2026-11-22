@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+const issue = 'https://github.com/manojanasuri16/RetroArchive/issues/new?template=suggest-app.yml';
+---
+<Base title="Submit" description="Suggest an app or game for the RetroArchive.">
+  <div class="wrap">
+    <div class="page-head"><h1>Suggest <span class="hl">an app</span></h1><p>Got something that runs on the N79 and deserves a place here? Tell us about it.</p></div>
+    <div class="prose">
+      <h2>What we need</h2>
+      <ul>
+        <li>The name, the original author and where it came from.</li>
+        <li>Platform: Symbian (.sis/.sisx) or Java ME (.jar/.jad).</li>
+        <li>A link to the file or the original page, and its licence if known.</li>
+        <li>Whether you tested it on an N79, the firmware, and what worked or did not.</li>
+      </ul>
+      <p>We only list test results that someone actually observed. Nokia SDK archives and anything that forbids re-hosting stay link-only.</p>
+      <p style="margin-top:2rem"><a class="btn" href={issue} rel="noopener">Open a GitHub issue</a></p>
+    </div>
+  </div>
+</Base>

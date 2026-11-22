@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import Catalog from '../../components/Catalog.astro';
+import { getApps } from '../../lib/catalog';
+const items = (await getApps()).filter((i) => i.data.kind === 'game');
+---
+<Base title="Games" nav="games" description="Every game in the archive, Symbian and Java ME.">
+  <div class="wrap">
+    <div class="page-head"><h1><span class="hl">Games</span></h1><p>Every game in the archive, Symbian and Java ME.</p></div>
+    <Catalog items={items} filters={false} current="games" group={false} />
+  </div>
+</Base>

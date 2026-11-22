@@ -1,0 +1,62 @@
+name: RetroSend
+tagline: LocalSend for old Nokia phones
+kind: app
+source: mine
+platform: symbian
+runtime: pys60
+category: network
+author: Manoj Anasuri
+authorUrl: https://github.com/manojanasuri16
+repo: manojanasuri16/RetroSend
+version: 1.2.1
+released: 2026-11-22
+added: 2026-11-22
+featured: true
+icon: retrosend/icon.png
+requires: [pys60-runtime]
+signing: self-signed
+capabilities: [NetworkServices, LocalServices, ReadUserData, WriteUserData, UserEnvironment]
+tested:
+  - device: n79
+    status: works
+    notes: 'Tested on a Nokia N79 with RetroSend on the memory card and Python for S60 in phone memory.'
+installNotes:
+  - 'Install **PythonForS60_1_4_5_3rdEd.sis** first (once). See the [Python for S60 guide](/guides/install-pys60/).'
+  - 'In App. mgr. > Options > Settings set *Software installation* to **All** and *Online certificate check* to **Off**.'
+  - 'Install **RetroSend-1.2.1-S60v3.sis**. You will see one "untrusted supplier" warning because the app is self-signed. Accept it.'
+  - 'Choose phone memory or the memory card. On an unlocked phone either works wherever Python is installed. On a phone that is not unlocked, install RetroSend on the same drive as Python. See [memory card installs](/guides/memory-card-installs/).'
+  - 'If "Certificate expired" appears while installing Python, set the phone date to 2009, install, then set the date back.'
+  - 'On the other device, open LocalSend, go to Settings, and turn **Encryption off**. Keep LocalSend open on the same Wi-Fi.'
+knownIssues:
+  - 'Releases 1.0.0 to 1.1.1 offered a combined package with Python for S60 included. Replacing it could remove Python, and then no Python app opens. Remove RetroSend and Python in App. mgr., then install Python and RetroSend again.'
+  - 'The other device must have LocalSend **encryption off**. Require PIN must also be off.'
+  - 'Finding a new LocalSend device takes about 12 seconds. If it is not found, use Scan again or Enter IP address.'
+  - 'Browser sharing lets anyone on the same Wi-Fi open the page while it is on. Turn it off when you are done.'
+  - 'Closing: use Options > Exit. On S60 the red key only hides the app.'
+  - 'The app pauses for 1 to 2 seconds at start while the phone starts Wi-Fi. This is normal.'
+  - 'In the Offline profile the phone asks "Create WLAN connection in offline mode?". Answer Yes, or switch to the General profile.'
+description: |
+  **RetroSend** sends and receives files between an **old Nokia phone** (S60 3rd Edition: N79, N82, N95, E71, 6120 and others) and the [LocalSend](https://localsend.org) app on Android, iPhone, Windows, macOS or Linux, over Wi-Fi.
+
+  RetroSend speaks the LocalSend v2 protocol, so the other device just runs the normal LocalSend app. No cable, no Bluetooth pairing and no PC in between.
+
+  ### Features
+
+  - **Send** photos, videos, music, any file, or a text message to a LocalSend device.
+  - **Multi-select** files, even in different folders, and send them in one transfer.
+  - **Send a whole folder**. The folder structure is kept on the other device.
+  - **Photo grid** for "Send a photo" (switch to list view in Options).
+  - **Send contacts** as a `.vcf` file.
+  - **Browser sharing**: any phone or PC on the Wi-Fi can open `http://<phone-ip>:53317/` in a normal browser to download shared files or upload files and text to the phone.
+  - **Previews** in the file picker: camera thumbnails for photos, album art and tags for music, length and size for videos.
+  - **Receive** one or many files with an Accept/Decline prompt (or auto-accept). Photos, music and videos go to the phone's Gallery and Music folders. Other files go to `RetroSend\`.
+  - **Open received files** in the phone's own viewer or player.
+  - **Cancel** a transfer at any time from Options.
+  - **Speed and time left** in the title bar during a transfer.
+  - **Remembers devices** and their addresses across restarts.
+  - **Receive text messages**, shown on screen.
+  - **No permission pop-ups**: the app gets its permissions once, at install, and remembers your Wi-Fi network.
+
+  RetroSend is written in Python for S60 1.4.5, so it needs [Python for S60](/sdks/pys60-runtime/) installed.
+
+  Source and build instructions are in the [GitHub repository](https://github.com/manojanasuri16/RetroSend).

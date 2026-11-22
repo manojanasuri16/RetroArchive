@@ -1,0 +1,85 @@
+---
+import '../styles/global.css';
+import { url } from '../lib/url';
+import { totalDownloads } from '../lib/catalog';
+interface Props { title?: string; description?: string; nav?: string; noindex?: boolean; }
+const { title, description = 'Software for the Nokia N79 era: Symbian S60v3 and Java ME apps, games, SDKs and guides.', nav = '', noindex = false } = Astro.props;
+const full = title ? `${title} · RetroArchive` : 'RetroArchive · Software for the N79 era';
+const links = [
+  ['apps', '/apps/', 'Apps'], ['games', '/apps/games/', 'Games'], ['sdks', '/sdks/', 'SDKs'],
+  ['guides', '/guides/', 'Guides'], ['about', '/about/', 'About'],
+];
+const dl = String(totalDownloads()).padStart(6, '0');
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{full}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <meta property="og:title" content={full} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+  <link rel="alternate" type="application/rss+xml" title="RetroArchive news" href={url('/rss.xml')} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <script is:inline>
+    document.documentElement.classList.add('has-js');
+    try { var t = localStorage.getItem('ra-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="window">
+    <header class="site-head">
+      <a class="logo" href={url('/')}>
+        <svg viewBox="0 0 30 30" aria-hidden="true"><rect x="0" y="0" width="22" height="13" fill="#8a8a86" stroke="#111" /><rect x="8" y="16" width="22" height="13" fill="#bdbdb8" stroke="#111" /></svg>
+        <span>RetroArchive</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        {links.map(([k, href, label]) => <a href={url(href)} aria-current={nav === k ? 'page' : undefined}>{label}</a>)}
+      </nav>
+      <div class="head-actions">
+        <button class="theme-btn" id="theme" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 0 0 13z" fill="currentColor"/></svg></button>
+        <a class="btn btn-sm" href={url('/m/')}>Phone site</a>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-foot">
+      <div>
+        <p style="margin:0 0 6px">Unofficial fan archive. Not affiliated with Nokia. <a href={url('/about/')}>About &amp; removals</a></p>
+        <span class="counter" title="Total release downloads">Downloads <span class="lcd">{dl}</span></span>
+      </div>
+      <nav aria-label="Footer">
+        <a href={url('/m/')}>Phone site /m</a><a href={url('/devices/')}>Devices</a><a href={url('/news/')}>News</a>
+        <a href={url('/submit/')}>Submit</a><a href={url('/rss.xml')}>RSS</a>
+        <a href="https://github.com/manojanasuri16/RetroArchive">GitHub</a>
+      </nav>
+    </footer>
+  </div>
+  <script is:inline>
+    (function () {
+      var b = document.getElementById('theme');
+      if (b) b.addEventListener('click', function () {
+        var r = document.documentElement, cur = r.getAttribute('data-theme');
+        if (!cur) cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var n = cur === 'dark' ? 'light' : 'dark';
+        r.setAttribute('data-theme', n);
+        try { localStorage.setItem('ra-theme', n); } catch (e) {}
+      });
+      document.addEventListener('click', function (e) {
+        var c = e.target.closest && e.target.closest('.copy'); if (!c) return;
+        var t = c.getAttribute('data-copy');
+        try { navigator.clipboard.writeText(t).then(function () { c.textContent = 'Copied'; setTimeout(function () { c.textContent = 'Copy'; }, 1500); }); } catch (x) {}
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+---
+import Lite from '../../../layouts/Lite.astro';
+import { getGuides } from '../../../lib/catalog';
+import { url } from '../../../lib/url';
+const guides = await getGuides();
+---
+<Lite title="Guides" back="/m/">
+<ul>{guides.map((g) => <li><a href={url(`/m/guides/${g.id}/`)}>{g.data.title}</a><br /><small>{g.data.summary}</small></li>)}</ul>
+</Lite>

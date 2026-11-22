@@ -1,0 +1,20 @@
+name: Nokia S60 3rd Edition FP2 SDK v1.1.1
+tagline: The S60 3.2 SDK (EPOCROOT) for S60 3rd Edition FP2, e.g. the N79
+kind: sdk
+hostOs: [windows, linux]
+author: Nokia
+license: Nokia SDK licence (proprietary, no re-hosting)
+version: 1.1.1
+homepage: https://archive.org/details/nokia_sdks_n_dev_tools
+links:
+  - label: Download from archive.org (S60_3rd_FP2_SDK_v1_1_1.zip)
+    url: https://archive.org/download/nokia_sdks_n_dev_tools/S60_3rd_FP2_SDK_v1_1_1.zip
+  - label: Collection on archive.org
+    url: https://archive.org/details/nokia_sdks_n_dev_tools
+added: 2026-11-22
+featured: false
+rehostable: false
+description: |
+  The **Nokia S60 3rd Edition FP2 SDK**, version 1.1.1, is a Windows InstallShield package. The [Symbian S60v3 toolchain](/sdks/symbian-s60v3-toolchain/) unpacks it on Linux with `unshield`, and it becomes `EPOCROOT`.
+
+  Nokia's licence does not allow re-hosting, so this entry links to the archive.org copy only. The copy is byte-for-byte the same as the one the toolchain uses (SHA-1 `53995d55bd8227647759d208a450501629295342`).

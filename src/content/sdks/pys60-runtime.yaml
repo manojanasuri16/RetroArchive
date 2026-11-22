@@ -1,0 +1,27 @@
+name: Python for S60 1.4.5
+tagline: Nokia's Python runtime for S60 3rd Edition, with the Python Script Shell
+kind: runtime
+hostOs: [phone]
+author: Nokia (PyS60 open source project)
+license: Apache 2.0 and the Python licence
+version: 1.4.5
+homepage: https://sourceforge.net/projects/pys60/
+added: 2026-11-22
+featured: true
+links:
+  - label: PyS60 1.4.5 archive (SDK plug-ins and source)
+    url: https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/download/archives/PyS60_1.4.5.zip
+  - label: PyS60 1.4.5 archive on archive.org
+    url: https://archive.org/download/nokia_sdks_n_dev_tools/PyS60_1.4.5.zip
+guide: install-pys60
+description: |
+  **Python for S60 1.4.5** runs Python 2.2 scripts and apps on Nokia S60 3rd Edition phones, including the **Nokia N79**. Nokia open-sourced the project (PyS60).
+
+  Install it once, on the phone. Every PyS60 app in this archive ([RetroSend](/apps/retrosend/), [RetroTele](/apps/retrotele/), [RetroTorch](/apps/retrotorch/)) needs it.
+
+  For the N79 (S60 3rd Edition FP2) use:
+
+  - `PythonForS60_1_4_5_3rdEd.sis`: the runtime
+  - `PythonScriptShell_1_4_5_3rdEd.SIS`: the Python Script Shell, for running a `.py` file without installing it as an app
+
+  Nokia's runtime certificate has expired. The [install guide](/guides/install-pys60/) explains how to install it anyway.

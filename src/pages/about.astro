@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+<Base title="About" nav="about" description="What RetroArchive is, credits, disclaimer and removal requests.">
+  <div class="wrap">
+    <div class="page-head"><h1>About <span class="hl">RetroArchive</span></h1></div>
+    <div class="prose">
+      <p>RetroArchive is a small catalog of software for the <strong>Nokia N79</strong> (S60 3rd Edition FP2, Symbian OS 9.3, 240×320 screen, MIDP 2.0 / CLDC 1.1). It lists Symbian apps (.sis / .sisx, including PyS60 apps) and Java ME apps (.jar / .jad), plus the tools needed to build and install them.</p>
+      <h2>What is in it</h2>
+      <ul>
+        <li><strong>My apps:</strong> software written by the site owner, with release data pulled from GitHub.</li>
+        <li><strong>Archive:</strong> third-party apps and games that were tested on the N79.</li>
+        <li><strong>SDKs &amp; tools:</strong> toolchains, runtimes and unlock tools.</li>
+      </ul>
+      <h2>Credits</h2>
+      <p>Every entry credits its original author and links to the original source where one exists. Nothing here is claimed as our work unless it says so.</p>
+      <h2>Disclaimer</h2>
+      <p>This is an unofficial fan project. It is not affiliated with, or endorsed by, Nokia or any other company. Names and trademarks belong to their owners. Software is provided as is, with no warranty. Installing unsigned or hacked software on your phone is your own decision and risk.</p>
+      <h2>Removal requests</h2>
+      <p>If you are an author or rights holder and want an entry changed or removed, open an issue on <a href="https://github.com/manojanasuri16/RetroArchive/issues">GitHub</a> and it will be taken down promptly.</p>
+      <h2>Phone site</h2>
+      <p>The N79's own browser struggles with modern pages, so there is a tiny version at <a href={url('/m/')}>/m/</a>.</p>
+    </div>
+  </div>
+</Base>
