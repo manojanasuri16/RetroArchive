@@ -1,6 +1,6 @@
 {
   "manojanasuri16/RetroSend": {
-    "fetched": "2026-11-22T05:40:20.576Z",
+    "fetched": "2026-11-22T05:40:29.869Z",
     "latest": {
       "tag": "v1.2.1",
       "name": "RetroSend 1.2.1: phone memory or memory card",
@@ -84,7 +84,7 @@
     ]
   },
   "manojanasuri16/symbian-s60v3-toolchain": {
-    "fetched": "2026-11-22T05:40:21.627Z",
+    "fetched": "2026-11-22T05:40:29.994Z",
     "latest": {
       "tag": "archives",
       "name": "Original archives",
@@ -132,7 +132,7 @@
     ]
   },
   "manojanasuri16/RetroTele": {
-    "fetched": "2026-11-22T05:40:20.946Z",
+    "fetched": "2026-11-22T05:40:29.913Z",
     "latest": {
       "tag": "v0.7.12",
       "name": "RetroTele 0.7.12: VoIP echo test mic fix (experimental)",
@@ -220,7 +220,7 @@
     ]
   },
   "manojanasuri16/RetroTorch": {
-    "fetched": "2026-11-22T05:40:21.276Z",
+    "fetched": "2026-11-22T05:40:29.954Z",
     "latest": {
       "tag": "v1.3.0",
       "name": "RetroTorch 1.3.0: phone memory or memory card",
