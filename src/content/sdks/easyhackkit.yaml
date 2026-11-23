@@ -7,13 +7,20 @@ homepage: http://s60world.ir
 added: 2026-11-22
 featured: false
 guide: unlock-n79
-rehostable: false
+rehostable: true
+files:
+  - name: EasyHackKit-2.0.zip
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/easyhackkit-2.0/EasyHackKit-2.0.zip
+    kind: zip
+    size: 2163340
+    sha256: 6f9d4311b47c47a36390f37d1cd73215ecfddc7fe91d511e808a498e01722144
+    note: Contains the .sisx installers and help file
 description: |
   **EasyHackKit 2.0** is a wizard by **Alireza.M** that installs the tools for "hacking" (unlocking) a Nokia Symbian phone. On a hacked phone, unsigned apps can be installed and protected folders can be reached. Support covers S60v3 FP1 and FP2, S60v5, Symbian^3, Anna, Belle and Belle FP2.
 
   The kit runs on the phone. It installs SafeManager, ROMPatcher+ and two patches (Install Server and Open4All). Its help file is by Alireza Elahi (2025).
 
-  The kit is not hosted here, because its licence is not known. Step-by-step instructions for the N79 are in the [unlock guide](/guides/unlock-n79/). The guide is also in the [unlock guide repository](https://github.com/manojanasuri16/symbian-unlock-guide).
+  The kit is hosted here for preservation. Step-by-step instructions for the N79 are in the [unlock guide](/guides/unlock-n79/). The guide is also in the [unlock guide repository](https://github.com/manojanasuri16/symbian-unlock-guide).
 
   Only use this on a phone you own. Disabling Platform Security is at your own risk.
 links:

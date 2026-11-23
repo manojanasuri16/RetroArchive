@@ -14,6 +14,19 @@ links:
   - label: PyS60 1.4.5 archive on archive.org
     url: https://archive.org/download/nokia_sdks_n_dev_tools/PyS60_1.4.5.zip
 guide: install-pys60
+files:
+  - name: PythonForS60_1_4_5_3rdEd.sis
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/pys60-1.4.5-runtime/PythonForS60_1_4_5_3rdEd.sis
+    kind: sis
+    size: 587124
+    sha256: db991e343b120c1bc64ae445126efdeba5479bd2244672181a318776b2840856
+    note: Install this first
+  - name: PythonScriptShell_1_4_5_3rdEd.SIS
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/pys60-1.4.5-runtime/PythonScriptShell_1_4_5_3rdEd.SIS
+    kind: sis
+    size: 21356
+    sha256: ba3c4016936cb287ffe5ddbf019d78c313ce2ab1f4d9ebedb6c1e9ea2801e941
+    note: "Optional, runs .py scripts on the phone"
 description: |
   **Python for S60 1.4.5** runs Python 2.2 scripts and apps on Nokia S60 3rd Edition phones, including the **Nokia N79**. Nokia open-sourced the project (PyS60).
 

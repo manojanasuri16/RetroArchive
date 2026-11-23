@@ -3,15 +3,21 @@ tagline: Extra FP2 APIs, including the ECam advanced settings used for the camer
 kind: sdk
 hostOs: [windows, linux]
 author: Nokia
-license: Nokia Limited Licence Agreement (proprietary, no re-hosting)
+license: Nokia Limited Licence Agreement (proprietary)
 version: 1.3
 added: 2026-11-22
 featured: false
 links:
   - label: Download from archive.org (S60_3rd_Ed_SDK_FP2_API_Plug-In_Pack_LLA_1_3.zip)
     url: https://archive.org/download/nokia_sdks_n_dev_tools/S60_3rd_Ed_SDK_FP2_API_Plug-In_Pack_LLA_1_3.zip
-rehostable: false
+rehostable: true
+files:
+  - name: S60_3rd_Ed_SDK_FP2_API_Plug-In_Pack_LLA_1_3.zip
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/s60-api-plugin-pack-1.3/S60_3rd_Ed_SDK_FP2_API_Plug-In_Pack_LLA_1_3.zip
+    kind: zip
+    size: 22710328
+    sha256: f7cce66ac5d9579c6cdc33adc212549e47f5d1cb86172cd174ec8706458ab493
 description: |
   The **FP2 API Plug-In Pack 1.3** is a set of extra APIs for the S60 3rd Edition FP2 SDK. The public SDK does not include the ECam *Advanced Settings* API, which is needed for camera flash and video light control. The [Symbian S60v3 toolchain](/sdks/symbian-s60v3-toolchain/) copies that API into the SDK. The other APIs in the pack are not used by the toolchain.
 
-  Nokia's licence does not allow re-hosting, so this entry links to the archive.org copy only. The copy is byte-for-byte the same as the one the toolchain uses (SHA-1 `03a57ab6df56c127f30729b82429820d8eaf3251`).
+  This copy is mirrored here for preservation. The copy is byte-for-byte the same as the one the toolchain uses (SHA-1 `03a57ab6df56c127f30729b82429820d8eaf3251`).

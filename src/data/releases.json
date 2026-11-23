@@ -1,6 +1,6 @@
 {
   "manojanasuri16/RetroSend": {
-    "fetched": "2026-11-22T05:40:29.869Z",
+    "fetched": "2026-11-23T02:34:55.864Z",
     "latest": {
       "tag": "v1.2.1",
       "name": "RetroSend 1.2.1: phone memory or memory card",
@@ -84,7 +84,7 @@
     ]
   },
   "manojanasuri16/symbian-s60v3-toolchain": {
-    "fetched": "2026-11-22T05:40:29.994Z",
+    "fetched": "2026-11-23T02:34:55.981Z",
     "latest": {
       "tag": "archives",
       "name": "Original archives",
@@ -132,95 +132,88 @@
     ]
   },
   "manojanasuri16/RetroTele": {
-    "fetched": "2026-11-22T05:40:29.913Z",
+    "fetched": "2026-11-23T02:34:55.905Z",
     "latest": {
-      "tag": "v0.7.12",
-      "name": "RetroTele 0.7.12: VoIP echo test mic fix (experimental)",
-      "published": "2026-11-22T05:23:18Z",
-      "body": "The VoIP echo test muted the microphone (gain rounded to 0). Fixed: install RetroTele-voiptest.sis and try Settings > Call test > Options > Echo test via VoIP again.",
-      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.12",
+      "tag": "v0.13.2",
+      "name": "RetroTele 0.13.2: thumbnails, multi-select",
+      "published": "2026-11-22T15:23:47Z",
+      "body": "- **Attach file:** image thumbnails in the file manager, select several files at once (centre = mark, key 0 = send), and sending without a caption works (a Send / Add caption and send menu replaces the caption box).\n- Single RetroTele.sis installs everything. Remove the old RetroTele in App. manager first, then install.",
+      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.13.2",
       "assets": [
         {
-          "name": "RetroTele-voiptest.sis",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.12/RetroTele-voiptest.sis",
-          "size": 8788,
-          "downloads": 0,
-          "sha256": "55f5c0f13218de9ebb1a6e673782793759c31eb403cb49eae8842fba5c127a85"
-        },
-        {
           "name": "RetroTele.sis",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.7.12/RetroTele.sis",
-          "size": 809696,
-          "downloads": 0,
-          "sha256": "fedc2f5175f980841620022161d171ca2cff116037f71b40d0c4f145773b4467"
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.13.2/RetroTele.sis",
+          "size": 893872,
+          "downloads": 1,
+          "sha256": "41df06cb3c2c1701338d500667404e5d60668eeb095bba67e4809275f22db8b9"
         }
       ]
     },
     "history": [
       {
-        "tag": "v0.7.12",
-        "published": "2026-11-22T05:23:18Z",
-        "body": "The VoIP echo test muted the microphone (gain rounded to 0). Fixed: install RetroTele-voiptest.sis and try Settings > Call test > Options > Echo test via VoIP again.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.12"
+        "tag": "v0.13.2",
+        "published": "2026-11-22T15:23:47Z",
+        "body": "- **Attach file:** image thumbnails in the file manager, select several files at once (centre = mark, key 0 = send), and sending without a caption works (a Send / Add caption and send menu replaces the caption box).\n- Single RetroTele.sis installs everything. Remove the old RetroTele in App. manager first, then install.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.13.2"
       },
       {
-        "tag": "v0.7.11",
-        "published": "2026-11-22T05:15:33Z",
-        "body": "Fixes the VoIP echo test stopping after the first beep, and logs more detail about the microphone. Install RetroTele-voiptest.sis, run Settings > Call test > Options > Echo test via VoIP.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.11"
+        "tag": "v0.13.1",
+        "published": "2026-11-22T15:10:06Z",
+        "body": "- **Attach file** now opens a proper file manager: drive list (Phone memory C:, Memory card E: with free space), folders with icons, file type icons, size and date, sorting and shortcuts to Images, Videos and Music.\n- Single RetroTele.sis installs everything. Remove the old RetroTele in App. manager first, then install.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.13.1"
       },
       {
-        "tag": "v0.7.10",
-        "published": "2026-11-22T05:05:04Z",
-        "body": "Fixes \"Unable to install\" for the VoIP echo test: it shared an internal ID with the RetroTorch app. Install **RetroTele.sis** and **RetroTele-voiptest.sis** (Nokia's VoIPAudioSrvc SISX from 0.7.9 is still needed), then Settings > Call test > Options > Echo test via VoIP.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.10"
+        "tag": "v0.13.0",
+        "published": "2026-11-22T14:58:37Z",
+        "body": "**New: attach files.** In a chat, Options > Attach file lets you browse the phone and memory card and send any file: pictures (sent as photos), music, video and every other file type, with an optional caption, a progress line and a Cancel option.\n\nRetroTele.sis is one file that installs everything (app, native crypto, call audio, Nokia's VoIP Audio Services). If an older RetroTele is installed, remove it in App. manager first, then install.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.13.0"
       },
       {
-        "tag": "v0.7.9",
-        "published": "2026-11-22T04:46:34Z",
-        "body": "The phone's normal audio can't record while playing, so this tries Nokia's VoIP Audio Services (built for internet calls).\n\nInstall, in order: **VoIPAudioSrvc_3132_0x10207b9e.SISX** (Nokia's VoIP audio service), **RetroTele.sis**, **RetroTele-audiotest.sis**. Then Settings > Call test > Options > **Echo test via VoIP**: you should hear a beep, then your own voice half a second later.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.9"
+        "tag": "v0.12.2",
+        "published": "2026-11-22T14:44:12Z",
+        "body": "**One file installs everything.** RetroTele.sis now also contains Nokia's VoIP Audio Services (needed for two-way call audio), so there is nothing else to install.\n\n- Telegram chats, folders, pictures, music, voice-free messaging, edit/delete/forward\n- **Telegram voice calls** with official Telegram apps (call protocol 2.7.7), mute, speaker/earpiece/Bluetooth\n- Native crypto, memory-card install, Telegram-style interface\n\nNeeds Python for S60 1.4.5 and your own api_id/api_hash from my.telegram.org. If an older RetroTele, 'RetroTele call audio' or 'VoIP Audio Services' is installed, remove it in App. manager first.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.12.2"
       },
       {
-        "tag": "v0.7.8",
-        "published": "2026-11-22T00:43:59Z",
-        "body": "The phone now plays without errors, but you heard nothing. This version narrows it down:\n- each echo test starts with a **short beep**: if you hear it, the speaker works\n- sound is forced to the **loudspeaker**\n- the log shows microphone and speaker levels every second\n\nPlease run both echo tests again (centre key, and Options > Echo test via helper) and say whether you heard the beep and/or your voice.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.8"
+        "tag": "v0.12.1",
+        "published": "2026-11-22T14:36:48Z",
+        "body": "- **One package**: RetroTele.sis now includes the call audio helper. Remove the old 'RetroTele call audio' / 'RetroTele audio test' apps in App. manager before installing, then install RetroTele.sis. (Nokia's VoIPAudioSrvc component is still needed once; you already have it.)\n- Settings no longer shows the test items; calls always use version 2.7.7 so they work with official Telegram apps.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.12.1"
       },
       {
-        "tag": "v0.7.7",
-        "published": "2026-11-22T00:38:56Z",
-        "body": "Call test results so far: **Opus is fast enough** (5.6 ms per 20 ms of audio at the lowest effort), recording works, but the phone refused to play while recording.\n\nThis version tries two fixes:\n- **Echo test** (centre key): speaker starts first, higher audio priority, lower mic gain\n- **Options > Echo test via helper**: install **RetroTele-audiotest.sis** too (needs an unlocked phone: it has the MultimediaDD capability S60 gives VoIP apps priority with)\n\nTell me which one lets you hear yourself.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.7"
+        "tag": "v0.12.0",
+        "published": "2026-11-22T14:23:00Z",
+        "body": "Settings > Call version: **2.7.7 (official apps)**. Install RetroTele.sis and RetroTele-callaudio.sis, then call a Play Store phone (or have it call you). First build with the full 2.7.7 call stack: ICE through Telegram's relay, encrypted transport, Opus audio. Untested on a real call; the log (retrotele_callaudio.txt) shows how far it gets.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.12.0"
       },
       {
-        "tag": "v0.7.6",
-        "published": "2026-11-22T00:29:38Z",
-        "body": "Step 1 of Telegram calls, part 2: **Settings > Call test > Options > Opus speed test**. It checks whether the N79 can compress and decompress voice with Opus (the codec calls use) fast enough: a self-test, then timings at three effort levels and a verdict. Takes about a minute; the screen pauses while it runs.\n\nAlso run the echo test (centre key) for ~30 s. Then send the log: together they decide whether real Telegram calls are possible on this phone.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.6"
+        "tag": "v0.11.4",
+        "published": "2026-11-22T14:04:16Z",
+        "body": "2.7.7 announcement now sets udp_p2p like official apps. Probe calls log the data needed to decode the peer's setup messages.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.4"
       },
       {
-        "tag": "v0.7.5",
-        "published": "2026-11-22T00:26:01Z",
-        "body": "First step towards Telegram calls: **Settings > Call test (experimental)**. Press the centre key and speak. You'll hear yourself half a second later, the way a call would deliver audio. The screen shows whether the phone records and plays live audio smoothly (rates, gaps, errors).\n\nPlease run it for ~30 seconds and send the log (retrotele_log.txt): it tells whether real calls are possible on the N79. Normal chat features are unchanged.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.5"
+        "tag": "v0.11.3",
+        "published": "2026-11-22T13:57:31Z",
+        "body": "Settings > Call version now cycles 2.4.4 / 2.7.7 / mimic. Experiment build for finding what Telegram's servers accept from the N79.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.3"
       },
       {
-        "tag": "v0.7.4",
-        "published": "2026-11-22T00:14:32Z",
-        "body": "**Tested on a Nokia N79:** RetroTorch, RetroSend and RetroTele all installed on the memory card, with Python for S60 in phone memory.\n\n**Install to phone memory or the memory card.** There's now one `RetroTele.sis`, and the installer asks where to put it. It works on either drive, wherever Python for S60 is installed, on an unlocked phone (e.g. the Open4All patch).\n\n- 0.7.3's memory-card package didn't fix the real cause. A Python for S60 1.4.5 app on a different drive from Python closes at once, because Python's `appuifw` looks for its resource file `appuifwmodule.rsc` on the app's drive. The package now includes that file and a tiny native program that the installer runs once to put it in place.\n- On a phone that isn't unlocked, install RetroTele on the same drive as Python for S60.\n\nThe fix comes from [RetroTorch](https://github.com/manojanasuri16/RetroTorch), where it was tested on a Nokia N79. RetroTele itself works as in 0.7.3.\n\nReplaces 0.7.3's `RetroTele-card.sis`.\n\n",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.4"
+        "tag": "v0.11.2",
+        "published": "2026-11-22T13:51:28Z",
+        "body": "Logs the call protocol announced by official apps when they call you, and the full discard details.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.2"
       },
       {
-        "tag": "v0.7.3",
-        "published": "2026-11-21T23:49:48Z",
-        "body": "Two packages now:\n- **RetroTele.sis**: install to phone memory\n- **RetroTele-card.sis**: install to the memory card (the app files go to the card; only a 2 KB starter goes to phone memory)\n\nA plain memory-card install never started because Python for S60 1.4.5 always looks for the app's starter script in phone memory. Your login is kept either way.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.7.3"
+        "tag": "v0.11.1",
+        "published": "2026-11-22T13:43:55Z",
+        "body": "Settings > Call version: 2.7.7 makes official Telegram apps accept the call at the servers (no audio yet). Use it to test with a Play Store phone.",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.1"
       }
     ]
   },
   "manojanasuri16/RetroTorch": {
-    "fetched": "2026-11-22T05:40:29.954Z",
+    "fetched": "2026-11-23T02:34:55.945Z",
     "latest": {
       "tag": "v1.3.0",
       "name": "RetroTorch 1.3.0: phone memory or memory card",
@@ -239,7 +232,7 @@
           "name": "RetroTorch.sis",
           "url": "https://github.com/manojanasuri16/RetroTorch/releases/download/v1.3.0/RetroTorch.sis",
           "size": 34632,
-          "downloads": 1,
+          "downloads": 2,
           "sha256": "6f30975cc91379760b8befb2728c06827696ee4779445f958937da50d228a08a"
         },
         {
