@@ -300,3 +300,17 @@ th { font: 700 .85rem var(--font-head); text-transform: uppercase; letter-spacin
 .card.repo h3 a::after { display: none; }
 .grid.repos { grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); padding-right: 0; }
 .repo-status, .repo-purpose { overflow-wrap: anywhere; }
+
+/* 360 viewer (real photos) */
+.spin { margin: 0; max-width: 520px; }
+.spin-stage { position: relative; background: #fff; border: 1px solid var(--ink); box-shadow: 10px 10px 0 var(--shadow); aspect-ratio: 400 / 450; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; overflow: hidden; }
+.spin-stage:active { cursor: grabbing; }
+.spin-stage:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.spin-img { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.spin-hint { position: absolute; left: 12px; bottom: 10px; font: 700 .8rem var(--font-head); letter-spacing: .14em; text-transform: uppercase; background: var(--ink); color: var(--panel); padding: 3px 8px; transition: opacity .4s; }
+.spin-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 10px; }
+.spin-bar .btn { padding: 6px 12px; font-size: .85rem; }
+.spin-bar .btn[aria-pressed="true"] { background: var(--ink); color: var(--panel); }
+.spin figcaption { font-size: .86rem; color: var(--ink-soft); line-height: 1.5; }
+.phone-sec { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: 48px; align-items: center; }
+@media (max-width: 860px) { .phone-sec { grid-template-columns: minmax(0, 1fr); gap: 28px; } .spin-stage { margin-right: 10px; } }

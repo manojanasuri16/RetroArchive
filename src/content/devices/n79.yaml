@@ -4,6 +4,7 @@ os: Symbian OS 9.3
 screen: 240x320
 java: MIDP 2.0 / CLDC 1.1
 released: 2008
+spin: devices/n79-360
 notes: |
   The N79 is a candybar phone with a keypad and a 240x320 screen. It runs S60 3rd Edition Feature Pack 2 (S60 3.2) on Symbian OS 9.3. Build against the S60 3.2 SDK. That is what the [build guide](/guides/build-native-on-linux/) sets up.
 

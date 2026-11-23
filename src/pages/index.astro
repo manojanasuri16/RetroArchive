@@ -10,6 +10,7 @@ const featured = [...apps, ...sdks].filter((i) => i.data.featured);
 const featApps = apps.filter((i) => i.data.featured).slice(0, 6);
 const latest = [...apps].sort(byAdded).slice(0, 6);
 const nGames = apps.filter((a) => a.data.kind === 'game').length;
+import Spin360 from '../components/Spin360.astro';
 ---
 <Base nav="">
   <div class="wrap">
@@ -57,6 +58,14 @@ const nGames = apps.filter((a) => a.data.kind === 'game').length;
         </ul>
       </section>
     )}
+
+    <section class="sec" aria-label="The phone">
+      <div class="sec-head"><h2>The phone</h2><a href={url('/devices/n79/')}>Specs and notes →</a></div>
+      <div class="phone-sec">
+        <Spin360 dir="devices/n79-360" alt="Nokia N79, 360 degree view" />
+        <div><p>Every app here was tested on a real Nokia N79: a candybar with a 240×320 screen, running S60 3rd Edition FP2.</p><p>Drag the phone to turn it all the way round.</p></div>
+      </div>
+    </section>
 
     <section class="sec">
       <div class="sec-head"><h2>Latest additions</h2><a href={url('/apps/')}>All apps →</a></div>

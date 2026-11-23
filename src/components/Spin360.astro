@@ -1,0 +1,67 @@
+---
+import { media, url } from '../lib/url';
+const { dir = 'devices/n79-360', count = 36, alt = 'Nokia N79, 360 degree view', credit = true } = Astro.props;
+const first = media(`${dir}/00.webp`);
+const base = media(dir);
+---
+<figure class="spin" data-spin data-base={base} data-count={count}>
+  <div class="spin-stage" tabindex="0" role="group" aria-label={`${alt}. Drag, or use the left and right arrow keys, to turn the phone.`}>
+    <img class="spin-img" src={first} alt={alt} width="400" height="450" draggable="false" />
+    <span class="spin-hint" aria-hidden="true">Drag to turn</span>
+  </div>
+  <div class="spin-bar">
+    <button type="button" class="btn small" data-act="prev" aria-label="Turn left">◀</button>
+    <button type="button" class="btn small" data-act="play" aria-pressed="true">Auto spin</button>
+    <button type="button" class="btn small" data-act="next" aria-label="Turn right">▶</button>
+    <button type="button" class="btn small" data-act="front">Front</button>
+    <button type="button" class="btn small" data-act="back">Back</button>
+  </div>
+  {credit && <figcaption>Real 360° photos of the Nokia N79 by <a href="https://www.gsmarena.com/nokia_n79-pictures-2497.php" rel="noopener">GSMArena</a>. The unit shown has a plum back cover; the N79 had swappable covers in several colours.</figcaption>}
+</figure>
+<script is:inline>
+(function () {
+  document.querySelectorAll('[data-spin]').forEach(function (root) {
+    if (root.dataset.ready) return; root.dataset.ready = '1';
+    var n = +root.dataset.count, base = root.dataset.base, img = root.querySelector('.spin-img'),
+        stage = root.querySelector('.spin-stage'), hint = root.querySelector('.spin-hint'),
+        playBtn = root.querySelector('[data-act=play]'), cur = 0, acc = 0, timer = null, loaded = false;
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cache = [];
+    function pad(i) { return (i < 10 ? '0' : '') + i; }
+    function preload() {
+      if (loaded) return; loaded = true;
+      for (var i = 0; i < n; i++) { var im = new Image(); im.src = base + '/' + pad(i) + '.webp'; cache.push(im); }
+    }
+    function show(i) { cur = ((i % n) + n) % n; img.src = base + '/' + pad(cur) + '.webp'; }
+    function play(on) {
+      clearInterval(timer); timer = null; playBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on) timer = setInterval(function () { show(cur + 1); }, 140);
+    }
+    function interact() { if (hint) { hint.style.opacity = 0; } }
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { preload(); if (!reduce && playBtn.dataset.user !== '0' && !dragging) play(true); }
+        else { play(false); }
+      });
+    }, { threshold: 0.35 }) : null;
+    if (io) io.observe(root); else preload();
+    var dragging = false, sx = 0, startFrame = 0;
+    stage.addEventListener('pointerdown', function (e) { dragging = true; sx = e.clientX; startFrame = cur; play(false); playBtn.dataset.user = '0'; interact(); preload(); stage.setPointerCapture(e.pointerId); });
+    stage.addEventListener('pointermove', function (e) { if (!dragging) return; show(startFrame - Math.round((e.clientX - sx) / 12)); });
+    function end() { dragging = false; }
+    stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', end);
+    stage.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { play(false); show(cur - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { play(false); show(cur + 1); e.preventDefault(); }
+    });
+    root.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-act]'); if (!b) return; interact(); preload();
+      var a = b.dataset.act;
+      if (a === 'play') { var on = playBtn.getAttribute('aria-pressed') !== 'true'; playBtn.dataset.user = on ? '1' : '0'; play(on); }
+      else { play(false); playBtn.dataset.user = '0';
+        if (a === 'prev') show(cur - 1); if (a === 'next') show(cur + 1);
+        if (a === 'front') show(0); if (a === 'back') show(Math.round(n * 0.5)); }
+    });
+  });
+})();
+</script>

@@ -95,6 +95,7 @@ const devices = defineCollection({
     java: z.string().optional(),
     released: z.coerce.string().optional(),
     image: z.string().optional(),
+    spin: z.string().optional(),
     notes: z.string().default(''),
   }),
 });
