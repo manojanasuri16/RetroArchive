@@ -47,6 +47,10 @@ const tabs = [['all', '/apps/', 'All'], ['mine', '/apps/mine/', 'Mine'], ['games
       for (var k in sel) if (ok && sel[k].length && sel[k].indexOf(c.dataset[k]) < 0) ok = false;
       c.hidden = !ok; if (ok) shown++;
     });
+    document.querySelectorAll('[data-grid]').forEach(function (g) {
+      var h = g.previousElementSibling, any = g.querySelector('.card:not([hidden])');
+      if (h && h.classList.contains('group-h')) h.hidden = !any;
+    });
     none.hidden = shown > 0;
   }
   document.querySelectorAll('.frow[data-group]').forEach(function (row) {

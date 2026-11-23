@@ -278,3 +278,4 @@ th { font: 700 .85rem var(--font-head); text-transform: uppercase; letter-spacin
 .oops .dialog .b { padding: 24px 22px 20px; }
 .oops .dialog h1 { font-size: 3rem; text-transform: uppercase; }
 .oops .btn { margin-top: 10px; }
+[hidden] { display: none !important; }
