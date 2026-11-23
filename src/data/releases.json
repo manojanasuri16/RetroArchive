@@ -1,6 +1,6 @@
 {
   "manojanasuri16/RetroSend": {
-    "fetched": "2026-11-23T14:17:35.979Z",
+    "fetched": "2026-11-23T14:21:51.769Z",
     "latest": {
       "tag": "v1.2.1",
       "name": "RetroSend 1.2.1: phone memory or memory card",
@@ -84,7 +84,7 @@
     ]
   },
   "manojanasuri16/symbian-s60v3-toolchain": {
-    "fetched": "2026-11-23T14:17:36.108Z",
+    "fetched": "2026-11-23T14:21:53.000Z",
     "latest": {
       "tag": "archives",
       "name": "Original archives",
@@ -132,7 +132,7 @@
     ]
   },
   "manojanasuri16/RetroTele": {
-    "fetched": "2026-11-23T14:17:36.025Z",
+    "fetched": "2026-11-23T14:21:52.203Z",
     "latest": {
       "tag": "v0.13.2",
       "name": "RetroTele 0.13.2: thumbnails, multi-select",
@@ -213,7 +213,7 @@
     ]
   },
   "manojanasuri16/RetroTorch": {
-    "fetched": "2026-11-23T14:17:36.067Z",
+    "fetched": "2026-11-23T14:21:52.590Z",
     "latest": {
       "tag": "v1.3.0",
       "name": "RetroTorch 1.3.0: phone memory or memory card",

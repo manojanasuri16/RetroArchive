@@ -69,7 +69,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       var b = document.getElementById('theme');
       if (b) b.addEventListener('click', function () {
         var r = document.documentElement, cur = r.getAttribute('data-theme');
-        if (!cur) cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (!cur) cur = 'light';
         var n = cur === 'dark' ? 'light' : 'dark';
         r.setAttribute('data-theme', n);
         try { localStorage.setItem('ra-theme', n); } catch (e) {}

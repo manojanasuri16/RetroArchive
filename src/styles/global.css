@@ -8,13 +8,7 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --gutter: 16px;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1d1a16; --panel: #2a2621; --ink: #f3ead9; --ink-soft: #bfb4a2;
-    --blue: #8db4e6; --red: #e46c6c; --tan: #4a4033; --shadow: #000; --rule: #6b6254;
-    --charcoal: #15130f; --on-charcoal: #f3ead9; --hl-ink: #111;
-  }
-}
+/* Light is the default; dark only when the visitor picks it with the toggle. */
 :root[data-theme="dark"] {
   --bg: #1d1a16; --panel: #2a2621; --ink: #f3ead9; --ink-soft: #bfb4a2;
   --blue: #8db4e6; --red: #e46c6c; --tan: #4a4033; --shadow: #000; --rule: #6b6254;
