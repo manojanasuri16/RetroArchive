@@ -64,4 +64,4 @@ description: |
 
   Source and build instructions are in the [GitHub repository](https://github.com/manojanasuri16/RetroSend).
 
-  **Reusable parts of this app:** the LocalSend protocol core is published separately as [localsend-py22](/opensource/) (pure Python 2.2, with tests and a PC backend).
+  **Reusable parts of this app:** the LocalSend protocol core is published separately as [localsend-py22](https://github.com/manojanasuri16/localsend-py22) (pure Python 2.2, with tests and a PC backend), and the memory-card install fix is in the [pys60-toolbox](https://github.com/manojanasuri16/pys60-toolbox). See [Open source](/opensource/).

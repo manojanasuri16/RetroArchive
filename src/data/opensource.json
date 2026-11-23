@@ -113,6 +113,104 @@
           "text": "Written for my own Nokia N79 (S60v3 FP2) and N82 (S60v3 FP1). Other phones: see the compatibility table in the guide."
         }
       ]
+    },
+    {
+      "name": "mtproto-py22",
+      "repo": "manojanasuri16/mtproto-py22",
+      "tagline": "Telegram MTProto 2.0 client library for Python 2.2 / PyS60",
+      "purpose": "The network and crypto layer of RetroTele: DH key exchange, encrypted requests, TL serializer, SRP two-factor login and a client (chats, sending, files, updates), in pure Python 2.2, plus an optional native crypto module (tgnative) that is far faster on the phone.",
+      "language": "Python 2.2 (plus C for the native module)",
+      "license": "MIT",
+      "usedBy": [
+        "retrotele"
+      ],
+      "status": [
+        {
+          "level": "n79",
+          "text": "The whole stack runs on a real N79 in daily use in RetroTele: login with code, 2FA, chats, sending, files, updates."
+        },
+        {
+          "level": "pc",
+          "text": "Unit tests pass on a PC (Python 2.7); a static checker confirms Python 2.2 compatibility."
+        },
+        {
+          "level": "none",
+          "text": "The example script in the repo was never run live against Telegram. Python 3 does not work; other phones untested. You need your own api_id/api_hash. Not affiliated with Telegram."
+        }
+      ]
+    },
+    {
+      "name": "opus-symbian-s60",
+      "repo": "manojanasuri16/opus-symbian-s60",
+      "tagline": "Opus 1.3.1 fixed-point for Symbian S60 3rd Edition",
+      "purpose": "Build scripts and config that produce the Opus codec as a static library (tgopus.lib) with GnuPoc and GCCE 3.4.3, with no patches to Opus, plus a self-test and benchmark. Made for RetroTele voice calls.",
+      "language": "C / C++ (Symbian build files)",
+      "license": "MIT",
+      "usedBy": [
+        "retrotele"
+      ],
+      "status": [
+        {
+          "level": "n79",
+          "text": "Self-test passed and the benchmark ran on a real N79, where Opus then carried real Telegram voice calls. The N79 timings (5.6 / 7.7 / 11.5 ms per 20 ms frame, encode plus decode) come from notes; the raw log is gone."
+        },
+        {
+          "level": "pc",
+          "text": "Rebuilt from the repo layout and the host test passes."
+        },
+        {
+          "level": "none",
+          "text": "Other S60 3rd Edition phones untested."
+        }
+      ]
+    },
+    {
+      "name": "symbian-s60v3-media-notes",
+      "repo": "manojanasuri16/symbian-s60v3-media-notes",
+      "tagline": "Camera, H.264 and VoIP audio findings for the Nokia N79",
+      "purpose": "What the N79's multimedia stack really does: camera, H.264 (DevVideo) and full-duplex VoIP audio, with error codes, needed capabilities and the small native helper programs used to find out.",
+      "language": "Symbian C++ and Markdown notes",
+      "license": "MIT",
+      "usedBy": [
+        "retrotele"
+      ],
+      "status": [
+        {
+          "level": "n79",
+          "text": "Measurements come from a real N79 (notes from RetroTele development; raw logs not included)."
+        },
+        {
+          "level": "pc",
+          "text": "All six helpers were rebuilt from this layout and compile and link; they were not re-run on a phone from it."
+        },
+        {
+          "level": "none",
+          "text": "Needs a hacked (unlocked) phone with Open4All: the helpers use MultimediaDD, which a self-signed package cannot get on a stock phone. Only the N79 was used; other phones untested."
+        }
+      ]
+    },
+    {
+      "name": "pys60-toolbox",
+      "repo": "manojanasuri16/pys60-toolbox",
+      "tagline": "PyS60 1.4.5 toolbox: memory-card install fix and Python 2.2 checkers",
+      "purpose": "rscfix, a tiny installer-run program that lets a PyS60 app work when installed on the memory card, two checkers that catch Python 2.2 syntax and integer traps, and notes on Python 2.2 and PyS60.",
+      "language": "Symbian C++ and Python",
+      "license": "MIT",
+      "usedBy": [
+        "retrotele",
+        "retrosend",
+        "retrotorch"
+      ],
+      "status": [
+        {
+          "level": "n79",
+          "text": "rscfix verified on a N79 with the app on the memory card; shipped in RetroSend, RetroTorch and RetroTele. The rebuild from this layout compiles but was not re-installed on a phone."
+        },
+        {
+          "level": "none",
+          "text": "rscfix does not work on a stock phone: it needs an unlocked phone (Open4All). Other phones untested."
+        }
+      ]
     }
   ]
 }

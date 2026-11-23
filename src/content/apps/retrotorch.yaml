@@ -57,4 +57,4 @@ description: |
 
   RetroTorch needs [Python for S60](/sdks/pys60-runtime/) installed. Its source is on [GitHub](https://github.com/manojanasuri16/RetroTorch).
 
-  **Reusable parts of this app:** the native LED and lights module is published as [symbian-torch-pyd](/opensource/) (`torchhw.pyd`), built with the [symbian-s60v3-toolchain](/opensource/).
+  **Reusable parts of this app:** the native LED and lights module is published as [symbian-torch-pyd](https://github.com/manojanasuri16/symbian-torch-pyd) (`torchhw.pyd`), built with the [symbian-s60v3-toolchain](https://github.com/manojanasuri16/symbian-s60v3-toolchain); the memory-card install fix found here is in the [pys60-toolbox](https://github.com/manojanasuri16/pys60-toolbox). See [Open source](/opensource/).

@@ -66,4 +66,4 @@ description: |
 
   Emoji images are from Twemoji by Twitter, Inc and contributors, under CC-BY 4.0.
 
-  **Open source:** see the [Open source](/opensource/) page for reusable libraries and tools from this project and its siblings, such as the [symbian-s60v3-toolchain](/opensource/) used to build native parts.
+  **Reusable parts of this app** (all on the [Open source](/opensource/) page): the [call engine](https://github.com/manojanasuri16/telegram-call-engine-c), the [MTProto stack](https://github.com/manojanasuri16/mtproto-py22), [Opus for Symbian](https://github.com/manojanasuri16/opus-symbian-s60), the [N79 media notes](https://github.com/manojanasuri16/symbian-s60v3-media-notes) and the [PyS60 toolbox](https://github.com/manojanasuri16/pys60-toolbox), built with the [toolchain](https://github.com/manojanasuri16/symbian-s60v3-toolchain).

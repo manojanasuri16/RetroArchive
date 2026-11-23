@@ -298,3 +298,5 @@ th { font: 700 .85rem var(--font-head); text-transform: uppercase; letter-spacin
 .repo-lic { padding: 0 18px 8px; font-size: .9rem; }
 .card.repo .rl { position: relative; }
 .card.repo h3 a::after { display: none; }
+.grid.repos { grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); padding-right: 0; }
+.repo-status, .repo-purpose { overflow-wrap: anywhere; }
