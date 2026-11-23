@@ -22,6 +22,7 @@ tested:
     status: works
     notes: 'The LED torch is confirmed working on a Nokia N79. RetroTorch was installed on the memory card with Python for S60 in phone memory.'
 installNotes:
+  - '**Works on stock phones:** no hacked phone needed (only user-grantable capabilities, self-signed). Set *Software installation* to **All** in App. mgr. settings. Only the memory-card-different-from-Python option needs an unlocked phone ([Easy Hack Kit](/sdks/easyhackkit/) (EasyHackKit 2.0, which installs RomPatcher+) with **Open4All rp+** applied; without it: "Update error" or "requested application access not granted"). Otherwise install on the same drive as Python.'
   - 'Install **Python for S60 1.4.5** (`PythonForS60_1_4_5_3rdEd.sis`) first. See the [Python for S60 guide](/guides/install-pys60/).'
   - 'Set *Software installation* to **All** and *Online certificate check* to **Off** in App. mgr. > Options > Settings.'
   - 'Install **RetroTorch.sis**. The installer asks for phone memory or the memory card. Either works wherever Python is installed.'
@@ -32,6 +33,8 @@ knownIssues:
   - 'Touching the camera while the screen is being drawn closes the app without a Python error. RetroTorch only touches the hardware after the UI is up, inside a crash guard. If a piece of hardware closes the app, it is switched off at the next start. Use Options > Retry all hardware to turn it back on.'
   - 'On phones that are not unlocked, a memory-card install needs the `appuifwmodule.rsc` file copied by hand. See [memory card installs](/guides/memory-card-installs/).'
 description: |
+  > **Works on stock phones** (self-signed, only user-grantable capabilities, verified from the built files; tested on a hacked N79 only). A hacked phone ([Easy Hack Kit](/sdks/easyhackkit/), RomPatcher+ with Open4All rp+) is needed only to install on a different drive than Python for S60.
+
   **RetroTorch** is a torch app for the **Nokia N79** and other S60 3rd Edition phones. Its main light is the **camera's LED flash as a steady torch**, and it can also use every other light the phone has.
 
   ### Lights

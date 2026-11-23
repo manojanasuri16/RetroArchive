@@ -15,28 +15,31 @@ featured: true
 icon: retrotele/icon.png
 screenshots: [retrotele/1.png, retrotele/2.png]
 requires: [pys60-runtime]
-signing: self-signed
+signing: needs-hack
 capabilities: [NetworkServices, LocalServices, ReadUserData, WriteUserData, UserEnvironment]
 tested:
   - device: n79
     status: partial
-    notes: 'Tested on a Nokia N79 with RetroTele on the memory card and Python for S60 in phone memory. Telegram calls are not supported, and the call test is experimental.'
+    notes: 'Tested on a Nokia N79 with RetroTele on the memory card and Python for S60 in phone memory. Voice calls and send-only video were added in later versions.'
 installNotes:
+  - '**Needs a hacked phone.** Install the [Easy Hack Kit](/sdks/easyhackkit/) (EasyHackKit 2.0, which installs RomPatcher+) first (see the [unlock guide](/guides/unlock-n79/)), then open RomPatcher+, tick **Open4All rp+** and apply it. Without it the install fails with "Update error" or "requested application access not granted".'
   - 'Install **PythonForS60_1_4_5_3rdEd.sis** first if it is not on the phone yet. See the [Python for S60 guide](/guides/install-pys60/).'
-  - 'Install **RetroTele.sis** and choose phone memory or the memory card. On an unlocked phone either works wherever Python is installed. On a phone that is not unlocked, install RetroTele on the same drive as Python. See [memory card installs](/guides/memory-card-installs/).'
-  - 'On a computer, open my.telegram.org, go to **API development tools**, and create an app. Note the **api_id** and **api_hash**.'
+  - 'Install **RetroTele.sis** (one file installs everything, including Nokia VoIP Audio Services) and choose phone memory or the memory card. On a hacked phone either works wherever Python is installed. See [memory card installs](/guides/memory-card-installs/).'
+  - 'On a computer, open my.telegram.org, go to **API development tools**, and create an app. Note your own **api_id** and **api_hash** (RetroTele ships none).'
   - 'Open RetroTele, enter the api_id and api_hash once, choose an access point (Wi-Fi or packet data), then log in.'
   - 'The first connection creates a secure key with Telegram. This takes a few seconds of 2048-bit maths on the phone.'
   - 'Two-step verification takes roughly an hour in pure Python on the N79. Either keep RetroTele open on the charger, or use the PC helper `tools/tg2fa.py` from the repository.'
   - 'Data is kept in `E:\RetroTele\`. The log is `E:\retrotele_log.txt`.'
 knownIssues:
-  - 'Telegram voice and video calls cannot be answered. The phone only shows the incoming call pop-up. "Call" in RetroTele uses the normal phone line.'
-  - 'The call test (Settings > Call test) is experimental. In an earlier test on the N79, every speaker write while recording failed with KErrAccessDenied. The VoIP echo test in 0.7.9 has no confirmed result on the N79 yet.'
+  - 'Video in calls is send-only: your camera is sent, the other side''s video is not shown.'
   - 'No secret chats, and no file or video download.'
   - 'No playback of GIFs or animated stickers. Stickers show as their emoji.'
   - 'Voice messages use Opus/OGG, which the N79 cannot decode yet.'
+  - 'Needs a hacked phone: the call helpers use MultimediaDD, ReadDeviceData and WriteDeviceData, which a self-signed package cannot get on a stock phone.'
   - 'Two-step verification takes about an hour on the phone unless the PC helper is used.'
 description: |
+  > **Needs a hacked phone.** `RetroTele.sis` includes call helpers with the MultimediaDD, ReadDeviceData and WriteDeviceData capabilities, which a self-signed package cannot get on a stock phone. Use the [Easy Hack Kit](/sdks/easyhackkit/) (RomPatcher+ with **Open4All rp+** ticked) before installing. Without it: "Update error" or "requested application access not granted". You enter your own Telegram api_id and api_hash.
+
   **RetroTele** is a small Telegram client for Nokia S60 3rd Edition phones, written and tested for the **Nokia N79**, in Python for S60 1.4.5.
 
   Modern Telegram apps need Qt Quick, which S60 3rd Edition does not have. RetroTele speaks Telegram's MTProto 2.0 protocol itself, so it needs no PC, bridge or proxy. The crypto is pure Python 2.2, with an optional native module that makes it much faster.
@@ -54,6 +57,7 @@ description: |
   - Live incoming messages with a pop-up banner, read receipts and online status.
   - Search chats and contacts, or open any @username.
   - **Call** a contact's phone number as a normal phone call.
+  - **Telegram voice calls** with the official apps (call library 2.7.7) and **send-only video**.
   - The chat list is cached, so it appears at once when the app starts.
   - **Profile** of any chat, with the photo, status, username, bio and members.
   - **Fast mode** (on by default) skips the SHA-256 integrity check on received data, which makes loading 2 to 3 times faster. Turn it off in Settings for the full check.

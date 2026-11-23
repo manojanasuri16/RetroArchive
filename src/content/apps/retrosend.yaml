@@ -21,6 +21,7 @@ tested:
     status: works
     notes: 'Tested on a Nokia N79 with RetroSend on the memory card and Python for S60 in phone memory.'
 installNotes:
+  - '**Works on stock phones:** no hacked phone needed (only user-grantable capabilities, self-signed). Set *Software installation* to **All** in App. mgr. settings. Only the memory-card-different-from-Python option needs an unlocked phone ([Easy Hack Kit](/sdks/easyhackkit/) (EasyHackKit 2.0, which installs RomPatcher+) with **Open4All rp+** applied; without it: "Update error" or "requested application access not granted"). Otherwise install on the same drive as Python.'
   - 'Install **PythonForS60_1_4_5_3rdEd.sis** first (once). See the [Python for S60 guide](/guides/install-pys60/).'
   - 'In App. mgr. > Options > Settings set *Software installation* to **All** and *Online certificate check* to **Off**.'
   - 'Install **RetroSend-1.2.1-S60v3.sis**. You will see one "untrusted supplier" warning because the app is self-signed. Accept it.'
@@ -36,6 +37,8 @@ knownIssues:
   - 'The app pauses for 1 to 2 seconds at start while the phone starts Wi-Fi. This is normal.'
   - 'In the Offline profile the phone asks "Create WLAN connection in offline mode?". Answer Yes, or switch to the General profile.'
 description: |
+  > **Works on stock phones** (self-signed, only user-grantable capabilities, verified from the built files; tested on a hacked N79 only). A hacked phone ([Easy Hack Kit](/sdks/easyhackkit/), RomPatcher+ with Open4All rp+) is needed only to install on a different drive than Python for S60.
+
   **RetroSend** sends and receives files between an **old Nokia phone** (S60 3rd Edition: N79, N82, N95, E71, 6120 and others) and the [LocalSend](https://localsend.org) app on Android, iPhone, Windows, macOS or Linux, over Wi-Fi.
 
   RetroSend speaks the LocalSend v2 protocol, so the other device just runs the normal LocalSend app. No cable, no Bluetooth pairing and no PC in between.
