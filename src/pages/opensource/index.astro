@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import RepoCard from '../../components/RepoCard.astro';
+import data from '../../data/opensource.json';
+import { getApps } from '../../lib/catalog';
+const apps = await getApps();
+const names: Record<string, string> = {};
+apps.forEach((a: any) => { names[a.slug] = a.data.name; });
+---
+<Base title="Open source" nav="opensource" description="Reusable open-source libraries and tools for Nokia N79 / Symbian S60v3 development, extracted from RetroTele, RetroSend and RetroTorch.">
+  <div class="wrap">
+    <div class="page-head"><h1>Open <span class="hl">source</span></h1><p>{data.intro}</p></div>
+    <ul class="grid">{data.repos.map((r) => <RepoCard r={r} apps={names} />)}</ul>
+    <p class="empty">All code is on <a href={`https://github.com/${data.owner}`} rel="noopener">GitHub</a>.</p>
+  </div>
+</Base>

@@ -289,3 +289,12 @@ th { font: 700 .85rem var(--font-head); text-transform: uppercase; letter-spacin
 .files li { grid-template-columns: minmax(0, 1fr) auto; }
 .files a { overflow-wrap: anywhere; }
 .btn { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+
+/* open source repo cards */
+.card.repo .card-main.one { grid-template-columns: 1fr; }
+.repo-purpose { padding: 0 18px 12px; }
+.repo-status { list-style: none; margin: 0; padding: 0 18px 10px; display: grid; gap: 6px; font-size: .9rem; line-height: 1.35; color: var(--ink-soft); }
+.repo-status .badge { margin-right: 4px; }
+.repo-lic { padding: 0 18px 8px; font-size: .9rem; }
+.card.repo .rl { position: relative; }
+.card.repo h3 a::after { display: none; }

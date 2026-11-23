@@ -65,3 +65,5 @@ description: |
   RetroTele needs [Python for S60](/sdks/pys60-runtime/) installed. Its source is on [GitHub](https://github.com/manojanasuri16/RetroTele).
 
   Emoji images are from Twemoji by Twitter, Inc and contributors, under CC-BY 4.0.
+
+  **Open source:** see the [Open source](/opensource/) page for reusable libraries and tools from this project and its siblings, such as the [symbian-s60v3-toolchain](/opensource/) used to build native parts.

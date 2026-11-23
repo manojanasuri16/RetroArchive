@@ -1,0 +1,118 @@
+{
+  "intro": "Reusable building blocks extracted from my own N79 apps (RetroTele, RetroSend, RetroTorch) and from the toolchain used to build them. Each repo is public on GitHub. The status line says what was checked on a real Nokia N79 and what was only run on a PC.",
+  "owner": "manojanasuri16",
+  "repos": [
+    {
+      "name": "telegram-call-engine-c",
+      "repo": "manojanasuri16/telegram-call-engine-c",
+      "tagline": "Portable C89 engine for Telegram voice and video calls",
+      "purpose": "The call core of RetroTele: Telegram call library 2.7.7 media plane (ICE over the reflector, encrypted transport, RTP/Opus, H.264 RTP, RTCP) plus the older 2.4.4 protocol. No sockets, clock, threads, malloc or floating point inside: you feed it datagrams and a clock.",
+      "language": "C (C89)",
+      "license": "MIT",
+      "usedBy": [
+        "retrotele"
+      ],
+      "status": [
+        {
+          "level": "n79",
+          "text": "2.7.7 voice carried real calls on a Nokia N79 with the official Telegram apps (RetroTele 0.12.0). Legacy 2.4.4 voice worked only against clients that still ship it."
+        },
+        {
+          "level": "pc",
+          "text": "Host unit and simulation tests pass with ASan and UBSan."
+        },
+        {
+          "level": "n79",
+          "text": "Video was used on the N79 in RetroTele 0.14.x but only lightly tested; quality is modest."
+        },
+        {
+          "level": "none",
+          "text": "No group calls, TURN/TCP or IPv6. Needs your own Telegram api_id/api_hash. Not affiliated with Telegram."
+        }
+      ]
+    },
+    {
+      "name": "localsend-py22",
+      "repo": "manojanasuri16/localsend-py22",
+      "tagline": "LocalSend protocol v2 client and server in pure Python 2.2",
+      "purpose": "Send and receive files and text with the LocalSend app from Python for S60 1.4.5. It is the protocol core of RetroSend, with a PyS60 socket backend, a PC backend, tests and a command line example.",
+      "language": "Python 2.2",
+      "license": "MIT",
+      "usedBy": [
+        "retrosend"
+      ],
+      "status": [
+        {
+          "level": "pc",
+          "text": "Protocol logic tested on a PC (Python 2.7) against fake peers; Python 2.2 syntax checked."
+        },
+        {
+          "level": "n79",
+          "text": "The same code is used in RetroSend on a real N79. This extracted copy was not re-run on a phone."
+        },
+        {
+          "level": "none",
+          "text": "No TLS/HTTPS. Other phones untested."
+        }
+      ]
+    },
+    {
+      "name": "symbian-torch-pyd",
+      "repo": "manojanasuri16/symbian-torch-pyd",
+      "tagline": "torchhw: native PyS60 module for the camera LED torch and phone lights",
+      "purpose": "A .pyd extension for Python for S60 1.4.5 that controls the camera LED as a steady torch, the HWRM lights (display, keypad) and ECam flash modes. It is the native part of RetroTorch and a small example of a PyS60 module that talks to asynchronous Symbian services.",
+      "language": "Symbian C++ (plus Python examples)",
+      "license": "MIT",
+      "usedBy": [
+        "retrotorch"
+      ],
+      "status": [
+        {
+          "level": "n79",
+          "text": "LED video light, keypad light and extra light verified on a Nokia N79 inside RetroTorch. The rebuild from this repository was built but not re-run on the phone."
+        },
+        {
+          "level": "none",
+          "text": "Other S60 3rd Edition phones untested; S60 5th Edition and PyS60 2.x not supported."
+        }
+      ]
+    },
+    {
+      "name": "symbian-s60v3-toolchain",
+      "repo": "manojanasuri16/symbian-s60v3-toolchain",
+      "tagline": "Symbian C++ toolchain for S60 3rd Edition FP2 on modern Linux",
+      "purpose": "GnuPoc, GCCE 3.4.3, the S60 3.2 SDK and the PyS60 1.4.5 SDK plug-in, set up by one script, to build native Symbian programs and PyS60 .pyd modules on a current x86_64 Linux. The original archives are kept in its Releases.",
+      "language": "Shell scripts",
+      "license": "MIT for the scripts and docs; the bundled third-party archives keep their own licences",
+      "usedBy": [
+        "retrotorch",
+        "retrotele"
+      ],
+      "status": [
+        {
+          "level": "pc",
+          "text": "Tested on Manjaro Linux (host GCC 16). It is a build toolchain, so there is nothing to run on the phone itself."
+        },
+        {
+          "level": "none",
+          "text": "FP2 phones only (for example N79). FP1 phones need the FP1 SDK."
+        }
+      ]
+    },
+    {
+      "name": "symbian-unlock-guide",
+      "repo": "manojanasuri16/symbian-unlock-guide",
+      "tagline": "Step-by-step guide to unlocking Symbian phones with EasyHackKit 2.0",
+      "purpose": "Personal, repeatable walkthrough for removing Platform Security restrictions so an old Nokia can install unsigned apps again, with device notes, troubleshooting and a glossary.",
+      "language": "Markdown (documentation)",
+      "license": "No licence file in the repository",
+      "usedBy": [],
+      "status": [
+        {
+          "level": "n79",
+          "text": "Written for my own Nokia N79 (S60v3 FP2) and N82 (S60v3 FP1). Other phones: see the compatibility table in the guide."
+        }
+      ]
+    }
+  ]
+}

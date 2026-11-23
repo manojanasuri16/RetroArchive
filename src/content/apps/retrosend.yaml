@@ -63,3 +63,5 @@ description: |
   RetroSend is written in Python for S60 1.4.5, so it needs [Python for S60](/sdks/pys60-runtime/) installed.
 
   Source and build instructions are in the [GitHub repository](https://github.com/manojanasuri16/RetroSend).
+
+  **Reusable parts of this app:** the LocalSend protocol core is published separately as [localsend-py22](/opensource/) (pure Python 2.2, with tests and a PC backend).

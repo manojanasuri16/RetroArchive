@@ -56,3 +56,5 @@ description: |
   - Crash guard and hardware info screen.
 
   RetroTorch needs [Python for S60](/sdks/pys60-runtime/) installed. Its source is on [GitHub](https://github.com/manojanasuri16/RetroTorch).
+
+  **Reusable parts of this app:** the native LED and lights module is published as [symbian-torch-pyd](/opensource/) (`torchhw.pyd`), built with the [symbian-s60v3-toolchain](/opensource/).

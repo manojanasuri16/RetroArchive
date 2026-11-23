@@ -1,0 +1,24 @@
+---
+import { url } from '../lib/url';
+const { r, apps = {} } = Astro.props;
+const lvl: Record<string, string> = { n79: 'On N79', pc: 'On PC', none: 'Limits' };
+---
+<li class="card repo">
+  <div class="card-main one">
+    <div>
+      <h3><a href={`https://github.com/${r.repo}`} rel="noopener">{r.name}</a></h3>
+      <p>{r.tagline}</p>
+    </div>
+  </div>
+  <p class="repo-purpose">{r.purpose}</p>
+  <ul class="badges">
+    <li class="badge">{r.language}</li>
+    <li class="badge">{r.license.startsWith('MIT') ? 'MIT' : 'See repo'}</li>
+  </ul>
+  <ul class="repo-status">
+    {r.status.map((s: any) => <li><span class={`badge ${s.level === 'n79' ? 'works' : ''}`}>{lvl[s.level]}</span> {s.text}</li>)}
+  </ul>
+  <p class="repo-lic"><strong>Licence:</strong> {r.license}</p>
+  {r.usedBy.length > 0 && <p class="repo-lic"><strong>Used by:</strong> {r.usedBy.map((s: string, i: number) => <>{i > 0 && ', '}<a class="rl" href={url(`/apps/${s}/`)}>{apps[s] ?? s}</a></>)}</p>}
+  <div class="card-foot"><a class="rl" href={`https://github.com/${r.repo}`} rel="noopener">GitHub →</a></div>
+</li>

@@ -6,7 +6,7 @@ interface Props { title?: string; description?: string; nav?: string; noindex?: 
 const { title, description = 'Software for the Nokia N79 era: Symbian S60v3 and Java ME apps, games, SDKs and guides.', nav = '', noindex = false } = Astro.props;
 const full = title ? `${title} · RetroArchive` : 'RetroArchive · Software for the N79 era';
 const links = [
-  ['apps', '/apps/', 'Apps'], ['games', '/apps/games/', 'Games'], ['sdks', '/sdks/', 'SDKs'],
+  ['apps', '/apps/', 'Apps'], ['games', '/apps/games/', 'Games'], ['sdks', '/sdks/', 'SDKs'], ['opensource', '/opensource/', 'Open source'],
   ['guides', '/guides/', 'Guides'], ['about', '/about/', 'About'],
 ];
 const dl = String(totalDownloads()).padStart(6, '0');
@@ -58,7 +58,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
         <span class="counter" title="Total release downloads">Downloads <span class="lcd">{dl}</span></span>
       </div>
       <nav aria-label="Footer">
-        <a href={url('/m/')}>Phone site /m</a><a href={url('/devices/')}>Devices</a><a href={url('/news/')}>News</a>
+        <a href={url('/m/')}>Phone site /m</a><a href={url('/opensource/')}>Open source</a><a href={url('/devices/')}>Devices</a><a href={url('/news/')}>News</a>
         <a href={url('/submit/')}>Submit</a><a href={url('/rss.xml')}>RSS</a>
         <a href="https://github.com/manojanasuri16/RetroArchive">GitHub</a>
       </nav>
