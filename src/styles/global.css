@@ -279,3 +279,13 @@ th { font: 700 .85rem var(--font-head); text-transform: uppercase; letter-spacin
 .oops .dialog h1 { font-size: 3rem; text-transform: uppercase; }
 .oops .btn { margin-top: 10px; }
 [hidden] { display: none !important; }
+
+/* Mobile safety: let grid children shrink, and scroll wide content inside its own box */
+.article > *, .detail > *, .panels > *, .hero > *, .cards3 > *, .grid > *, .detail-id > * { min-width: 0; }
+.prose pre { overflow-x: auto; max-width: 100%; }
+.prose table { display: block; max-width: 100%; overflow-x: auto; }
+.prose, .detail-id h1, .tagline, .card h3, .card p { overflow-wrap: anywhere; }
+.toc a { overflow-wrap: anywhere; }
+.files li { grid-template-columns: minmax(0, 1fr) auto; }
+.files a { overflow-wrap: anywhere; }
+.btn { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
