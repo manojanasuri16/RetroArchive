@@ -96,6 +96,10 @@ const devices = defineCollection({
     released: z.coerce.string().optional(),
     image: z.string().optional(),
     spin: z.string().optional(),
+    headline: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
+    features: z.array(z.string()).optional(),
+    specs: z.array(z.object({ group: z.string(), rows: z.array(z.object({ label: z.string(), value: z.string() })) })).optional(),
+    specsSource: z.object({ label: z.string(), url: z.string() }).optional(),
     notes: z.string().default(''),
   }),
 });

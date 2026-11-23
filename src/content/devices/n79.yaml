@@ -1,10 +1,139 @@
 name: Nokia N79
 platform: S60 3rd Edition FP2
 os: Symbian OS 9.3
-screen: 240x320
+screen: 240x320 (2.4 inch)
 java: MIDP 2.0 / CLDC 1.1
 released: 2008
 spin: devices/n79-360
+headline:
+  - label: Released
+    value: "Oct 2008"
+  - label: Weight
+    value: "97 g"
+  - label: Display
+    value: "2.4\" 240x320"
+  - label: Camera
+    value: "5 MP, AF"
+  - label: CPU
+    value: "369 MHz ARM11"
+  - label: Battery
+    value: "1200 mAh"
+features:
+  - "2.4-inch 16M-colour TFT display, 240x320 (QVGA)"
+  - "5 MP autofocus camera with Carl Zeiss optics, dual-LED flash and an AF assist light"
+  - "Video recording at 30 fps"
+  - "Symbian OS 9.3 with the S60 3.2 interface, on a 369 MHz ARM11 CPU"
+  - "3G with HSDPA, and quad-band GSM"
+  - "Wi-Fi with UPnP and DLNA"
+  - "Built-in GPS with A-GPS, and Nokia Maps"
+  - "microSD slot with microSDHC support, 4 GB card in the box"
+  - "Accelerometer for screen auto-rotation"
+  - "Swappable Xpress-on covers, two in the box"
+  - "3.5 mm audio jack, TV out, stereo speakers"
+  - "Stereo FM radio with RDS, and an FM transmitter"
+  - "Touch-sensitive Navi wheel"
+  - "Bluetooth 2.0 with A2DP, and microUSB 2.0"
+  - "Removable keylock switch on the side, one free N-Gage game in the retail package"
+specs:
+  - group: Network
+    rows:
+      - label: Technology
+        value: "GSM / HSPA"
+      - label: 2G bands
+        value: "GSM 850 / 900 / 1800 / 1900"
+      - label: 3G bands
+        value: "HSDPA 900 / 2100"
+      - label: Speed
+        value: "HSPA 3.6 / 0.384 Mbps"
+  - group: Launch
+    rows:
+      - label: Announced
+        value: "August 2008"
+      - label: Released
+        value: "October 2008"
+      - label: Status
+        value: "Discontinued"
+  - group: Body
+    rows:
+      - label: Dimensions
+        value: "110 x 49 x 15 mm (4.33 x 1.93 x 0.59 in)"
+      - label: Weight
+        value: "97 g (3.42 oz)"
+      - label: SIM
+        value: "Mini-SIM"
+      - label: Colours
+        value: "Canvas white, Seal grey, Petrol black"
+  - group: Display
+    rows:
+      - label: Type
+        value: "TFT, 16M colours"
+      - label: Size
+        value: "2.4 inches"
+      - label: Resolution
+        value: "240 x 320 pixels, 4:3 (about 167 ppi)"
+      - label: Input
+        value: "Touch-sensitive Navi wheel"
+  - group: Platform
+    rows:
+      - label: OS
+        value: "Symbian OS 9.3, Series 60 v3.2 UI"
+      - label: CPU
+        value: "369 MHz ARM11"
+  - group: Memory
+    rows:
+      - label: Card slot
+        value: "microSDHC (dedicated slot), 4 GB included"
+      - label: Internal
+        value: "50 MB"
+  - group: Cameras
+    rows:
+      - label: Main
+        value: "5 MP, autofocus, Carl Zeiss optics, LED flash"
+      - label: Video
+        value: "480p at 30 fps"
+      - label: Front
+        value: "VGA video-call camera"
+  - group: Sound
+    rows:
+      - label: Loudspeaker
+        value: "Yes, stereo speakers"
+      - label: Alert types
+        value: "Vibration; downloadable polyphonic and MP3 ringtones"
+      - label: 3.5 mm jack
+        value: "Yes"
+  - group: Connectivity
+    rows:
+      - label: WLAN
+        value: "Wi-Fi 802.11 b/g, UPnP and DLNA"
+      - label: Bluetooth
+        value: "2.0, A2DP"
+      - label: Positioning
+        value: "GPS, A-GPS, Nokia Maps"
+      - label: Radio
+        value: "Stereo FM radio with RDS, FM transmitter"
+      - label: USB
+        value: "microUSB 2.0"
+  - group: Features
+    rows:
+      - label: Sensors
+        value: "Accelerometer"
+      - label: Browser
+        value: "WAP 2.0 / xHTML, HTML, Adobe Flash Lite"
+      - label: Media
+        value: "MP4 / WMV / H.264 video player; MP3 / WMA / WAV / eAAC+ audio player"
+      - label: Apps
+        value: "Photo and video editor, organiser, document viewer (Word, Excel, PowerPoint, PDF), voice command and dial, Push to Talk, TV-out"
+  - group: Battery
+    rows:
+      - label: Type
+        value: "Removable Li-Ion 1200 mAh (BL-6F)"
+      - label: Stand-by
+        value: "Up to 372 h (2G) / 305 h (3G)"
+      - label: Talk time
+        value: "Up to 5 h 30 min (2G) / 3 h 30 min (3G)"
+specsSource:
+  label: GSMArena
+  url: https://www.gsmarena.com/nokia_n79-2497.php
 notes: |
   The N79 is a candybar phone with a keypad and a 240x320 screen. It runs S60 3rd Edition Feature Pack 2 (S60 3.2) on Symbian OS 9.3. Build against the S60 3.2 SDK. That is what the [build guide](/guides/build-native-on-linux/) sets up.
 

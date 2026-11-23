@@ -18,16 +18,19 @@ const x = d.data;
   <div class="wrap">
     <div class="page-head"><div class="crumbs"><a href={url('/devices/')}>Devices</a> / {x.name}</div><h1><span class="hl">{x.name}</span></h1></div>
     {x.spin && <section class="phone-sec" style="margin-bottom:44px"><Spin360 dir={x.spin} alt={`${x.name}, 360 degree view`} /><div><h2 style="margin:0 0 10px">Turn it around</h2><p>Drag the phone to spin it, or press the arrow keys. The back camera, the side keys and the keypad are all there.</p></div></section>}
+    {x.headline && <ul class="statbar">{x.headline.map((h: any) => <li><b>{h.value}</b><span>{h.label}</span></li>)}</ul>}
+    {x.features && <section class="panel" style="margin-bottom:30px"><h2>Key features</h2><ul class="prose keyf">{x.features.map((f: string) => <li>{f}</li>)}</ul></section>}
     <div class="panels" style="margin-top:0">
-      <section class="panel">
+      {!x.specs && <section class="panel">
         <h2>Specs</h2>
         {x.image && <img src={media(x.image)} alt={x.name} style="max-height:240px;margin-bottom:12px" />}
         <dl class="facts">
           <dt>Platform</dt><dd>{x.platform}</dd><dt>OS</dt><dd>{x.os}</dd><dt>Screen</dt><dd>{x.screen}</dd>
           {x.java && <><dt>Java</dt><dd>{x.java}</dd></>}{x.released && <><dt>Released</dt><dd>{x.released}</dd></>}
         </dl>
-      </section>
-      <section class="panel"><h2>Notes</h2><div class="prose" set:html={md(x.notes)} /></section>
+      </section>}
+      {x.specs && <section class="panel wide"><h2>Full specifications</h2><div class="specgrid">{x.specs.map((g: any) => <div class="specgroup"><h3>{g.group}</h3><dl class="facts">{g.rows.map((r: any) => <><dt>{r.label}</dt><dd>{r.value}</dd></>)}</dl></div>)}</div>{x.specsSource && <p class="sm">Specifications from <a href={x.specsSource.url} rel="noopener">{x.specsSource.label}</a>.</p>}</section>}
+      <section class={x.specs ? "panel wide" : "panel"}><h2>Notes</h2><div class="prose" set:html={md(x.notes)} /></section>
       <section class="panel wide"><h2>Tested on this device</h2>
         {tested.length === 0 ? <p>Nothing recorded yet.</p> : (
           <div class="tablewrap"><table>
