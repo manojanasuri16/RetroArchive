@@ -1,11 +1,20 @@
 ---
 name: retroarchive-publish
-description: Add or update an app, game or SDK on RetroArchive (https://manojanasuri16.github.io/RetroArchive/), the owner's retro site for Nokia N79 Symbian and Java ME software. Use when the user says "add this to RetroArchive", "publish/list/update on RetroArchive", "put this on the retro site", "release a new version and update the site", or hands over .sis/.sisx/.jar/.jad files to add. Checks the current state of the project, brings README, description, release notes and version up to date, releases on GitHub, then writes the site entry and deploys.
+description: Add or update an app, game or SDK on RetroArchive (https://manojanasuri16.github.io/RetroArchive/), the owner's retro site for Nokia N79 Symbian and Java ME software. Use when the user says "add this to RetroArchive", "publish/list/update on RetroArchive", "put this on the retro site", "release a new version and update the site", or hands over .sis/.sisx/.jar/.jad files to add. Checks the current state of the project, finds anything native or reusable inside it and publishes that as its own open-source repo, brings README, description, release notes and version up to date, releases on GitHub, writes the site entries (app page, Open source page, vault listing), deploys, and then updates every linked repo and the link registry.
 ---
 
 # Add or update an entry on RetroArchive
 
 Two cases. **A) The user's own app** (a project repo with source): check it, refresh its docs, release it, then list it. **B) Third-party files** (a folder of .sis/.jar files): hash them, upload them, then list them. Work through the steps in order, skip what is already done, and report the live page URL at the end.
+
+## The full pipeline (own apps)
+When the owner hands over a project of their own, do all of this in order, and say which steps you skipped as already done:
+1. **Audit the project** (A1) and bring docs, version and release notes up to date (A2).
+2. **Look for reusable parts** (section "Open-source extraction" below): native code, protocol stacks, tools, test-suites, findings. Create or update a separate public repo for each, with full documentation and a release.
+3. **Release the app** on GitHub (A2) and **list it on the site** (A3). Third-party or copyrighted companions go to the vault and are listed too (Case B).
+4. **List the extracted repos** on the site's Open source page and cross-link them from the app page.
+5. **Propagate**: update every other repo and page that should now mention something new (section "Propagate and keep the link registry"), and update the registry.
+6. Build, deploy, verify (the last section) and report.
 
 ## Safety rules
 - Never add Claude as author, co-author or collaborator, and never add attribution lines to commits, PR text, READMEs or release notes (the owner's standing rule).
@@ -57,6 +66,25 @@ Create with `npm run new -- app <slug>` or edit the existing YAML. For own apps 
 
 YAML rules that bit before: quote any `tagline` or value containing a colon or apostrophe-heavy text (`tagline: "..."`); description goes in a `|` block; use only the enum values from the schema; internal markdown links are root-absolute like `/guides/install-pys60/` (the site prefixes the base path).
 
+## Open-source extraction (own apps)
+Goal: anything reusable that the owner built should become its own public repo so others (also on other devices) can use it. Do this after the app is tested and before the site entry is finalised.
+1. **Find candidates** by reading the project, not by guessing: `native/` (C/C++ modules, .mmp files), protocol or crypto code, packaging/build/test tools, host test-suites, protocol or hardware findings in `docs/`, anything with its own tests. App UI code and glue are usually not reusable: leave them. Check `gh repo list manojanasuri16 --limit 100` and `/home/manoja/nokia_n79/opensource/INDEX.md` first, so you update an existing repo instead of creating a duplicate, and avoid over-fragmenting (combine small related things).
+2. **Work in a fresh copy** under `/home/manoja/nokia_n79/opensource/<repo>/` with a new `git init` (never copy the app's history), and never modify the app's own repo for this step.
+3. **Scrub before the first push.** Grep the whole tree for: api_id/api_hash, tokens, phone numbers, IMEI, emails, real IP addresses, user ids, session files, captured call/network data, logs, signing keys and certs (`*.pem`, `*.key`, `cert/`), fingerprints of the owner's devices, contact names. Replace with synthetic placeholders or delete. Test vectors from real captures must be removed or contain only protocol constants (say so in the README). No Claude attribution anywhere.
+4. **Run the tests** that exist in the copied tree and report real results. Rebuild Symbian binaries from the new layout only if you can; otherwise say it was not rebuilt there. Never claim "tested on N79" unless the app's own notes or the owner say so; separate "verified on a real N79 inside the app" from "only on PC" in the README.
+5. **Write the repo**: README (what and why, honest status, supported devices, layout, build with the owner's toolchain repo link, tests, API overview with short examples, limitations, credits and third-party notices), LICENSE (MIT unless third-party rules or the owner say otherwise; third-party code keeps its own licence files and a THIRD-PARTY note), `.gitignore`, `docs/`, description and topics. Create: `gh repo create manojanasuri16/<name> --public --source . --push`.
+6. **Release**: tag and `gh release create` with useful assets (source zip is automatic; add built .pyd/.sis/tools only when built and checked), notes in plain language. For app releases, attach the app's .sis and `SHA256SUMS.txt`.
+7. Append the repo to `/home/manoja/nokia_n79/opensource/INDEX.md` (re-read before writing; append, never overwrite).
+
+## Propagate and keep the link registry
+After steps above, make sure everything that should point at the new things does. The registry file is `src/data/linked-repos.json` in the site repo (create it if missing): a list of `{repo, kind: app|library|guide|vault|site, linksTo: [repos or site pages], linkedFrom: [files that mention it]}` entries. Update it every run.
+- **Site**: the app's page (`src/content/apps/<slug>.yaml`) gets a "Reusable parts of this app" paragraph linking the extracted repos; `src/data/opensource.json` gets one entry per new public repo (fields name, repo, tagline, purpose, language, license, usedBy, status[{level n79|pc|none, text}]; status text only from the repo README); the home/nav/footer already link the Open source page.
+- **Vault**: copyrighted/third-party files belong in `RetroArchive-vault` (see Safety rules) and are listed on the site like any other app (Case B). Check the vault repo's own README/index if it has a list and add the entry there too.
+- **Other repos**: for every repo in the registry that links to or is related to what changed (the app's README "Source code of components" section, the other apps' READMEs if they share a component, the toolchain repo README, the extracted repos' cross-links), update the text so links are not stale (new version, new repo, moved paths). Use `grep -rn "github.com/manojanasuri16" ` over the local clones to find mentions; open README edits as small commits (only the README), never touch unrelated files.
+- **Licence**: every public repo the owner publishes must have a LICENSE file (MIT by default) and a License section in its README; add it if missing.
+- **Verify links**: run a quick check that each URL you added returns 200 (`curl -s -o /dev/null -w '%{http_code}'`) and that no README points at a private repo.
+- Record all of this in the registry, and mention in the final report which repos were updated.
+
 ## Build, deploy, verify
 ```bash
 cd "$SITE"
@@ -68,7 +96,7 @@ git add -A && git commit -m "Add/update <name> <version>" && git push
 gh run watch $(gh run list --limit 1 --json databaseId --jq '.[0].databaseId') --exit-status
 curl -s -o /dev/null -w '%{http_code}\n' https://manojanasuri16.github.io/RetroArchive/apps/<slug>/
 ```
-Also check the phone page `/m/apps/<slug>/` exists. Report: live URL, version, download links, what was changed in the README/notes, and anything left unknown (author, version, screenshots, tested status) so the owner can fill it in.
+Also check the phone page `/m/apps/<slug>/` exists. Report: live URL, version, download links, repos created or updated (with URLs), which other repos/pages were updated and what the registry now lists, what was changed in the README/notes, and anything left unknown (author, version, screenshots, tested status) so the owner can fill it in.
 
 ## Other tasks on the same site
 New guide: `npm run new -- guide <slug>` (frontmatter: title, summary, order, tags, updated). News post: `npm run new -- news <slug>`. Device: `src/content/devices/`. Full design contract is `SPEC.md` in the site repo.
