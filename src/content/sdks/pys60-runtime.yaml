@@ -27,6 +27,12 @@ files:
     size: 21356
     sha256: ba3c4016936cb287ffe5ddbf019d78c313ce2ab1f4d9ebedb6c1e9ea2801e941
     note: "Optional, runs .py scripts on the phone"
+  - name: PythonForS60_1_4_5_doc.pdf
+    url: https://github.com/manojanasuri16/RetroArchive-files/releases/download/pys60-1.4.5-runtime/PythonForS60_1_4_5_doc.pdf
+    kind: other
+    size: 656862
+    sha256: 77e7e7b04b4c5cddcee27bc06387ee01ce26d2f2a7a92b8232d00374ebaf3c13
+    note: Python for S60 1.4.5 documentation (PDF)
 description: |
   **Python for S60 1.4.5** runs Python 2.2 scripts and apps on Nokia S60 3rd Edition phones, including the **Nokia N79**. Nokia open-sourced the project (PyS60).
 
