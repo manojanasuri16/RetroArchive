@@ -1,6 +1,6 @@
 {
   "manojanasuri16/RetroSend": {
-    "fetched": "2026-11-23T14:21:51.769Z",
+    "fetched": "2026-11-24T04:17:49.448Z",
     "latest": {
       "tag": "v1.2.1",
       "name": "RetroSend 1.2.1: phone memory or memory card",
@@ -84,7 +84,7 @@
     ]
   },
   "manojanasuri16/symbian-s60v3-toolchain": {
-    "fetched": "2026-11-23T14:21:53.000Z",
+    "fetched": "2026-11-24T04:17:49.596Z",
     "latest": {
       "tag": "archives",
       "name": "Original archives",
@@ -132,24 +132,37 @@
     ]
   },
   "manojanasuri16/RetroTele": {
-    "fetched": "2026-11-23T14:21:52.203Z",
+    "fetched": "2026-11-24T04:17:49.502Z",
     "latest": {
-      "tag": "v0.13.2",
-      "name": "RetroTele 0.13.2: thumbnails, multi-select",
-      "published": "2026-11-22T15:23:47Z",
-      "body": "- **Attach file:** image thumbnails in the file manager, select several files at once (centre = mark, key 0 = send), and sending without a caption works (a Send / Add caption and send menu replaces the caption box).\n- Single RetroTele.sis installs everything. Remove the old RetroTele in App. manager first, then install.",
-      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.13.2",
+      "tag": "v0.16.2",
+      "name": "RetroTele 0.16.2: calls with video",
+      "published": "2026-11-24T04:17:14Z",
+      "body": "RetroTele 0.16.2 adds Telegram voice and video calls that work with the official Telegram apps, plus a single-file install.\n\n## What is new since 0.13.2\n\n**Voice calls**\n- Call and answer Telegram voice calls with the official apps (call library 2.7.7), in both directions.\n- Sound through the phone speaker or the earpiece; key 2 switches between them.\n- Uses the phone's own microphone, with a mic boost setting and a mute button.\n\n**Video calls**\n- Send your camera video and see the other person's video (software H.264 decoding), in either order.\n- Switch between the front and rear camera, and show or hide your own picture.\n\n**Chats**\n- Image thumbnails, multi-select and caption-free sending when attaching files, plus the file manager and attach-any-file support from the 0.13 releases.\n\n**Install**\n- One file, RetroTele.sis, installs everything: the app, Python for S60 and Nokia's VoIP Audio Services.\n\n## Requirements\n- A hacked Nokia N79 with RomPatcher+ and Open4All (Easy Hack Kit). The call helpers need capabilities a stock phone refuses, so the install fails otherwise.\n- Your own Telegram api_id and api_hash.\n\n## Known limits\n- Headsets (Bluetooth or wired) are not supported in calls; the phone's own microphone and speaker or earpiece are always used.\n- Video is small and can be choppy.\n- The other person's video above 240x480 waits until their app steps down.\n- Video needs call library 2.7.7 (Settings > Call version).\n- If call audio ever stays silent, restart the phone (the Nokia VoIP audio service can get stuck).\n",
+      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.16.2",
       "assets": [
         {
           "name": "RetroTele.sis",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.13.2/RetroTele.sis",
-          "size": 893872,
-          "downloads": 1,
-          "sha256": "41df06cb3c2c1701338d500667404e5d60668eeb095bba67e4809275f22db8b9"
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.16.2/RetroTele.sis",
+          "size": 1936628,
+          "downloads": 0,
+          "sha256": "0d7c52624cee485b808fa57e886bf7ccef73843b0e9daaaa65edc467910c6599"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.16.2/SHA256SUMS.txt",
+          "size": 80,
+          "downloads": 0,
+          "sha256": "3cfcb989b3678f31e1df3f11c7baba4b661b41c5935333039d3c9a2cd12265ea"
         }
       ]
     },
     "history": [
+      {
+        "tag": "v0.16.2",
+        "published": "2026-11-24T04:17:14Z",
+        "body": "RetroTele 0.16.2 adds Telegram voice and video calls that work with the official Telegram apps, plus a single-file install.\n\n## What is new since 0.13.2\n\n**Voice calls**\n- Call and answer Telegram voice calls with the official apps (call library 2.7.7), in both directions.\n- Sound through the phone speaker or the earpiece; key 2 switches between them.\n- Uses the phone's own microphone, with a mic boost setting and a mute button.\n\n**Video calls**\n- Send your camera video and see the other person's video (software H.264 decoding), in either order.\n- Switch between the front and rear camera, and show or hide your own picture.\n\n**Chats**\n- Image thumbnails, multi-select and caption-free sending when attaching files, plus the file manager and attach-any-file support from the 0.13 releases.\n\n**Install**\n- One file, RetroTele.sis, installs everything: the app, Python for S60 and Nokia's VoIP Audio Services.\n\n## Requirements\n- A hacked Nokia N79 with RomPatcher+ and Open4All (Easy Hack Kit). The call helpers need capabilities a stock phone refuses, so the install fails otherwise.\n- Your own Telegram api_id and api_hash.\n\n## Known limits\n- Headsets (Bluetooth or wired) are not supported in calls; the phone's own microphone and speaker or earpiece are always used.\n- Video is small and can be choppy.\n- The other person's video above 240x480 waits until their app steps down.\n- Video needs call library 2.7.7 (Settings > Call version).\n- If call audio ever stays silent, restart the phone (the Nokia VoIP audio service can get stuck).\n",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.16.2"
+      },
       {
         "tag": "v0.13.2",
         "published": "2026-11-22T15:23:47Z",
@@ -203,17 +216,11 @@
         "published": "2026-11-22T13:51:28Z",
         "body": "Logs the call protocol announced by official apps when they call you, and the full discard details.",
         "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.2"
-      },
-      {
-        "tag": "v0.11.1",
-        "published": "2026-11-22T13:43:55Z",
-        "body": "Settings > Call version: 2.7.7 makes official Telegram apps accept the call at the servers (no audio yet). Use it to test with a Play Store phone.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.1"
       }
     ]
   },
   "manojanasuri16/RetroTorch": {
-    "fetched": "2026-11-23T14:21:52.590Z",
+    "fetched": "2026-11-24T04:17:49.550Z",
     "latest": {
       "tag": "v1.3.0",
       "name": "RetroTorch 1.3.0: phone memory or memory card",

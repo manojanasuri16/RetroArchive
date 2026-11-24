@@ -1,5 +1,5 @@
 name: RetroTele
-tagline: Telegram client for the N79, talking to Telegram directly
+tagline: Telegram client for the N79 with voice and video calls
 kind: app
 source: mine
 platform: symbian
@@ -9,29 +9,33 @@ author: Manoj Anasuri
 authorUrl: https://github.com/manojanasuri16
 repo: manojanasuri16/RetroTele
 version: 0.7.9
-released: 2026-11-22
+released: 2026-11-24
 added: 2026-11-22
 featured: true
 icon: retrotele/icon.png
-screenshots: [retrotele/1.png, retrotele/2.png]
-requires: [pys60-runtime]
+screenshots: [retrotele/1.png, retrotele/2.png, retrotele/3.png, retrotele/4.png, retrotele/5.png, retrotele/6.png]
+requires: []
 signing: needs-hack
 capabilities: [NetworkServices, LocalServices, ReadUserData, WriteUserData, UserEnvironment]
 tested:
   - device: n79
-    status: partial
-    notes: 'Tested on a Nokia N79 with RetroTele on the memory card and Python for S60 in phone memory. Voice calls and send-only video were added in later versions.'
+    status: works
+    date: 2026-11-24
+    notes: 'Tested on a real Nokia N79 with Open4All: chats, files, Telegram voice calls with the official apps (speaker and earpiece), phone microphone, and video calls in both directions.'
 installNotes:
   - '**Needs a hacked phone.** Install the [Easy Hack Kit](/sdks/easyhackkit/) (EasyHackKit 2.0, which installs RomPatcher+) first (see the [unlock guide](/guides/unlock-n79/)), then open RomPatcher+, tick **Open4All rp+** and apply it. Without it the install fails with "Update error" or "requested application access not granted".'
-  - 'Install **PythonForS60_1_4_5_3rdEd.sis** first if it is not on the phone yet. See the [Python for S60 guide](/guides/install-pys60/).'
-  - 'Install **RetroTele.sis** (one file installs everything, including Nokia VoIP Audio Services) and choose phone memory or the memory card. On a hacked phone either works wherever Python is installed. See [memory card installs](/guides/memory-card-installs/).'
+  - 'Install **RetroTele.sis** (a single file that installs everything, including Python for S60 and Nokia VoIP Audio Services) and choose phone memory or the memory card. On a hacked phone either works wherever Python is installed. See [memory card installs](/guides/memory-card-installs/).'
   - 'On a computer, open my.telegram.org, go to **API development tools**, and create an app. Note your own **api_id** and **api_hash** (RetroTele ships none).'
   - 'Open RetroTele, enter the api_id and api_hash once, choose an access point (Wi-Fi or packet data), then log in.'
   - 'The first connection creates a secure key with Telegram. This takes a few seconds of 2048-bit maths on the phone.'
   - 'Two-step verification takes roughly an hour in pure Python on the N79. Either keep RetroTele open on the charger, or use the PC helper `tools/tg2fa.py` from the repository.'
   - 'Data is kept in `E:\RetroTele\`. The log is `E:\retrotele_log.txt`.'
 knownIssues:
-  - 'Video in calls is send-only: your camera is sent, the other side''s video is not shown.'
+  - 'Headsets (Bluetooth or wired) are not supported in calls: the phone''s own microphone and speaker or earpiece are always used.'
+  - 'Video is small and can be choppy.'
+  - 'The other person''s video above 240x480 waits until their app steps down.'
+  - 'Video needs call library 2.7.7 (Settings > Call version).'
+  - 'If call audio ever stays silent, restart the phone (the Nokia VoIP audio service can get stuck).'
   - 'No secret chats, and no file or video download.'
   - 'No playback of GIFs or animated stickers. Stickers show as their emoji.'
   - 'Voice messages use Opus/OGG, which the N79 cannot decode yet.'
@@ -57,12 +61,15 @@ description: |
   - Live incoming messages with a pop-up banner, read receipts and online status.
   - Search chats and contacts, or open any @username.
   - **Call** a contact's phone number as a normal phone call.
-  - **Telegram voice calls** with the official apps (call library 2.7.7) and **send-only video**.
+  - **Telegram voice and video calls** with the official apps (call library 2.7.7): speaker or earpiece (key 2), mic boost, mute, send and receive video, front/rear camera switch.
+  - **One file install**: RetroTele.sis bundles Python for S60 and Nokia VoIP Audio Services.
   - The chat list is cached, so it appears at once when the app starts.
   - **Profile** of any chat, with the photo, status, username, bio and members.
   - **Fast mode** (on by default) skips the SHA-256 integrity check on received data, which makes loading 2 to 3 times faster. Turn it off in Settings for the full check.
 
-  RetroTele needs [Python for S60](/sdks/pys60-runtime/) installed. Its source is on [GitHub](https://github.com/manojanasuri16/RetroTele).
+  Python for S60 is bundled in the package. Its source is on [GitHub](https://github.com/manojanasuri16/RetroTele).
+
+  The screenshots are PC renderings of the real UI with sample data, not phone captures.
 
   Emoji images are from Twemoji by Twitter, Inc and contributors, under CC-BY 4.0.
 
