@@ -1,0 +1,43 @@
+name: UserAgent
+tagline: "Change the user-agent string of the built-in Symbian browser"
+kind: app
+source: community
+platform: symbian
+runtime: native
+category: network
+author: Razumey
+license: Freeware
+version: 1.9.5
+added: 2026-11-25
+icon: useragent/icon.png
+files:
+  - name: UserAgent-1.9.5.sis
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/useragent-1.9.5/UserAgent-1.9.5.sis
+    kind: sis
+    size: 28672
+    sha256: 9c043df93f5f3e6d19fba72611735aa2a7922f21a2a4fadd8abdabd63bd3c9a9
+signing: unsigned
+installNotes:
+  - 'UserAgent is unsigned. In App. manager > Options > Settings, set *Software installation* to **All** and *Online certificate check* to **Off** before installing.'
+  - 'Open UserAgent, tick the user-agent profile you want, untick the others, and apply it.'
+knownIssues:
+  - 'This build is labelled for **S60 5th Edition and Symbian^3**, not S60 3rd Edition. It has not been confirmed on the N79, and the bundled profiles are written for newer Symbian browsers.'
+  - 'It changes the **built-in Symbian browser** only. Opera Mini and other Java apps send their own user agent, so this does not change them.'
+  - 'Unofficial third-party tool mirrored for preservation. Rights belong to the original author. See [About and removals](/about/).'
+description: |
+  **UserAgent** is a small tool by Razumey that changes the user-agent string of the phone's built-in Symbian browser. Some websites serve an old or cut-down page, or refuse an old browser outright, depending on the user agent it reports. Selecting a newer profile can make the site open its normal page instead.
+
+  ### Profiles included
+
+  - Symbian^3 (Nokia N8-00) and Nokia 603
+  - iPhone (iOS 5.0 and 5.1.1)
+  - Firefox 13
+  - Opera 12.02
+  - Internet Explorer Mobile 10 (Windows Phone 8)
+  - HTC and Samsung Galaxy Tab
+
+  Choose one profile from the app's list and apply it.
+
+  ### Compatibility
+
+  The file is labelled **S60 5th Edition and Symbian^3** and is unsigned. It is not confirmed on S60 3rd Edition phones such as the N79. If you only need pages that work in a different browser, [Opera Mini](/apps/opera-mini/) is the safer choice on the N79.
