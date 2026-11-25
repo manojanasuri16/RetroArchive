@@ -22,6 +22,12 @@ files:
     size: 6397
     sha256: 0dea439556c2252828c70f81cd449b5078ef5161ed019a86b206d13c9225dc23
     note: Descriptor, optional
+  - name: UserAgent-1.9.5.sis
+    url: https://github.com/manojanasuri16/RetroArchive-vault/releases/download/useragent-1.9.5/UserAgent-1.9.5.sis
+    kind: sis
+    size: 28672
+    sha256: 9c043df93f5f3e6d19fba72611735aa2a7922f21a2a4fadd8abdabd63bd3c9a9
+    note: UserAgent mod, for pages that refuse the built-in browser
 tested:
   - device: n79
     status: works
@@ -35,3 +41,11 @@ description: |
   The Opera Mini servers for this old version may no longer work. Check that it connects before relying on it.
 
   MIDP 2.0 / CLDC 1.0. The .jad lists the permissions it asks for: HTTP access, plus optional file, SMS and socket access.
+
+  ### If pages still won't load properly
+
+  Some sites refuse the N79's browser or serve a cut-down page because of the user agent it reports. **UserAgent** by Razumey is a small mod that changes the user agent string of the phone's **built-in Symbian browser**, so a site opens its normal page instead. It is the third file above: [UserAgent-1.9.5.sis](https://github.com/manojanasuri16/RetroArchive-vault/releases/download/useragent-1.9.5/UserAgent-1.9.5.sis).
+
+  It changes the built-in browser only. Opera Mini is a Java app and sends its own user agent, so UserAgent will not change the pages Opera Mini loads.
+
+  To install it: in App. manager > Options > Settings, set *Software installation* to **All** and *Online certificate check* to **Off**, then open the .sis. It is unsigned and labelled for **S60 5th Edition / Symbian^3**, so it is not confirmed on the N79. In the app, tick one profile only (for example Symbian^3, Firefox 13 or Opera 12.02) and apply it.
