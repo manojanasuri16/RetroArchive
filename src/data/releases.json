@@ -1,6 +1,6 @@
 {
   "manojanasuri16/RetroSend": {
-    "fetched": "2026-11-24T04:18:48.901Z",
+    "fetched": "2026-11-26T02:05:09.264Z",
     "latest": {
       "tag": "v1.2.1",
       "name": "RetroSend 1.2.1: phone memory or memory card",
@@ -12,21 +12,21 @@
           "name": "PythonForS60_1_4_5_3rdEd.sis",
           "url": "https://github.com/manojanasuri16/RetroSend/releases/download/v1.2.1/PythonForS60_1_4_5_3rdEd.sis",
           "size": 587124,
-          "downloads": 0,
+          "downloads": 6,
           "sha256": "db991e343b120c1bc64ae445126efdeba5479bd2244672181a318776b2840856"
         },
         {
           "name": "RetroSend-1.2.1-S60v3.sis",
           "url": "https://github.com/manojanasuri16/RetroSend/releases/download/v1.2.1/RetroSend-1.2.1-S60v3.sis",
           "size": 51896,
-          "downloads": 1,
+          "downloads": 13,
           "sha256": "98dde3fffec1a58d84a98782a2e4a6025b5c452033496b0991509c78d928bd7e"
         },
         {
           "name": "retrosend-1.2.1.py",
           "url": "https://github.com/manojanasuri16/RetroSend/releases/download/v1.2.1/retrosend-1.2.1.py",
           "size": 157382,
-          "downloads": 1,
+          "downloads": 5,
           "sha256": "daa5e2446437538172249b85c8f1c605dc365d9d26c80b2834ce5fcdee3721ac"
         },
         {
@@ -84,7 +84,7 @@
     ]
   },
   "manojanasuri16/symbian-s60v3-toolchain": {
-    "fetched": "2026-11-24T04:18:50.143Z",
+    "fetched": "2026-11-26T02:05:10.733Z",
     "latest": {
       "tag": "archives",
       "name": "Original archives",
@@ -110,7 +110,7 @@
           "name": "PyS60_1.4.5.zip",
           "url": "https://github.com/manojanasuri16/symbian-s60v3-toolchain/releases/download/archives/PyS60_1.4.5.zip",
           "size": 27326587,
-          "downloads": 3,
+          "downloads": 4,
           "sha256": "2a091547475ab426cb390cd62bd25443802063714d2dc2de59c49e4fa6103d13"
         },
         {
@@ -132,31 +132,37 @@
     ]
   },
   "manojanasuri16/RetroTele": {
-    "fetched": "2026-11-24T04:18:49.302Z",
+    "fetched": "2026-11-26T02:05:09.760Z",
     "latest": {
-      "tag": "v0.16.2",
-      "name": "RetroTele 0.16.2: calls with video",
-      "published": "2026-11-24T04:17:14Z",
-      "body": "RetroTele 0.16.2 adds Telegram voice and video calls that work with the official Telegram apps, plus a single-file install.\n\n## What is new since 0.13.2\n\n**Voice calls**\n- Call and answer Telegram voice calls with the official apps (call library 2.7.7), in both directions.\n- Sound through the phone speaker or the earpiece; key 2 switches between them.\n- Uses the phone's own microphone, with a mic boost setting and a mute button.\n\n**Video calls**\n- Send your camera video and see the other person's video (software H.264 decoding), in either order.\n- Switch between the front and rear camera, and show or hide your own picture.\n\n**Chats**\n- Image thumbnails, multi-select and caption-free sending when attaching files, plus the file manager and attach-any-file support from the 0.13 releases.\n\n**Install**\n- One file, RetroTele.sis, installs everything: the app, Python for S60 and Nokia's VoIP Audio Services.\n\n## Requirements\n- A hacked Nokia N79 with RomPatcher+ and Open4All (Easy Hack Kit). The call helpers need capabilities a stock phone refuses, so the install fails otherwise.\n- Your own Telegram api_id and api_hash.\n\n## Known limits\n- Headsets (Bluetooth or wired) are not supported in calls; the phone's own microphone and speaker or earpiece are always used.\n- Video is small and can be choppy.\n- The other person's video above 240x480 waits until their app steps down.\n- Video needs call library 2.7.7 (Settings > Call version).\n- If call audio ever stays silent, restart the phone (the Nokia VoIP audio service can get stuck).\n",
-      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.16.2",
+      "tag": "v0.17.1",
+      "name": "RetroTele 0.17.1: search in chats, polls and bot buttons",
+      "published": "2026-11-26T02:04:57Z",
+      "body": "RetroTele 0.17.1 adds searching inside a chat, polls you can vote on, and bot buttons, on top of the calls from 0.16.2.\n\n## What is new since 0.16.2\n\n**Chats**\n- Search chats and contacts from the search screen, and search the messages of the open chat with \"Search in chat\"; pick a result to jump to that message.\n- Polls are shown with their current results and can be voted on from the phone; the results update as votes come in.\n- Bot messages with buttons can be answered by picking the button.\n\n**Notifications**\n- Only a chat that is on screen in front counts as read: in the background the message stays unread and its notification is shown.\n\n**Install**\n- One file, RetroTele.sis, installs everything: the app, the Python for S60 1.4.5 runtime and Nokia's VoIP Audio Services, so Telegram calls have two-way audio without extra installs. Phone memory or memory card both work; Nokia's audio service has to end up on the same drive as the app.\n\n## Requirements\n- A hacked Nokia N79 with RomPatcher+ and Open4All (Easy Hack Kit). The call helpers need capabilities a stock phone refuses, so the install fails otherwise.\n- Your own Telegram api_id and api_hash.\n\n## Known limits\n- Headsets (Bluetooth or wired) are not supported in calls; the phone's own microphone and speaker or earpiece are used.\n- Video is small and can be choppy.\n- If call audio ever stays silent, restart the phone (the Nokia VoIP audio service can get stuck).\n\nSHA256SUMS.txt has the checksum of RetroTele.sis.\n",
+      "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.17.1",
       "assets": [
         {
           "name": "RetroTele.sis",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.16.2/RetroTele.sis",
-          "size": 1936628,
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.17.1/RetroTele.sis",
+          "size": 2113732,
           "downloads": 0,
-          "sha256": "0d7c52624cee485b808fa57e886bf7ccef73843b0e9daaaa65edc467910c6599"
+          "sha256": "13b281b9fce82e6c4c94fdbbaaf3a29e3309a4ec5a7a9deb797145a23ff51be4"
         },
         {
           "name": "SHA256SUMS.txt",
-          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.16.2/SHA256SUMS.txt",
+          "url": "https://github.com/manojanasuri16/RetroTele/releases/download/v0.17.1/SHA256SUMS.txt",
           "size": 80,
           "downloads": 0,
-          "sha256": "3cfcb989b3678f31e1df3f11c7baba4b661b41c5935333039d3c9a2cd12265ea"
+          "sha256": "2a420413742d809ba8cb275f922d4624315060b616193bfc7fe13afff1c4e8f6"
         }
       ]
     },
     "history": [
+      {
+        "tag": "v0.17.1",
+        "published": "2026-11-26T02:04:57Z",
+        "body": "RetroTele 0.17.1 adds searching inside a chat, polls you can vote on, and bot buttons, on top of the calls from 0.16.2.\n\n## What is new since 0.16.2\n\n**Chats**\n- Search chats and contacts from the search screen, and search the messages of the open chat with \"Search in chat\"; pick a result to jump to that message.\n- Polls are shown with their current results and can be voted on from the phone; the results update as votes come in.\n- Bot messages with buttons can be answered by picking the button.\n\n**Notifications**\n- Only a chat that is on screen in front counts as read: in the background the message stays unread and its notification is shown.\n\n**Install**\n- One file, RetroTele.sis, installs everything: the app, the Python for S60 1.4.5 runtime and Nokia's VoIP Audio Services, so Telegram calls have two-way audio without extra installs. Phone memory or memory card both work; Nokia's audio service has to end up on the same drive as the app.\n\n## Requirements\n- A hacked Nokia N79 with RomPatcher+ and Open4All (Easy Hack Kit). The call helpers need capabilities a stock phone refuses, so the install fails otherwise.\n- Your own Telegram api_id and api_hash.\n\n## Known limits\n- Headsets (Bluetooth or wired) are not supported in calls; the phone's own microphone and speaker or earpiece are used.\n- Video is small and can be choppy.\n- If call audio ever stays silent, restart the phone (the Nokia VoIP audio service can get stuck).\n\nSHA256SUMS.txt has the checksum of RetroTele.sis.\n",
+        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.17.1"
+      },
       {
         "tag": "v0.16.2",
         "published": "2026-11-24T04:17:14Z",
@@ -210,17 +216,11 @@
         "published": "2026-11-22T13:57:31Z",
         "body": "Settings > Call version now cycles 2.4.4 / 2.7.7 / mimic. Experiment build for finding what Telegram's servers accept from the N79.",
         "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.3"
-      },
-      {
-        "tag": "v0.11.2",
-        "published": "2026-11-22T13:51:28Z",
-        "body": "Logs the call protocol announced by official apps when they call you, and the full discard details.",
-        "url": "https://github.com/manojanasuri16/RetroTele/releases/tag/v0.11.2"
       }
     ]
   },
   "manojanasuri16/RetroTorch": {
-    "fetched": "2026-11-24T04:18:49.732Z",
+    "fetched": "2026-11-26T02:05:10.261Z",
     "latest": {
       "tag": "v1.3.0",
       "name": "RetroTorch 1.3.0: phone memory or memory card",
@@ -232,14 +232,14 @@
           "name": "appuifwmodule.rsc",
           "url": "https://github.com/manojanasuri16/RetroTorch/releases/download/v1.3.0/appuifwmodule.rsc",
           "size": 1015,
-          "downloads": 1,
+          "downloads": 2,
           "sha256": "3a8f10d50439152d577ac0ba73445f83380c76494f5db538e69b61a6d3f9c608"
         },
         {
           "name": "RetroTorch.sis",
           "url": "https://github.com/manojanasuri16/RetroTorch/releases/download/v1.3.0/RetroTorch.sis",
           "size": 34632,
-          "downloads": 2,
+          "downloads": 7,
           "sha256": "6f30975cc91379760b8befb2728c06827696ee4779445f958937da50d228a08a"
         },
         {
