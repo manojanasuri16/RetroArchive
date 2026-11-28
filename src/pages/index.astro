@@ -67,6 +67,14 @@ import Spin360 from '../components/Spin360.astro';
       </div>
     </section>
 
+    <section class="sec" aria-label="The N82">
+      <div class="sec-head"><h2>The N82</h2><a href={url('/devices/n82/')}>Specs and notes →</a></div>
+      <div class="phone-sec">
+        <Spin360 dir="devices/n82-360" alt="Nokia N82, 360 degree view" creditText={'Real 360° photos of the Nokia N82 by <a href="https://www.gsmarena.com/nokia_n82-pictures-2177.php" rel="noopener">GSMArena</a>. Their spin unit is silver; mine is the black one.'} />
+        <div><p>The other phone on the desk: a black Nokia N82, the Nseries with a 5 MP Carl Zeiss camera and a xenon flash.</p><p>It runs S60 3rd Edition FP1, one edition older than the N79, so it needs the FP1 SDK to build for it.</p></div>
+      </div>
+    </section>
+
     <section class="sec">
       <div class="sec-head"><h2>Latest additions</h2><a href={url('/apps/')}>All apps →</a></div>
       {latest.length ? <ul class="grid">{latest.map((i) => <AppCard item={i} />)}</ul> : <p class="empty">Nothing yet.</p>}

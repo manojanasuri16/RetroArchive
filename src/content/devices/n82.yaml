@@ -1,0 +1,148 @@
+name: Nokia N82
+platform: S60 3rd Edition FP1
+os: Symbian OS 9.2
+screen: 240x320 (2.4 inch)
+java: MIDP 2.0 / CLDC 1.1
+released: 2007
+image: devices/n82-black.webp
+imageCaption: 'The Nokia N82 in black, front and back. Image from <a href="https://www.gsmarena.com/nokia_n82-pictures-2177.php" rel="noopener">GSMArena</a>.'
+spin: devices/n82-360
+spinCredit: 'Real 360° photos of the Nokia N82 by <a href="https://www.gsmarena.com/nokia_n82-pictures-2177.php" rel="noopener">GSMArena</a>. Their spin unit is the silver N82; the one I use is black.'
+headline:
+  - label: Released
+    value: "Nov 2007"
+  - label: Weight
+    value: "114 g"
+  - label: Display
+    value: "2.4\" 240x320"
+  - label: Camera
+    value: "5 MP, AF, xenon"
+  - label: CPU
+    value: "332 MHz ARM11"
+  - label: Battery
+    value: "1050 mAh"
+features:
+  - "2.4-inch 16M-colour TFT display, 240x320 (QVGA)"
+  - "5 MP autofocus camera with Carl Zeiss Tessar 2.8/5.6 optics, a xenon flash and a sliding lens cover"
+  - "Video recording at 480p and 30 fps"
+  - "Symbian OS 9.2 with S60 3rd Edition FP1, on a 332 MHz dual ARM11 with a 3D graphics accelerator"
+  - "3G with HSDPA, and quad-band GSM"
+  - "Wi-Fi 802.11 b/g with UPnP"
+  - "Built-in GPS with A-GPS, and Nokia Maps"
+  - "128 MB of RAM, 100 MB of internal storage, and a microSDHC slot with a 2 GB card in the box"
+  - "Accelerometer for automatic screen rotation"
+  - "Stereo speakers, a 3.5 mm audio jack and TV out"
+  - "Stereo FM radio, microUSB 2.0 and Bluetooth 2.0 with A2DP"
+  - "Black or silver; the black one is the classic N82"
+specs:
+  - group: Network
+    rows:
+      - label: Technology
+        value: "GSM / HSPA"
+      - label: 2G bands
+        value: "GSM 850 / 900 / 1800 / 1900"
+      - label: 3G bands
+        value: "HSDPA 2100"
+      - label: Speed
+        value: "HSPA"
+  - group: Launch
+    rows:
+      - label: Announced
+        value: "November 2007"
+      - label: Released
+        value: "November 2007"
+      - label: Status
+        value: "Discontinued"
+  - group: Body
+    rows:
+      - label: Dimensions
+        value: "112 x 50.2 x 17.3 mm, 90 cc (4.41 x 1.98 x 0.68 in)"
+      - label: Weight
+        value: "114 g (4.02 oz)"
+      - label: SIM
+        value: "Mini-SIM"
+      - label: Colours
+        value: "Silver, Black"
+  - group: Display
+    rows:
+      - label: Type
+        value: "TFT, 16M colours"
+      - label: Size
+        value: "2.4 inches (about 31.7% screen-to-body)"
+      - label: Resolution
+        value: "240 x 320 pixels, 4:3 (about 167 ppi)"
+  - group: Platform
+    rows:
+      - label: OS
+        value: "Symbian OS 9.2, S60 3rd Edition FP1 (S60 rel. 3.1)"
+      - label: CPU
+        value: "332 MHz dual ARM11"
+      - label: GPU
+        value: "3D graphics hardware accelerator"
+  - group: Memory
+    rows:
+      - label: Card slot
+        value: "microSDHC (dedicated slot), 2 GB included"
+      - label: Internal
+        value: "100 MB storage, 128 MB RAM"
+  - group: Cameras
+    rows:
+      - label: Main
+        value: "5 MP, autofocus, Carl Zeiss optics, xenon flash, sliding lens cover"
+      - label: Video
+        value: "480p at 30 fps"
+      - label: Front
+        value: "CIF video-call camera"
+  - group: Sound
+    rows:
+      - label: Loudspeaker
+        value: "Yes, stereo speakers"
+      - label: Alert types
+        value: "Vibration; downloadable polyphonic, monophonic and MP3 ringtones"
+      - label: 3.5 mm jack
+        value: "Yes"
+  - group: Connectivity
+    rows:
+      - label: WLAN
+        value: "Wi-Fi 802.11 b/g, UPnP"
+      - label: Bluetooth
+        value: "2.0, A2DP"
+      - label: Positioning
+        value: "GPS, A-GPS, Nokia Maps"
+      - label: Radio
+        value: "Stereo FM radio"
+      - label: USB
+        value: "microUSB 2.0"
+  - group: Features
+    rows:
+      - label: Sensors
+        value: "Accelerometer"
+      - label: Browser
+        value: "WAP 2.0 / xHTML, HTML"
+      - label: Media
+        value: "MP3 / WMA / WAV / RA / AAC / M4A player; MP4 / H.264 / RV / AVC video player"
+      - label: Apps
+        value: "Document viewer (Word, Excel, PowerPoint, PDF), organiser, voice dial and memo, push to talk, TV-out, predictive text input"
+  - group: Battery
+    rows:
+      - label: Type
+        value: "Removable Li-Ion 1050 mAh (BP-6MT)"
+      - label: Stand-by
+        value: "Up to 225 h (2G) / 216 h (3G)"
+      - label: Talk time
+        value: "Up to 4 h 20 min (2G) / 3 h 10 min (3G)"
+specsSource:
+  label: GSMArena
+  url: https://www.gsmarena.com/nokia_n82-2177.php
+notes: |
+  The N82 is the black, xenon-flash Nseries: a candybar with a keypad, a 240x320 screen and a camera that still holds up against phones of its year. It runs S60 3rd Edition **FP1** (S60 3.1) on Symbian OS 9.2, which is one edition older than the N79's FP2.
+
+  **Building.** FP1 and FP2 are not interchangeable. The [S60 3.2 SDK](/sdks/s60-3-2-sdk/) and the [S60v3 toolchain](/sdks/symbian-s60v3-toolchain/) on this site target FP2, so they build for the N79 and not for the N82. An FP1 phone needs the S60 3rd Edition FP1 SDK instead; the [build guide](/guides/build-native-on-linux/) explains the same setup with the FP2 packages swapped for FP1.
+
+  **Python.** Python for S60 1.4.5 is the S60 3rd Edition runtime and covers FP1 as well; the [install guide](/guides/install-pys60/) walks through it on the N79, and the steps on the phone are the same.
+
+  **Signing and installing.** The N82 takes the same `.sis` / `.sisx` files and answers to the same signing rules. The [unlock guide](/guides/unlock-n79/) and EasyHackKit 2.0 are written around the N79, but they are the standard S60v3 route. The same goes for [installing Java apps](/guides/install-java-apps/) and [memory card installs](/guides/memory-card-installs/).
+
+  **Camera.** A 5 MP sensor behind a Tessar 2.8/5.6 lens, with a real xenon flash and a sliding cover that starts the camera when you open it. Xenon is a one-shot flash, not a torch, so the LED light tricks written for the N79's dual LED do not carry over.
+
+  **Keypad.** The keys are small and laid out around the nav cluster; it is the N82's most complained-about part and it takes some getting used to.

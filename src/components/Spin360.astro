@@ -1,8 +1,9 @@
 ---
 import { media, url } from '../lib/url';
-const { dir = 'devices/n79-360', count = 36, alt = 'Nokia N79, 360 degree view', credit = true } = Astro.props;
+const { dir = 'devices/n79-360', count = 36, alt = 'Nokia N79, 360 degree view', credit = true, creditText } = Astro.props;
 const first = media(`${dir}/00.webp`);
 const base = media(dir);
+const creditHtml = creditText ?? 'Real 360° photos of the Nokia N79 by <a href="https://www.gsmarena.com/nokia_n79-pictures-2497.php" rel="noopener">GSMArena</a>. The unit shown has a plum back cover; the N79 had swappable covers in several colours.';
 ---
 <figure class="spin" data-spin data-base={base} data-count={count}>
   <div class="spin-stage" tabindex="0" role="group" aria-label={`${alt}. Drag, or use the left and right arrow keys, to turn the phone.`}>
@@ -16,7 +17,7 @@ const base = media(dir);
     <button type="button" class="btn small" data-act="front">Front</button>
     <button type="button" class="btn small" data-act="back">Back</button>
   </div>
-  {credit && <figcaption>Real 360° photos of the Nokia N79 by <a href="https://www.gsmarena.com/nokia_n79-pictures-2497.php" rel="noopener">GSMArena</a>. The unit shown has a plum back cover; the N79 had swappable covers in several colours.</figcaption>}
+  {credit && <figcaption set:html={creditHtml} />}
 </figure>
 <script is:inline>
 (function () {

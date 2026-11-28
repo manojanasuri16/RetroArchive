@@ -17,7 +17,7 @@ const x = d.data;
 <Base title={x.name} description={`${x.name}: ${x.platform}, ${x.os}, ${x.screen}.`}>
   <div class="wrap">
     <div class="page-head"><div class="crumbs"><a href={url('/devices/')}>Devices</a> / {x.name}</div><h1><span class="hl">{x.name}</span></h1></div>
-    {x.spin && <section class="phone-sec" style="margin-bottom:44px"><Spin360 dir={x.spin} alt={`${x.name}, 360 degree view`} /><div><h2 style="margin:0 0 10px">Turn it around</h2><p>Drag the phone to spin it, or press the arrow keys. The back camera, the side keys and the keypad are all there.</p></div></section>}
+    {x.spin && <section class="phone-sec" style="margin-bottom:44px"><Spin360 dir={x.spin} alt={`${x.name}, 360 degree view`} creditText={x.spinCredit} /><div><h2 style="margin:0 0 10px">Turn it around</h2><p>Drag the phone to spin it, or press the arrow keys. The back camera, the side keys and the keypad are all there.</p>{x.image && <figure style="margin:22px 0 0"><img src={media(x.image)} alt={x.name} style="max-height:210px;border:1px solid var(--ink)" />{x.imageCaption && <figcaption class="sm" set:html={x.imageCaption} />}</figure>}</div></section>}
     {x.headline && <ul class="statbar">{x.headline.map((h: any) => <li><b>{h.value}</b><span>{h.label}</span></li>)}</ul>}
     {x.features && <section class="panel" style="margin-bottom:30px"><h2>Key features</h2><ul class="prose keyf">{x.features.map((f: string) => <li>{f}</li>)}</ul></section>}
     <div class="panels" style="margin-top:0">
